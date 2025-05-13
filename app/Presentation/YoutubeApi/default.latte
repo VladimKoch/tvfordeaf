@@ -1,0 +1,11 @@
+
+{block content}
+
+{ifset $error}
+    <p>{$error}</p>
+{else}
+    <h1>{$title}</h1>
+    <p>Zhlédnutí: {$views}</p>
+{/ifset}
+
+{/block}

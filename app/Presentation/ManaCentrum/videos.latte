@@ -1,0 +1,77 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<div hx-target="this" hx-swap="outerHTML">
+{include '../header.latte'}
+
+
+    <div class="container px-4 py-5" style="margin-top: 150px; margin-bottom: 100px;">
+            <!-- Post -->
+            <div class="row g-4 py-5 row-cols-2 row-cols-lg-4"> 
+          
+		          <div n:foreach="$videos as $video">
+              
+              <div class="col-12">
+                
+                      <div class="card-group">
+                        <div class="card border-0">
+                        <iframe width="100%" height="200px" src="https://www.youtube.com/embed/{$video->video_url}" frameborder="0" allowfullscreen></iframe>
+                          {* <img src="{$basePath}/uploads/img/{$video->video_url}" class="card-img-top" alt="..." style="height: 350px; width: 100%; object-fit: cover;"> *}
+                          {* <img src="{$basePath}/uploads/img/{$video->video_url}" class="card-img-top" alt="..." style="height: 350px; width: 100%; object-fit: cover;"> *}
+                          {* <div class="card-body"> *}
+                            {* <h5 class="card-title text-center">{$post->name}</h5> *}
+                            {* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> *}
+                            {* <p class="card-text text-center"><small class="text-body-secondary">{$post->content}</small></p> *}
+                          {* </div> *}
+                        </div>
+                  </div>
+                </div>
+            </div>
+                      	{* <div class="pagination">{if $page > 1}
+
+                            <a n:href="default, 1">První</a>
+                            &nbsp;|&nbsp;
+                            <a n:href="default, $page-1">Předchozí</a>
+                            &nbsp;|&nbsp;
+                            {/if}Stránka {$page} z {$lastPage}
+
+                            {if $page < $lastPage}
+                            &nbsp;|&nbsp;
+                              <a n:href="default, $page+1">Další</a>&nbsp;|&nbsp;<a n:href="default, $lastPage">Poslední</a>
+                            {/if}
+                      </div> *}
+			</div>
+    <nav aria-label="Jednoduchá stránkování" class="d-flex justify-content-center">
+  <ul class="pagination">
+
+    <li class="page-item {if $page <= 1}disabled{/if}">
+      <a class="page-link" href="{link this, page => $page - 1}">Předchozí</a>
+    </li>
+
+    {for $i = 1; $i <= $pageCount; $i++}
+      <li class="page-item {if $i === $page}active{/if}">
+        <a class="page-link" href="{link this, page => $i}">{$i}</a>
+      </li>
+    {/for}
+
+    <li class="page-item {if $page >= $pageCount}disabled{/if}">
+      <a class="page-link" href="{link this, page => $page + 1}">Další</a>
+    </li>
+
+  </ul>
+</nav>
+</div>
+
+
+
+
+
+  
+ 
+    {* </div> *}
+  {* </main> *}
+  <!--Main layout-->
+{include '../footer.latte'}
+</div>
+{/block}

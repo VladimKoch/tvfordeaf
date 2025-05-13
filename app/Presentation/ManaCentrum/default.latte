@@ -1,0 +1,53 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+
+<div hx-target="this" hx-swap="outerHTML">
+{include '../header.latte'}
+
+
+  {* <a n:href="YoutubeApi:default" class="btn btn-primary" style="margin-top: 100px; margin-left: 100px;">YoutubeApi</a> *}
+
+    <div class="container " style="margin-top: 150px; margin-bottom: 100px;">
+            <!-- Post -->
+            <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-5"> 
+          
+		          <div n:foreach="$posts as $post">
+              
+              <div class="col-12">
+                
+                      <div class="card-group">
+                        <div class="card border-0">
+                        {* <div n:foreach="$videos as $video"> *}
+                        <a n:href="{$post->presenter}:{$post->action}">
+                          <img src="{$basePath}/uploads/img/{$post->photo_url}" class="card-img-top" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
+                          <div class="card-body">
+                            <h5 class="card-title text-center">{$post->title}</h5>
+                            {* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> *}
+                            <p class="card-text text-center"><small class="text-body-secondary">{$post->content}</small></p>
+                          </div>
+                        </a>
+                      {* </div> *}
+                        </div>
+
+                        
+                  
+                  </div>
+                </div>
+            </div>
+			</div>
+
+</div>
+
+
+
+
+
+  
+ 
+    {* </div> *}
+  {* </main> *}
+  <!--Main layout-->
+{include '../footer.latte'}
+</div>
+{/block}
