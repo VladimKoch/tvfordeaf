@@ -64,24 +64,28 @@ final class Template_6f696a3439 extends Latte\Runtime\Template
               <div class="col-12">
                 
                       <div class="card-group">
-                        <div class="card border-0">
+                        <div class="card card__container border-0 rounded-3">
+                          <article class="card__article">
                         <a href="';
 			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 22 */;
-			echo '">
+			echo '" class="href">
                           <img src="';
 			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 23 */;
 			echo '/uploads/img/';
 			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 23 */;
-			echo '" class="card-img-top" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
-                          <div class="card-body">
-                            <h5 class="card-title text-center">';
-			echo LR\Filters::escapeHtmlText($post->name) /* line 25 */;
-			echo '</h5>
-                            <p class="card-text text-center"><small class="text-body-secondary">';
+			echo '" class="card-img-top rounded-3 scale-down" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
+                          <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
+                                                                      -webkit-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
+                                                                      -moz-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;">
+                            <span class="card__description" style="color:blue">';
 			echo LR\Filters::escapeHtmlText($post->content) /* line 27 */;
-			echo '</small></p>
+			echo '</span>
+                              <h2 class="card__title text-center"style="color:blue">';
+			echo LR\Filters::escapeHtmlText($post->name) /* line 28 */;
+			echo '</h2>
                           </div>
-                      </a>
+                          </a>
+                        </article>
                         </div>
 
                         
@@ -105,7 +109,7 @@ final class Template_6f696a3439 extends Latte\Runtime\Template
  
   <!--Main layout-->
 ';
-		$this->createTemplate('../footer.latte', $this->params, 'include')->renderToContentType('html') /* line 51 */;
+		$this->createTemplate('../footer.latte', $this->params, 'include')->renderToContentType('html') /* line 56 */;
 		echo '</div>
 ';
 	}

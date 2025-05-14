@@ -78,6 +78,7 @@ final class Template_8c828d0c65 extends Latte\Runtime\Template
 ';
 		$this->renderBlock('content', [], 'html') /* line 55 */;
 		echo '
+
     <script>
         function updateTime() {
             const now = new Date();
@@ -94,7 +95,7 @@ final class Template_8c828d0c65 extends Latte\Runtime\Template
 
 	 <!-- MDB -->
     <script type="text/javascript" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 82 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 78 */;
 		echo '/js/mdb.umd.min.js"></script>
 
 	

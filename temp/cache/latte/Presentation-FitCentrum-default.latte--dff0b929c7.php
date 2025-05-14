@@ -32,7 +32,7 @@ final class Template_dff0b929c7 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['topic' => '13'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['topic' => '14'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -51,55 +51,52 @@ final class Template_dff0b929c7 extends Latte\Runtime\Template
 <div hx-target="this" hx-swap="outerHTML">
 ';
 		$this->createTemplate('../header.latte', $this->params, 'include')->renderToContentType('html') /* line 6 */;
-		echo '
-
-    <div class="container" style="margin-top: 150px; margin-bottom: 100px;">
+		echo '    <div class="container" style="margin-top: 150px; margin-bottom: 100px;">
+     <div class="mb-3 border-2" style="margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
+-webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
+-moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:green" class="text-center">FitCentrum</h1>
+        <p class="text-center">Tady najdete vše ohledně zdraví sportu výživy</p></div>
             <!-- Post -->
-            <div class="row g-4 py-5 row-cols-4 row-cols-lg-4"> 
-          
+            <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-5"> 
 ';
-		foreach ($topics as $topic) /* line 13 */ {
-			echo '		          <div>
-              
-              <div class="col-12">
-                
+		foreach ($topics as $topic) /* line 14 */ {
+			echo '		          <div>   
+                <div class="col-12">
                       <div class="card-group">
-                        <div class="card fit border-0">
+                        <div class="card card-fit card__container border-0">
+                          <article class="card__article">
                           <a href="';
 			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$topic->presenter}:{$topic->action}")) /* line 19 */;
-			echo '">
+			echo '" class="fit-href">
                               <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 21 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 20 */;
 			echo '/uploads/img/';
-			echo LR\Filters::escapeHtmlAttr($topic->photo_url) /* line 21 */;
-			echo '" class="card-img-top" alt="..." style="height: 350px; width: 100%; object-fit: cover;">
-                              <div class="card-body">
-                                <h5 class="card-title text-center">';
-			echo LR\Filters::escapeHtmlText($topic->title) /* line 24 */;
+			echo LR\Filters::escapeHtmlAttr($topic->photo_url) /* line 20 */;
+			echo '" class="card-img-top rounded-3 scale-down" alt="..." style="height: 350px; width: 100%; object-fit: cover;">
+                              <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;
+-webkit-box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;
+-moz-box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;">
+                              <span class="card__description">';
+			echo LR\Filters::escapeHtmlText($topic->content) /* line 24 */;
+			echo '</span>
+                                <h5 class="card__title card-title text-center" style="color:green">';
+			echo LR\Filters::escapeHtmlText($topic->title) /* line 25 */;
 			echo '</h5>
                               </div>
                             </a>
+                            </article>
                         </div>
                   </div>
                 </div>
-            </div>
+            </div>    
 ';
 
 		}
 
-		echo '                
-			</div>
+		echo '			</div>
 </div>
-
-
-
-
-
-  
- 
-  <!--Main layout-->
 ';
-		$this->createTemplate('../footer.latte', $this->params, 'include')->renderToContentType('html') /* line 65 */;
+		$this->createTemplate('../footer.latte', $this->params, 'include')->renderToContentType('html') /* line 56 */;
 		echo '</div>
 ';
 	}

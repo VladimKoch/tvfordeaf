@@ -17,17 +17,22 @@
               <div class="col-12">
                 
                       <div class="card-group">
-                        <div class="card border-0">
-                        {* <div n:foreach="$videos as $video"> *}
-                        <a n:href="{$post->presenter}:{$post->action}">
-                          <img src="{$basePath}/uploads/img/{$post->photo_url}" class="card-img-top" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
-                          <div class="card-body">
-                            <h5 class="card-title text-center">{$post->name}</h5>
+                        <div class="card card__container border-0 rounded-3">
+                          <article class="card__article">
+                        <a n:href="{$post->presenter}:{$post->action}" class="href">
+                          <img src="{$basePath}/uploads/img/{$post->photo_url}" class="card-img-top rounded-3 scale-down" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
+                          <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
+                                                                      -webkit-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
+                                                                      -moz-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;">
+                            <span class="card__description" style="color:blue">{$post->content}</span>
+                              <h2 class="card__title text-center"style="color:blue">{$post->name}</h2>
+                              {* <button class="card__button btn">Read More</button> *}
+                            {* <h5 class="card-title text-center">{$post->name}</h5> *}
                             {* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> *}
-                            <p class="card-text text-center"><small class="text-body-secondary">{$post->content}</small></p>
+                            {* <p class="card-text text-center"><small class="text-body-secondary">{$post->content}</small></p> *}
                           </div>
-                      </a>
-                      {* </div> *}
+                          </a>
+                        </article>
                         </div>
 
                         
