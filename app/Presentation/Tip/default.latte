@@ -1,9 +1,9 @@
 {* This is the welcome page, you can delete it *}
+{layout '../@layout.latte'}
+ {block content}
 
-{block content}
-
-<div hx-target="this" hx-swap="outerHTML">
-{include '../header.latte'}
+<div  hx-swap="outerHTML">
+{* {include '../header.latte'} *}
 
   {* <a n:href="YoutubeApi:default" class="btn btn-primary" style="margin-top: 100px; margin-left: 100px;">YoutubeApi</a> *}
 
@@ -21,13 +21,12 @@
                           <article class="card__article">
                               <a n:href="{$topic->presenter}:{$topic->action}" class="href">
                                 <img src="{$basePath}/uploads/img/{$topic->photo_url}" class="card-img-top scale-down" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
-                                  <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
--webkit-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
--moz-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;">
+                                  <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
                                   {* <span class="card__description" stlye="color:blue">{$topic->content}</span> *}
-                                    <h5 class="card__title card-title text-center" stlye="color:blue">{$topic->title}</h5>
-                                    {* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> *}
-                                    {* <p class="card-text text-center"><small class="text-body-secondary">{$topic->content}</small></p> *}
+                                    <h5 class="card__title card-title text-center" style="color:white">{$topic->title}</h5>
+
                                   </div>
                               </a>
                           </article>
@@ -38,6 +37,6 @@
 			</div>
 </div>
 
-{include '../footer.latte'}
+{* {include '../footer.latte'} *}
 </div>
-{/block}
+{* {/block} *}

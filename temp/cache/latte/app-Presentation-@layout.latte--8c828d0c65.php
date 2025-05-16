@@ -63,7 +63,9 @@ final class Template_8c828d0c65 extends Latte\Runtime\Template
 </head>
 
 <body>
-	<div class="container">
+';
+		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 48 */;
+		echo '	<div class="container">
 ';
 		foreach ($flashes as $flash) /* line 50 */ {
 			echo '			<div class="alert alert-warning text-center">';
@@ -77,7 +79,9 @@ final class Template_8c828d0c65 extends Latte\Runtime\Template
 
 ';
 		$this->renderBlock('content', [], 'html') /* line 55 */;
+		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 59 */;
 		echo '
+
 
     <script>
         function updateTime() {

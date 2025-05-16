@@ -48,10 +48,6 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '
-<div hx-target="this" hx-swap="outerHTML">
-';
-		$this->createTemplate('../header.latte', $this->params, 'include')->renderToContentType('html') /* line 6 */;
-		echo '
 
     <div class="container px-4 py-5" style="margin-top: 150px; margin-bottom: 100px;">
             <!-- Post -->
@@ -68,6 +64,7 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
                         <iframe width="100%" height="200px" src="https://www.youtube.com/embed/';
 			echo LR\Filters::escapeHtmlAttr($video->video_url) /* line 19 */;
 			echo '" frameborder="0" allowfullscreen></iframe>
+                         
                         </div>
                   </div>
                 </div>
@@ -81,28 +78,28 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
   <ul class="pagination">
 
     <li class="page-item ';
-		if ($page <= 1) /* line 48 */ {
+		if ($page <= 1) /* line 45 */ {
 			echo 'disabled';
 		}
 		echo '">
       <a class="page-link" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page - 1])) /* line 49 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page - 1])) /* line 46 */;
 		echo '">Předchozí</a>
     </li>
 
 ';
 		for ($i = 1;
 		$i <= $pageCount;
-		$i++) /* line 52 */ {
+		$i++) /* line 49 */ {
 			echo '      <li class="page-item ';
-			if ($i === $page) /* line 53 */ {
+			if ($i === $page) /* line 50 */ {
 				echo 'active';
 			}
 			echo '">
         <a class="page-link" href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $i])) /* line 54 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $i])) /* line 51 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($i) /* line 54 */;
+			echo LR\Filters::escapeHtmlText($i) /* line 51 */;
 			echo '</a>
       </li>
 ';
@@ -110,12 +107,12 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
 		}
 		echo '
     <li class="page-item ';
-		if ($page >= $pageCount) /* line 58 */ {
+		if ($page >= $pageCount) /* line 55 */ {
 			echo 'disabled';
 		}
 		echo '">
       <a class="page-link" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page + 1])) /* line 59 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page + 1])) /* line 56 */;
 		echo '">Další</a>
     </li>
 
@@ -123,16 +120,6 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
 </nav>
 </div>
 
-
-
-
-
-  
- 
-  <!--Main layout-->
-';
-		$this->createTemplate('../footer.latte', $this->params, 'include')->renderToContentType('html') /* line 75 */;
-		echo '</div>
 ';
 	}
 }

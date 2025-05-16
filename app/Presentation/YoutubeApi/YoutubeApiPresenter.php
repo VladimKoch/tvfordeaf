@@ -22,8 +22,8 @@ final class YoutubeApiPresenter extends Presenter
         $videoId = 'HWhDsC-zGhI';
         $videoInfo = $this->youtube->getVideoInfo($videoId);
 
-        print_r($videoInfo['statistics']); // Debugging line
-        die;
+        // print_r($videoInfo['statistics']); // Debugging line
+        // die;
 
         if ($videoInfo) {
             $this->template->title = $videoInfo['snippet']['title'];

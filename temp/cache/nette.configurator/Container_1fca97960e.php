@@ -95,6 +95,7 @@ class Container_1fca97960e extends Nette\DI\Container
 		'App\MyApi\v1\Forms\ImgForm' => [['010']],
 		'App\Model\ImageUploadFormFactory' => [['011']],
 		'App\Service\YouTubeService' => [['012']],
+		'App\Service\FusteroService' => [['013']],
 		'Nette\Application\UI\Presenter' => [
 			2 => [
 				'application.1',
@@ -301,7 +302,7 @@ class Container_1fca97960e extends Nette\DI\Container
 		'App\Presentation\YouTubeApi\YoutubeApiPresenter' => [2 => ['application.14']],
 		'NetteModule\ErrorPresenter' => [2 => ['application.15']],
 		'NetteModule\MicroPresenter' => [2 => ['application.16']],
-		'App\MyApi\v1\Handlers\UsersRepository' => [['013']],
+		'App\MyApi\v1\Handlers\UsersRepository' => [['014']],
 	];
 
 
@@ -349,7 +350,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createService07(): App\MyApi\v1\Handlers\UsersListingHandler
 	{
-		return new App\MyApi\v1\Handlers\UsersListingHandler($this->getService('013'));
+		return new App\MyApi\v1\Handlers\UsersListingHandler($this->getService('014'));
 	}
 
 
@@ -383,7 +384,13 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createService013(): App\MyApi\v1\Handlers\UsersRepository
+	public function createService013(): App\Service\FusteroService
+	{
+		return new App\Service\FusteroService;
+	}
+
+
+	public function createService014(): App\MyApi\v1\Handlers\UsersRepository
 	{
 		return new App\MyApi\v1\Handlers\UsersRepository($this->getService('database.default.explorer'));
 	}
@@ -627,6 +634,7 @@ class Container_1fca97960e extends Nette\DI\Container
 			$this->getService('02'),
 			$this->getService('http.request'),
 			$this->getService('database.default.explorer'),
+			$this->getService('013'),
 		);
 		$service->injectPrimary(
 			$this->getService('http.request'),

@@ -15,7 +15,7 @@ class ArticleManager
 
     public function findAllArticles()
     {
-       return $this->database->table('posts')->where('created_at <',new \DateTime)->order('created_at DESC');
+       return $this->database->table('posts');
     }
 
    //  public function findAllVideos()

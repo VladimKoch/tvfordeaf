@@ -1,9 +1,9 @@
 {* This is the welcome page, you can delete it *}
-
+{layout '../@layout.latte'}
 {block content}
 
 <div hx-target="this" hx-swap="outerHTML">
-{include '../header.latte'}
+{* {include '../header.latte'} *}
 
 
   {* <a n:href="YoutubeApi:default" class="btn btn-primary" style="margin-top: 100px; margin-left: 100px;">YoutubeApi</a> *}
@@ -13,20 +13,23 @@
 -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
 -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:blue" class="text-center">Start!</h1>
         <p class="text-center">Tady můžete najít jak se naučit znakovou řeč.</p></div>
+           
+           
             <!-- Post -->
             <div class="row row-cols-1 row-cols-md-2 g-5"> 
 		          <div n:foreach="$posts as $post">         
                 <div class="col-12">
                       <div class="card-group">
                         <div class="card card__container border-0">
-                          <article class="card__article">                     
+                          <article class="card__article">
+                                                
                             <a n:href="{$post->presenter}:{$post->action}" class="href">
                               <img src="{$basePath}/uploads/img/{$post->photo_url}" class="card-img-top scale-down" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
-                                <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
--webkit-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
--moz-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;">
+                                <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
                                 {* <span class="card__description"stlye="color:blue">{$post->content}</span> *}
-                                  <h5 class="card__title card-title text-center" stlye="color:blue">{$post->title}</h5>
+                                  <h5 class="card__title card-title text-center" style="color:white">{$post->title}</h5>
                                   {* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> *}
                                   {* <p class="card-text text-center"><small class="text-body-secondary">{$post->content}</small></p> *}
                                 </div>
@@ -38,6 +41,6 @@
             </div>
 			</div>
 </div>
-{include '../footer.latte'}
+{* {include '../footer.latte'} *}
 </div>
-{/block}
+{/block}e

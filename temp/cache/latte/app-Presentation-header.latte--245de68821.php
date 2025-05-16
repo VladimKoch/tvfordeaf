@@ -30,14 +30,17 @@ background: linear-gradient(19deg,rgba(42, 53, 155, 1) 19%, rgba(159, 188, 227, 
 			<a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 18 */;
 		echo '" class="navbar-brand">
+          <div class="d-flex align-item:center">
              <img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 19 */;
-		echo '/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ms-3 ucho" style="border-radius: 20%; width:18%; height:18%">
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 20 */;
+		echo '/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ms-3 ucho" style="border-radius: 20%; width:14%; height:14%">
+            <h1>Home</h1>
+          </div> 
                     </a>
 			<ul class="navbar-nav ms-auto">
 			<li class="nav-item mt-2" style="margin-right:-150px">
 				<img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 27 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 30 */;
 		echo '/uploads/img/tvfodeaf-big.png" class="img-fluid overflove-none" style="height:75%; width:65%; margin-bottom:-10px">
 			</li>
 	

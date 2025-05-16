@@ -15,14 +15,34 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
 
     public function __construct(private \App\Model\ArticleManager $article,
                                 private \Nette\Http\Request $request,
-                                private \Nette\Database\Explorer $database)
+                                private \Nette\Database\Explorer $database,
+                                private \App\Service\FusteroService $fusteroService)
     {
        
     }
 
     public function renderDefault()
-    {     
+    {   
+        $imgString = $this->fusteroService->fetchPage();
+        // print_r($imgString);
+        // die;
+
+        if(is_string($imgString)){
+        $setImg = $this->database->table('manacentrum')->get(9);
+        if($setImg['photo_url']!==$imgString)
+        {
+            $setImg->update([
+                'photo_url' => $imgString]);
+        };
+    }
+
          $this->template->posts= $this->database->table('manacentrum'); // získejte články podle volby menu
+         
+    }
+
+    public function renderSkola()
+    {   
+        $this->template->html = $this->fusteroService->fetchPage();
     }
 
       public function renderVideos($page=1)
@@ -51,6 +71,18 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         $this->template->page = $page;
         $this->template->pageCount = $pageCount;
     }
+
+
+    public function handleProxyImage(): void
+{
+    $url = 'https://www.fustero.es/index_cz.php';
+    // $url = 'https://fustero.es/2025t2cz.jpg';
+    $image = file_get_contents($url);
+
+    // $this->getHttpResponse()->setContentType('image/jpeg');
+    echo $image;
+    exit;
+}
 
 
     // public function handleClick(): void

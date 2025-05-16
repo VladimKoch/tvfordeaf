@@ -11,6 +11,7 @@ services:
 	- App\MyApi\v1\Forms\ImgForm
 	- App\Model\ImageUploadFormFactory
 	- App\Service\YouTubeService
+	- App\Service\FusteroService
 
 
 

@@ -36,6 +36,7 @@ final class Template_dff0b929c7 extends Latte\Runtime\Template
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
+		$this->parentName = '../@layout.latte';
 		return get_defined_vars();
 	}
 
@@ -49,9 +50,7 @@ final class Template_dff0b929c7 extends Latte\Runtime\Template
 
 		echo '
 <div hx-target="this" hx-swap="outerHTML">
-';
-		$this->createTemplate('../header.latte', $this->params, 'include')->renderToContentType('html') /* line 6 */;
-		echo '    <div class="container" style="margin-top: 150px; margin-bottom: 100px;">
+    <div class="container" style="margin-top: 150px; margin-bottom: 100px;">
      <div class="mb-3 border-2" style="margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
 -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
 -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:green" class="text-center">FitCentrum</h1>
@@ -73,13 +72,13 @@ final class Template_dff0b929c7 extends Latte\Runtime\Template
 			echo '/uploads/img/';
 			echo LR\Filters::escapeHtmlAttr($topic->photo_url) /* line 20 */;
 			echo '" class="card-img-top rounded-3 scale-down" alt="..." style="height: 350px; width: 100%; object-fit: cover;">
-                              <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;
--webkit-box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;
--moz-box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;">
+                              <div class="card-body card__data" style="background: rgb(18, 134, 0);background:linear-gradient(0deg,rgba(18, 134, 0,1) 0%, rgb(62, 180, 12) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
                               <span class="card__description">';
 			echo LR\Filters::escapeHtmlText($topic->content) /* line 24 */;
 			echo '</span>
-                                <h5 class="card__title card-title text-center" style="color:green">';
+                                <h5 class="card__title card-title text-center" style="color:white">';
 			echo LR\Filters::escapeHtmlText($topic->title) /* line 25 */;
 			echo '</h5>
                               </div>
@@ -95,9 +94,7 @@ final class Template_dff0b929c7 extends Latte\Runtime\Template
 
 		echo '			</div>
 </div>
-';
-		$this->createTemplate('../footer.latte', $this->params, 'include')->renderToContentType('html') /* line 56 */;
-		echo '</div>
+</div>
 ';
 	}
 }

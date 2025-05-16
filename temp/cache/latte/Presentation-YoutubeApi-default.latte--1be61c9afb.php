@@ -35,21 +35,24 @@ final class Template_1be61c9afb extends Latte\Runtime\Template
 		extract($ʟ_args);
 		unset($ʟ_args);
 
-		echo "\n";
-		if (isset($error)) /* line 4 */ {
+		echo '<div hx-target="this" hx-swap="outerHTML">
+
+';
+		if (isset($error)) /* line 5 */ {
 			echo '    <p>';
-			echo LR\Filters::escapeHtmlText($error) /* line 5 */;
+			echo LR\Filters::escapeHtmlText($error) /* line 6 */;
 			echo '</p>
 ';
-		} else /* line 6 */ {
+		} else /* line 7 */ {
 			echo '    <h1>';
-			echo LR\Filters::escapeHtmlText($title) /* line 7 */;
+			echo LR\Filters::escapeHtmlText($title) /* line 8 */;
 			echo '</h1>
     <p>Zhlédnutí: ';
-			echo LR\Filters::escapeHtmlText($views) /* line 8 */;
+			echo LR\Filters::escapeHtmlText($views) /* line 9 */;
 			echo '</p>
 ';
 		}
-		echo "\n";
+		echo '</div>
+';
 	}
 }

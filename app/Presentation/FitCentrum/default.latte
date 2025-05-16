@@ -1,9 +1,9 @@
 {* This is the welcome page, you can delete it *}
-
+{layout '../@layout.latte'}
 {block content}
 
 <div hx-target="this" hx-swap="outerHTML">
-{include '../header.latte'}
+{* {include '../header.latte'} *}
     <div class="container" style="margin-top: 150px; margin-bottom: 100px;">
      <div class="mb-3 border-2" style="margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
 -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
@@ -18,11 +18,11 @@
                           <article class="card__article">
                           <a n:href="{$topic->presenter}:{$topic->action}" class="fit-href">
                               <img src="{$basePath}/uploads/img/{$topic->photo_url}" class="card-img-top rounded-3 scale-down" alt="..." style="height: 350px; width: 100%; object-fit: cover;">
-                              <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;
--webkit-box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;
--moz-box-shadow: -2px -30px 85px -41px rgba(152,252,193,1) inset;">
+                              <div class="card-body card__data" style="background: rgb(18, 134, 0);background:linear-gradient(0deg,rgba(18, 134, 0,1) 0%, rgb(62, 180, 12) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
                               <span class="card__description">{$topic->content}</span>
-                                <h5 class="card__title card-title text-center" style="color:green">{$topic->title}</h5>
+                                <h5 class="card__title card-title text-center" style="color:white">{$topic->title}</h5>
                                 {* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> *}
                                 {* <p class="card-text text-center"><small class="text-body-secondary">{$post->content}</small></p> *}
                               </div>
@@ -53,6 +53,6 @@
   </ul>
 </nav> *}
 </div>
-{include '../footer.latte'}
+{* {include '../footer.latte'} *}
 </div>
 {/block}

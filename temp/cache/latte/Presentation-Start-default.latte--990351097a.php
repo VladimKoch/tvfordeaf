@@ -24,6 +24,7 @@ final class Template_990351097a extends Latte\Runtime\Template
 		}
 
 		$this->renderBlock('content', get_defined_vars()) /* line 3 */;
+		echo 'e';
 	}
 
 
@@ -32,7 +33,7 @@ final class Template_990351097a extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['post' => '18'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['post' => '20'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -49,37 +50,37 @@ final class Template_990351097a extends Latte\Runtime\Template
 
 		echo '
 <div hx-target="this" hx-swap="outerHTML">
-';
-		$this->createTemplate('../header.latte', $this->params, 'include')->renderToContentType('html') /* line 6 */;
-		echo '
 
     <div class="container " style="margin-top: 150px; margin-bottom: 100px;">
      <div class="mb-3 border-2" style="margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
 -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
 -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:blue" class="text-center">Start!</h1>
         <p class="text-center">Tady můžete najít jak se naučit znakovou řeč.</p></div>
+           
+           
             <!-- Post -->
             <div class="row row-cols-1 row-cols-md-2 g-5"> 
 ';
-		foreach ($posts as $post) /* line 18 */ {
+		foreach ($posts as $post) /* line 20 */ {
 			echo '		          <div>         
                 <div class="col-12">
                       <div class="card-group">
                         <div class="card card__container border-0">
-                          <article class="card__article">                     
+                          <article class="card__article">
+                                                
                             <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 23 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 26 */;
 			echo '" class="href">
                               <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 24 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 27 */;
 			echo '/uploads/img/';
-			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 24 */;
+			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 27 */;
 			echo '" class="card-img-top scale-down" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
-                                <div class="card-body card__data" style="box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
--webkit-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;
--moz-box-shadow: -2px -30px 85px -41px rgba(152,212,252,1) inset;">
-                                  <h5 class="card__title card-title text-center" stlye="color:blue">';
-			echo LR\Filters::escapeHtmlText($post->title) /* line 29 */;
+                                <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
+                                  <h5 class="card__title card-title text-center" style="color:white">';
+			echo LR\Filters::escapeHtmlText($post->title) /* line 32 */;
 			echo '</h5>
                                 </div>
                             </a>
@@ -94,9 +95,7 @@ final class Template_990351097a extends Latte\Runtime\Template
 
 		echo '			</div>
 </div>
-';
-		$this->createTemplate('../footer.latte', $this->params, 'include')->renderToContentType('html') /* line 41 */;
-		echo '</div>
+</div>
 ';
 	}
 }
