@@ -110,7 +110,7 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1747393092,
+      1 => 1747419100,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -145,7 +145,7 @@ return array (
     'App\\Service\\FusteroService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\FusteroService.php',
-      1 => 1747392944,
+      1 => 1747418995,
     ),
     'App\\Service\\YouTubeService' => 
     array (
@@ -184,6 +184,7 @@ return array (
     'App\\Presentation\\Calculator\\CalculatorPresenter' => 2,
     'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
     'App\\Presentation\\this\\thisPresenter' => 1,
+    'App\\Presentation\\Uploads\\UploadsPresenter' => 3,
   ),
   2 => 
   array (

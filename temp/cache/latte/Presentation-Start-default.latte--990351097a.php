@@ -37,6 +37,7 @@ final class Template_990351097a extends Latte\Runtime\Template
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
+		$this->parentName = '../@layout.latte';
 		return get_defined_vars();
 	}
 

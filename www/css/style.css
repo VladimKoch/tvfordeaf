@@ -1,263 +1,185 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+            /*=============== GOOGLE FONTS ===============*/
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
-:root {
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(82, 60%, 28%);
-  --title-color: hsl(0, 0%, 15%);
-  --text-color: hsl(0, 0%, 35%);
-  --body-color: hsl(0, 0%, 95%);
-  --container-color: hsl(0, 0%, 100%);
+            /*=============== Proměnné CSS ===============*/
+            :root {
+              /*========== Barvy ==========*/
+              /*Color mode HSL(hue, saturation, lightness)*/
+              --first-color: hsl(82, 60%, 28%);
+              --title-color: hsl(0, 0%, 15%);
+              --text-color: hsl(0, 0%, 35%);
+              --body-color: hsl(0, 0%, 95%);
+              --container-color: hsl(0, 0%, 100%);
 
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Poppins", sans-serif;
-  --h2-font-size: 1.25rem;
-  --small-font-size: .813rem;
-}
-
-/*========== Responsive typography ==========*/
-/* @media screen and (min-width: 1120px) {
-  :root {
-    --h2-font-size: 1.5rem;
-    --small-font-size: .875rem;
-  }
-} */
-
-/*=============== BASE ===============*/
-/* * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-family: var(--body-font);
-  background-color: var(--body-color);
-  color: var(--text-color);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
-
-/*=============== CARD ===============*/
-/* .container {
-  display: grid;
-  place-items: center;
-  margin-inline: 1.5rem;
-  padding-block: 5rem;
-} */
-
-.card__container {
-  display: grid;
-  row-gap: 3.5rem;
-}
-
-.card__article {
-  position: relative;
-  overflow: hidden;
-}
-
-.card__img {
-  width: 328px;
-  border-radius: 1.5rem;
-}
-
-.card__data {
-  width: 200px;
-  background-color: var(--container-color);
-  padding: 1.5rem 2rem;
-  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
-  border-radius: 1rem;
-  position: absolute;
-  bottom: -9rem;
-  left: 0;
-  right: 0;
-  margin-inline: auto;
-  opacity: 0;
-  transition: opacity 1s 1s;
-}
-
-.card__description {
-  display: block;
-  font-size: var(--small-font-size);
-  margin-bottom: .25rem;
-  text-align: center;
-  
-}
-
-.card__title {
-  font-size: var(--h2-font-size);
-  font-weight: 500;
-  /* color: var(--title-color); */
-  margin-bottom: .75rem;
-  /* text-align: center; */
-  
-  margin: 0 auto;
-}
-
-.card__button {
-  text-decoration: none;
-  font-size: var(--small-font-size);
-  font-weight: 500;
-  color: var(--first-color);
- 
-  margin-left: 65px;
-}
-
-.card__button:hover {
-  text-decoration: underline;
-}
-
-/* Naming animations in hover */
-.card__article:hover .card__data {
-  animation: show-data 1s forwards;
-  opacity: 1;
-  transition: opacity .3s;
-}
-
-.card__article:hover {
-  animation: remove-overflow 2s forwards;
-}
-
-.card__article:not(:hover) {
-  animation: show-overflow 2s forwards;
-}
-
-.card__article:not(:hover) .card__data {
-  animation: remove-data 1s forwards;
-}
-
-/* Card animation */
-@keyframes show-data {
-  50% {
-    transform: translateY(-10rem);
-  }
-  100% {
-    transform: translateY(-7rem);
-  }
-}
-
-@keyframes remove-overflow {
-  to {
-    overflow: initial;
-  }
-}
-
-@keyframes remove-data {
-  0% {
-    transform: translateY(-7rem);
-  }
-  50% {
-    transform: translateY(-10rem);
-  }
-  100% {
-    transform: translateY(.5rem);
-  }
-}
-
-@keyframes show-overflow {
-  0% {
-    overflow: initial;
-    pointer-events: none;
-  }
-  50% {
-    overflow: hidden;
-  }
-}
-
-  .scale-down {
-    transform: scale(0.97); /* zmenší obrázek na 80 % jeho původní velikosti */
-    transform-origin: center; /* zajistí, že se zmenší vůči středu obrázku */
-  }
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
- /* @media screen and (max-width: 340px) {
-  .container {
-    margin-inline: 1rem;
-  }
-
-  .card__data {
-    width: 250px;
-    padding: 1rem;
-  }
-
-}  */
-
-/* For medium devices */
-/* @media screen and (min-width: 768px) {
-  .card__container {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-  }
-}
-
-/* For large devices */
-/* @media screen and (min-width: 1120px) {
-  .container {
-    height: 100vh;
-  }
-
-  .card__container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card__img {
-    width: 348px;
-  }
-  .card__data {
-    width: 316px;
-    padding-inline: 2.5rem;
-  }
-} */ */
+              /*========== Fonty a Typografie ==========*/
+              /*.5rem = 8px | 1rem = 16px ...*/
+              --body-font: "Poppins", sans-serif;
+              --h2-font-size: 1.25rem;
+              --small-font-size: .813rem;
+            }
 
 
-body{
-    /* padding-top: 80px; */
-    font-family: Arial, sans-serif;
-    /* overflow:Hidden; */
-    /* zoom: 80%; */
-    /* transform: scale(0.8); transform-origin: top left; */
-}
+            /*=============== CARD ===============*/
 
+            .card__container {
+              display: grid;
+              row-gap: 3.5rem;
+            }
 
-.card{
-    box-shadow: 6px 10px 35px -2px rgba(7,7,7,0.75);
-    -webkit-box-shadow: 6px 10px 35px -2px rgba(7,7,7,0.75);
-    -moz-box-shadow: 6px 10px 35px -2px rgba(7,7,7,0.75);
-    transition: all 0.5s ease-in-out;
-    
+            .card__article {
+              position: relative;
+              overflow: hidden;
+            }
+
+            .card__img {
+              width: 328px;
+              border-radius: 1.5rem;
+            }
+
+            .card__data {
+              width: 200px;
+              background-color: var(--container-color);
+              padding: 1.5rem 2rem;
+              box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+              border-radius: 1rem;
+              position: absolute;
+              bottom: -9rem;
+              left: 0;
+              right: 0;
+              margin-inline: auto;
+              opacity: 0;
+              transition: opacity 1s 1s;
+            }
+
+            .card__description {
+              display: block;
+              font-size: var(--small-font-size);
+              margin-bottom: .25rem;
+              text-align: center;
+              
+            }
+
+            .card__title {
+              font-size: var(--h2-font-size);
+              font-weight: 500;
+              margin-bottom: .75rem;
+              margin: 0 auto;
+            }
+
+            .card__button {
+              text-decoration: none;
+              font-size: var(--small-font-size);
+              font-weight: 500;
+              color: var(--first-color);
+            
+              margin-left: 65px;
+            }
+
+            .card__button:hover {
+              text-decoration: underline;
+            }
+
+            /* Jméno animace v hoveru */
+            .card__article:hover .card__data {
+              animation: show-data 1s forwards;
+              opacity: 1;
+              transition: opacity .3s;
+            }
+
+            .card__article:hover {
+              animation: remove-overflow 2s forwards;
+            }
+
+            .card__article:not(:hover) {
+              animation: show-overflow 2s forwards;
+            }
+
+            .card__article:not(:hover) .card__data {
+              animation: remove-data 1s forwards;
+            }
+
+            /* Animace karet */
+            @keyframes show-data {
+              50% {
+                transform: translateY(-10rem);
+              }
+              100% {
+                transform: translateY(-7rem);
+              }
+            }
+
+            @keyframes remove-overflow {
+              to {
+                overflow: initial;
+              }
+            }
+
+            @keyframes remove-data {
+              0% {
+                transform: translateY(-7rem);
+              }
+              50% {
+                transform: translateY(-10rem);
+              }
+              100% {
+                transform: translateY(.5rem);
+              }
+            }
+
+            @keyframes show-overflow {
+              0% {
+                overflow: initial;
+                pointer-events: none;
+              }
+              50% {
+                overflow: hidden;
+              }
+            }
+            
+            /*--------------- Zmenšeni obrázku ---------------*/
+              .scale-down {
+                transform: scale(0.97); /* zmenší obrázek na 80 % jeho původní velikosti */
+                transform-origin: center; /* zajistí, že se zmenší vůči středu obrázku */
+              }
+
+            /*----------- Tělo --------------*/
+
+            body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            } 
+
+          /*=============== Karty menu =================*/
+          .card{
+              box-shadow: 6px 10px 35px -2px rgba(7,7,7,0.75);
+              -webkit-box-shadow: 6px 10px 35px -2px rgba(7,7,7,0.75);
+              -moz-box-shadow: 6px 10px 35px -2px rgba(7,7,7,0.75);
+              transition: all 0.5s ease-in-out;
+              }
+
+        .card:hover{
+            transform: scale(0.95);
+            box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
+            -webkit-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
+            -moz-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
     
 }
+          /*--------------- Karty fitcentr menu hover ----------------*/
+          .card-fit:hover{
+              transform: scale(0.95);
+              box-shadow: 5px 6px 22px 5px rgb(26, 171, 0);
+              -webkit-box-shadow: 5px 6px 22px 5px rgb(42, 160, 35);
+              -moz-box-shadow: 5px 6px 22px 5px rgb(82, 255, 29);
+            
+          }
 
-.card:hover{
-    transform: scale(0.95);
-    box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
-    -webkit-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
-    -moz-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
-    /* transition: all 0.5s ease-in-out; */
-    
-
-}
-
-    .card-fit:hover{
-        transform: scale(0.95);
-        box-shadow: 5px 6px 22px 5px rgb(26, 171, 0);
-        -webkit-box-shadow: 5px 6px 22px 5px rgb(42, 160, 35);
-        -moz-box-shadow: 5px 6px 22px 5px rgb(82, 255, 29);
-        /* transition: all 0.5s ease-in-out; */
-    }
-
+        /*---------------- Body ------------------*/
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
 
+        /*--------------- Header -------------------*/
         .header {
             display: flex;
             align-items: center;
@@ -268,16 +190,28 @@ body{
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /*------------------ Hrader Img ----------------------*/
         .header img {
             width: 50px;
             height: 50px;
         }
 
-        .header h1 {
-            /* font-weight: bold; */
+        /*------------------ H1 Tv for Deaf  css ---------------*/
+        .header .tv {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 70px;
+            background: linear-gradient(to right, #0c4394, #bcd3fa); /* Přechod textu */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: auto 10px;
+            transition: background 0.5s ease; /* Jemný přechod pro hover efekt */
+        }
+
+        /*--------------- H1 Home css ---------------*/
+        .header .home {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 50px;
-            background: linear-gradient(to right, #95b5e5, #ececec); /* Přechod textu */
+            background: linear-gradient(to right, #d9dfe8, #ececec); /* Přechod textu */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: auto 10px;
@@ -285,26 +219,35 @@ body{
         }
         
 
-        
-        h1:hover {
-            background: linear-gradient(to right, #ffffff, #002f75); /* Obrácený přechod při hoveru */
+        .home:hover {
+            background: linear-gradient(to right, #ffffff, #002f75); /*Obrácený přechod při hoveru*/
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            transition: background 0.5s ease-in-out; /* Jemný přechod pro hover efekt */
-            
+            transition: background 0.5s ease-in-out; /* Jemný přechod pro hover efekt */ 
         }
 
+        
+        .hand:hover{
+          box-shadow: #1c00bb ;
+          transform: scale(0.9);
+          transition: transform 0.5 ease-in-out;
+        }
+
+
+        /*----------Symbol přešrktnutého ucha------------ */
+        /* .ucho{
+          width:10px;
+          height:50px;
+        } */
 
         .ucho:hover{
             transform: scale(0.9);
             transition: all 0.3s ease-in-out; /* Přidání přechodu pro hover efekt */
             box-shadow: #ffffff 0px 0px 20px; /* Přidání stínu při hoveru */
-
-
-            
             border:0px solid white;
         }
 
+        /*===================== Footer ======================= */
          .footer {
             position: fixed;
             bottom: 0;
@@ -325,184 +268,41 @@ body{
             -webkit-text-fill-color: transparent;
         }
 
-.card-overlay {
-  position: relative;
-  left:668px;
-  top:590px;
-  width: 620px;
-  height: 200px;
-  background-color:transparent;
-  /* border: 1px solid #ccc; */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .card-overlay {
+          position: relative;
+          left:668px;
+          top:590px;
+          width: 620px;
+          height: 200px;
+          background-color:transparent;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-.text {
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 2;
-  color: #333;
-}
+        .text {
+          font-size: 24px;
+          font-weight: bold;
+          z-index: 2;
+          color: #333;
+        }
 
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: -20%;
-  width: 140%;
-  height: 8px;
-  background-color: red;
-  transform: rotate(-20deg);
-  z-index: 1;
-  
-}
+        .overlay {
+          position: absolute;
+          top: 50%;
+          left: -20%;
+          width: 140%;
+          height: 8px;
+          background-color: red;
+          transform: rotate(-20deg);
+          z-index: 1;
+        }
 
-     
-        /* .card{
-            display:grid;
-            row-gap:3.5rem;
-
-            position: relative;
-            overflow: hidden;
-        } */
 
         .href{
             text-decoration: none;
             color:#2600ff
         }
-
-        /* .card-body{
-            background: #2a359b;
-            background: linear-gradient(50deg,rgba(42, 53, 155, 1) 19%, rgba(159, 188, 227, 1) 45%, rgba(255, 255, 255, 1) 60%);
-        } */
-
-        /* .fit-body{
-            background: #05ff05;
-            background: linear-gradient(50deg,rgb(94, 245, 44) 19%, rgb(159, 227, 168) 45%, rgb(255, 255, 255) 60%);
-        } */
-        /* .fit-href{
-            text-decoration: none;
-            color:#207723
-        } */
-
-        /* img{
-            border-radius:1.5rem;
-        } */
-        /* .card_article{
-            position:relative;
-            overflow: hidden;
-        }
-        .card-body{
-            width:280px;
-            background-color: var(--container-color);
-            padding: 1.5rem 2rem;
-            box-shadow: 0 8px 24 px hsla(0,0%, 0%, .15);
-            border-radius: 1rem;
-            position:absolute;
-            bottom:-9rem;
-            left:0;
-            right:0;
-            margin-inline: auto;
-            opacity: 0;
-            transition: opacity 1s 1s;
-        }
-
-        .card_description{
-            display: block;
-            font-size: var(--small-font-size);
-            margin-bottom: .25rem;
-        }
-
-        .card_title{
-            font-size:var(--h2-font-size);
-            font-weight:500;
-            color:var(--title-color);
-            margin-bottom: .75rem;
-        }
-
-        .car_button{
-            text-decoration: none;
-            font-size: var(--small-font-size);
-            font-weight:500;
-            color:var(--first-color);
-        }
-
-        .card_button:hover{
-            text-decoration: underline;
-
-        }
-
-        .card_article:hover .card_body{
-            animation: show-data 1s forwards;
-            opacity:1;
-            transition: opacity .3s;
-        } 
-
-        .card_article:hover{
-            animation:remove-overflow 2s forwards;
-        }
-
-        .card_article:not(:hover){
-            animation: show-overflow 2s forwards;
-        }
-
-        .card_article:not(:hover) .card-body{
-            animation: remove-data 1s forwards;
-        }
-
-        @keyframes show-data{
-            50%{
-                transform: translateY(-10rem);
-            }
-            100%{
-                transform: translateY(-7rem);
-            }
-        }
-
-        @keyframes remove-overflow{
-            to{
-                overflow: initial;
-            }
-
-        }
-
-        @keyframes remove-data{
-            0%{
-                transform: translateY(-7rem);
-            }
-            50%{
-                transform: translateY(-10rem);
-            }
-            100%{
-                transform: translateY(.5rem);
-            }
-        }
-
-        @keyframes show-overflow{
-            0%{
-                overflow: initial;
-                pointer-events: none;
-            }
-            50%{
-                overflow: hidden;
-            }
-        } */
-
-
-        /* @media screen and (max-width:340px){
-            .continer{
-                margin-inline: 1rem;
-            }
-            .card-body{
-                width:250px;
-                padding:1rem;
-            }
-        }
-
-         */
-
-
-
