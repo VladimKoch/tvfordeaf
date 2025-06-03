@@ -33,15 +33,15 @@ background: linear-gradient(19deg,rgba(42, 53, 155, 1) 19%, rgba(159, 188, 227, 
           <div class="d-flex align-item:center">
              <img src="';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 19 */;
-		echo '/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ms-3 ucho" style="border-radius: 20%; width:10%; height:10%">
+		echo '/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ms-3 ucho" style="border-radius: 20%; width:8%; height:8%">
             <h1 class="home" style="font-weight: bold;">Tv for Deaf</h1>
           </div> 
                     </a>
 			<ul class="navbar-nav ms-auto">
 			<li class="nav-item mt-2" style="">
 				<img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 31 */;
-		echo '/uploads/img/holubice-modra.png" class="me-5" style="height:80px; width:80px; transform: scale(1.5)">
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 32 */;
+		echo '/uploads/img/Fulllogo-origin.png" class="me-5 pb-1" style="height:60px; width:60px; transform: scale(1.2);">
 			</li>
 	
 			</ul>
