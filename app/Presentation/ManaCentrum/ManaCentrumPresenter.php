@@ -11,7 +11,7 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
 {   
 
     /** @var int počet položek na stránku */
-    private const ITEMS_PER_PAGE = 8;
+    private const ITEMS_PER_PAGE = 12;
 
     public function __construct(private \App\Model\ArticleManager $article,
                                 private \Nette\Http\Request $request,
@@ -23,9 +23,10 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
 
     public function renderDefault()
     {   
+
+        // Aktualizace fotky sobotní školy
+
         $imgString = $this->fusteroService->fetchPage();
-        // print_r($imgString);
-        // die;
 
         if(is_string($imgString)){
         $setImg = $this->database->table('manacentrum')->get(9);
@@ -45,14 +46,38 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         $this->template->html = $this->fusteroService->fetchPage();
     }
 
+    public function renderProdeti($page=1){
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; //počet článku na stránku
+
+        $proDeti = $this->database->table('prodeti')->page($page,$itemsPerPage); // získejte články podle volby menu
+        $this->template->pribehy = $proDeti; // získejte videa na stránku
+        
+        //-- Pagination --//
+
+        $totalItems = $proDeti->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+            // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+         // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+
       public function renderVideos($page=1)
     {   
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 
-         $post = $this->database->table('videos')->page($page,$itemsPerPage); // získejte články podle volby menu
-         $this->template->videos = $post; // získejte videa na stránku 
+         $kazani = $this->database->table('videos')->page($page,$itemsPerPage); // získejte články podle volby menu
+         $this->template->videos = $kazani; // získejte videa na stránku 
          
-        $totalItems = $post->count(); // celkový počet článků
+        $totalItems = $kazani->count('*'); // celkový počet článků
         $pageCount = (int) ceil($totalItems / $itemsPerPage);
 
         // Ošetření neplatné stránky

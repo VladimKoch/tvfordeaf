@@ -18,8 +18,4 @@ class ArticleManager
        return $this->database->table('posts');
     }
 
-   //  public function findAllVideos()
-   //  {
-   //     return $this->database->table('posts')->relate('videa');
-   //  }
 }

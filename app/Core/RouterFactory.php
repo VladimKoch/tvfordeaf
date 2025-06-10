@@ -24,7 +24,7 @@ final class RouterFactory
 			'presenter' => 'Api:Api',
 			'action' => 'default',
 			'id' => [
-				Route::FILTER_IN => function ($id) {
+				Route::FilterIn => function ($id) {
 					$_GET['id'] = $id;
 					return $id;
 				}

@@ -85,17 +85,16 @@ class Container_1fca97960e extends Nette\DI\Container
 		'App\Model\Auth' => [['03']],
 		'App\Model\UserManager' => [['04']],
 		'App\Model\PostManager' => [['05']],
-		'App\Model\CalculatorManager' => [['06']],
-		'Tomaj\NetteApi\Handlers\BaseHandler' => [['07']],
-		'Tomaj\NetteApi\Handlers\ApiHandlerInterface' => [['07']],
-		'App\MyApi\v1\Handlers\UsersListingHandler' => [['07']],
-		'Tomaj\NetteApi\Link\ApiLink' => [['08']],
-		'Tomaj\NetteApi\Misc\IpDetectorInterface' => [['09']],
-		'Tomaj\NetteApi\Misc\IpDetector' => [['09']],
-		'App\MyApi\v1\Forms\ImgForm' => [['010']],
-		'App\Model\ImageUploadFormFactory' => [['011']],
-		'App\Service\YouTubeService' => [['012']],
-		'App\Service\FusteroService' => [['013']],
+		'Tomaj\NetteApi\Handlers\BaseHandler' => [['06']],
+		'Tomaj\NetteApi\Handlers\ApiHandlerInterface' => [['06']],
+		'App\MyApi\v1\Handlers\UsersListingHandler' => [['06']],
+		'Tomaj\NetteApi\Link\ApiLink' => [['07']],
+		'Tomaj\NetteApi\Misc\IpDetectorInterface' => [['08']],
+		'Tomaj\NetteApi\Misc\IpDetector' => [['08']],
+		'App\MyApi\v1\Forms\ImgForm' => [['09']],
+		'App\Model\ImageUploadFormFactory' => [['010']],
+		'App\Service\YouTubeService' => [['011']],
+		'App\Service\FusteroService' => [['012']],
 		'Nette\Application\UI\Presenter' => [
 			2 => [
 				'application.1',
@@ -302,7 +301,7 @@ class Container_1fca97960e extends Nette\DI\Container
 		'App\Presentation\YouTubeApi\YoutubeApiPresenter' => [2 => ['application.14']],
 		'NetteModule\ErrorPresenter' => [2 => ['application.15']],
 		'NetteModule\MicroPresenter' => [2 => ['application.16']],
-		'App\MyApi\v1\Handlers\UsersRepository' => [['014']],
+		'App\MyApi\v1\Handlers\UsersRepository' => [['013']],
 	];
 
 
@@ -342,55 +341,49 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createService06(): App\Model\CalculatorManager
+	public function createService06(): App\MyApi\v1\Handlers\UsersListingHandler
 	{
-		return new App\Model\CalculatorManager;
+		return new App\MyApi\v1\Handlers\UsersListingHandler($this->getService('013'));
 	}
 
 
-	public function createService07(): App\MyApi\v1\Handlers\UsersListingHandler
-	{
-		return new App\MyApi\v1\Handlers\UsersListingHandler($this->getService('014'));
-	}
-
-
-	public function createService08(): Tomaj\NetteApi\Link\ApiLink
+	public function createService07(): Tomaj\NetteApi\Link\ApiLink
 	{
 		return new Tomaj\NetteApi\Link\ApiLink($this->getService('application.linkGenerator'));
 	}
 
 
-	public function createService09(): Tomaj\NetteApi\Misc\IpDetector
+	public function createService08(): Tomaj\NetteApi\Misc\IpDetector
 	{
 		return new Tomaj\NetteApi\Misc\IpDetector;
 	}
 
 
-	public function createService010(): App\MyApi\v1\Forms\ImgForm
+	public function createService09(): App\MyApi\v1\Forms\ImgForm
 	{
 		return new App\MyApi\v1\Forms\ImgForm;
 	}
 
 
-	public function createService011(): App\Model\ImageUploadFormFactory
+	public function createService010(): App\Model\ImageUploadFormFactory
 	{
 		return new App\Model\ImageUploadFormFactory;
 	}
 
 
-	public function createService012(): App\Service\YouTubeService
+	public function createService011(): App\Service\YouTubeService
 	{
 		return new App\Service\YouTubeService;
 	}
 
 
-	public function createService013(): App\Service\FusteroService
+	public function createService012(): App\Service\FusteroService
 	{
 		return new App\Service\FusteroService;
 	}
 
 
-	public function createService014(): App\MyApi\v1\Handlers\UsersRepository
+	public function createService013(): App\MyApi\v1\Handlers\UsersRepository
 	{
 		return new App\MyApi\v1\Handlers\UsersRepository($this->getService('database.default.explorer'));
 	}
@@ -502,7 +495,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceApplication__14(): App\Presentation\YouTubeApi\YoutubeApiPresenter
 	{
-		$service = new App\Presentation\YouTubeApi\YoutubeApiPresenter($this->getService('012'));
+		$service = new App\Presentation\YouTubeApi\YoutubeApiPresenter($this->getService('011'));
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -613,7 +606,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceApplication__7(): App\Presentation\ImgApi\ImgApiPresenter
 	{
-		$service = new App\Presentation\ImgApi\ImgApiPresenter($this->getService('011'), $this);
+		$service = new App\Presentation\ImgApi\ImgApiPresenter($this->getService('010'), $this);
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -634,7 +627,7 @@ class Container_1fca97960e extends Nette\DI\Container
 			$this->getService('02'),
 			$this->getService('http.request'),
 			$this->getService('database.default.explorer'),
-			$this->getService('013'),
+			$this->getService('012'),
 		);
 		$service->injectPrimary(
 			$this->getService('http.request'),

@@ -4,7 +4,6 @@ services:
 	- App\Model\Auth
 	- App\Model\UserManager
 	- App\Model\PostManager
-	- App\Model\CalculatorManager
 	- App\MyApi\v1\Handlers\UsersListingHandler
 	- Tomaj\NetteApi\Link\ApiLink
 	- Tomaj\NetteApi\Misc\IpDetector

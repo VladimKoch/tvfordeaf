@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -52,7 +51,7 @@ class FusteroService
                             //stžení obrázku
                             $imageData = @file_get_contents($img);
                            
-                                //kontrola stžení
+                                //kontrola stažení
                                 if ($imageData === false) {
                                         throw new \Exception("Obrázek se nepodařilo stáhnout.");
                                     }

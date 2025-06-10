@@ -64,8 +64,11 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
                         <iframe width="100%" height="200px" src="https://www.youtube.com/embed/';
 			echo LR\Filters::escapeHtmlAttr($video->video_url) /* line 19 */;
 			echo '" frameborder="0" allowfullscreen></iframe>
-                         
+                        
                         </div>
+                        <p class="text-center">';
+			echo LR\Filters::escapeHtmlText($video->title) /* line 22 */;
+			echo '</p>
                   </div>
                 </div>
             </div>
@@ -73,33 +76,34 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
 
 		}
 
-		echo '			</div>
+		echo ' 
+			</div>
     <nav aria-label="Jednoduchá stránkování" class="d-flex justify-content-center">
   <ul class="pagination">
 
     <li class="page-item ';
-		if ($page <= 1) /* line 45 */ {
+		if ($page <= 1) /* line 31 */ {
 			echo 'disabled';
 		}
 		echo '">
       <a class="page-link" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page - 1])) /* line 46 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page - 1])) /* line 32 */;
 		echo '">Předchozí</a>
     </li>
 
 ';
 		for ($i = 1;
 		$i <= $pageCount;
-		$i++) /* line 49 */ {
+		$i++) /* line 35 */ {
 			echo '      <li class="page-item ';
-			if ($i === $page) /* line 50 */ {
+			if ($i === $page) /* line 36 */ {
 				echo 'active';
 			}
 			echo '">
         <a class="page-link" href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $i])) /* line 51 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $i])) /* line 37 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($i) /* line 51 */;
+			echo LR\Filters::escapeHtmlText($i) /* line 37 */;
 			echo '</a>
       </li>
 ';
@@ -107,18 +111,19 @@ final class Template_e4c7d9a995 extends Latte\Runtime\Template
 		}
 		echo '
     <li class="page-item ';
-		if ($page >= $pageCount) /* line 55 */ {
+		if ($page >= $pageCount) /* line 41 */ {
 			echo 'disabled';
 		}
 		echo '">
       <a class="page-link" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page + 1])) /* line 56 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page + 1])) /* line 42 */;
 		echo '">Další</a>
     </li>
 
   </ul>
 </nav>
 </div>
+
 
 ';
 	}

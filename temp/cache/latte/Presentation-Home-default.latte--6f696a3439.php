@@ -103,11 +103,6 @@ final class Template_6f696a3439 extends Latte\Runtime\Template
 
 </div>
 
-
-
-
-
-  
  
   <!--Main layout-->
 </div>

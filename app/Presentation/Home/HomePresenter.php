@@ -22,7 +22,69 @@ final class HomePresenter extends Nette\Application\UI\Presenter
     public function renderDefault()
     {       
         $this->template->posts = $this->article->findAllArticles();;
-               
+        
+        // Youtube playlist URL pro neslyšící
+        $playlistUrl = 'https://www.youtube.com/playlist?list=PLGng993tSmjEqFx6w4ohGY3xJOXjtePtd';
+
+        // spusť yt-dlp s JSON výstupem
+        $jsonOutput = shell_exec('yt-dlp --flat-playlist -J ' . escapeshellarg($playlistUrl));
+
+        
+        if (!$jsonOutput) {
+            $this->flashMessage('Nepodařilo se načíst playlist.', 'danger');
+            $this->template->pribehy = [];
+            return;
+        }
+
+        $data = json_decode($jsonOutput);
+
+            //   echo '<pre>';
+            //   print_r($data->entries);
+            //   echo '</pre>';
+            //   die;
+
+    
+        $videos=$data->entries;
+        $videoId = [];
+
+        foreach($videos as $video){
+            
+            parse_str(parse_url($video->url, PHP_URL_QUERY), $query);
+            $videoId[]= ['title'=>$video->title,'url'=>$query['v'] ?? null];
+        }
+    // echo'<pre>';
+    // print_r($videoId);
+    // echo'</pre>';
+    // die;
+
+        foreach($videoId as $video){
+
+         if (strpos($video['title'], 'Příběh') !== false) {
+            // vložit do tabulky pribehy
+             try {
+            $this->database->table('prodeti')->insert([
+                'title' => $video['title'],
+                'video_url' => $video['url'],
+                'created_at' => new \DateTime(),
+            ]);
+            } catch (\Nette\Database\UniqueConstraintViolationException $e) {
+                // Přeskoč duplicitní řádek
+                continue;
+            }
+        } elseif (strpos($video['title'], 'Kázání') !== false) {
+            // vložit do tabulky kázání
+            try{
+
+                $this->database->table('videos')->insert([
+                    'title' => $video['title'],
+                    'video_url' => $video['url'],
+                    'created_at' => new \DateTime(),
+                ]);
+            }catch(\Nette\Database\UniqueConstraintViolationException $e) {
+                    // Přeskoč duplicitní řádek
+                    continue;
+                }
+        }
 
             // $post = $this->database->table('posts')->get($id);
             // $this->template->videos = $post->related('videa');
@@ -51,6 +113,7 @@ final class HomePresenter extends Nette\Application\UI\Presenter
         // $this->template->lastPage = $lastPage;
         // $this->template->time = date('H:i:s');
     }
+}
 
     public function renderShow($postId): void
     {
