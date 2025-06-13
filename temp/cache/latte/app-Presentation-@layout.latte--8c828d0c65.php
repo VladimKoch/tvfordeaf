@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 use Latte\Runtime as LR;
 
-/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation/@layout.latte */
+/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation\@layout.latte */
 final class Template_8c828d0c65 extends Latte\Runtime\Template
 {
-	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation/@layout.latte';
+	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\@layout.latte';
 
 
 	public function main(array $ʟ_args): void
@@ -78,35 +78,22 @@ final class Template_8c828d0c65 extends Latte\Runtime\Template
 		echo '	</div>
 
 ';
-		$this->renderBlock('content', [], 'html') /* line 55 */;
-		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 59 */;
+		$this->renderBlock('content', [], 'html') /* line 63 */;
+		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 67 */;
 		echo '
 
 
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const options = { hour: \'2-digit\', minute: \'2-digit\', second: \'2-digit\' };
-            document.getElementById(\'current-time\').textContent = now.toLocaleTimeString(\'cs-CZ\', options);
-        }
 
-
-        setInterval(updateTime, 1000); // Aktualizace každou sekundu
-        updateTime(); // Inicializace při načtení stránky
-    </script>
 	
 	<script>window.scrollTo({ top: 0, behavior: \'smooth\' });</script>
 
 	 <!-- MDB -->
     <script type="text/javascript" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 78 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 76 */;
 		echo '/js/mdb.umd.min.js"></script>
 
-	
-	
-		
 </body>
-  
+
 </html>
 ';
 	}

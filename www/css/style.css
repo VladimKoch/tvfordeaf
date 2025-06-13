@@ -140,6 +140,14 @@
               .scale-down {
                 transform: scale(0.97); /* zmenší obrázek na 80 % jeho původní velikosti */
                 transform-origin: center; /* zajistí, že se zmenší vůči středu obrázku */
+                
+              }
+
+              .scale:hover{
+                transform: scale(0.95); /* zmenší obrázek na 80 % jeho původní velikosti */
+                transform-origin: center; /* zajistí, že se zmenší vůči středu obrázku */
+                transition: all 0.5s ease-in-out;
+
               }
 
             /*----------- Tělo --------------*/
