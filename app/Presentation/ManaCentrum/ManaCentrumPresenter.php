@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App\Presentation\ManaCentrum;
 
+use GuzzleHttp\Client;
+use Symfony\Component\DomCrawler\Crawler;
+use DOMDocument;
+use DOMXPath;
+
 use Nette;
 
 
@@ -16,7 +21,8 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
     public function __construct(private \App\Model\ArticleManager $article,
                                 private \Nette\Http\Request $request,
                                 private \Nette\Database\Explorer $database,
-                                private \App\Service\FusteroService $fusteroService)
+                                private \App\Service\FusteroService $fusteroService,
+                                private \App\Service\FusteroTitle $fusteroTitle)
     {
        
     }
@@ -222,6 +228,83 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
     // $this->getHttpResponse()->setContentType('image/jpeg');
     echo $image;
     exit;
+}
+
+public function renderAktual()
+{   
+
+
+
+
+
+
+    // $title = $this->fusteroTitle->getTitlesFromFustero();
+    // print_r($title);
+    // die;
+
+    $lessons = [
+
+        [
+            'title' => '01. Narození Mojžíše',
+            'pdf' => 'https://www.fustero.es/cz_2025t301.pdf',
+            'pptx' => 'https://www.fustero.es/cz_2025t301.pptx',
+            'docx' => 'https://www.fustero.es/cz_resumen_2025t301.docx',
+            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t301.pdf'
+        ],
+        [   'title'=>'02.HOŘÍCÍ KEŘ',
+            'pdf' => 'https://www.fustero.es/cz_2025t302.pdf',
+            'pptx' => 'https://www.fustero.es/cz_2025t302.pptx',
+            'docx' => 'https://www.fustero.es/cz_resumen_2025t302.docx',
+            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t302.pdf',
+        ],
+        [
+            'title' => '13. OBRAZY KONCE',
+            'pdf' => 'https://www.fustero.es/cz_2025t213.pdf',
+            'pptx' => 'https://www.fustero.es/cz_2025t213.pptx',
+            'docx' => 'https://www.fustero.es/cz_resumen_2025t213.docx',
+            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t213.pdf'
+    
+        ],
+        [
+            'title' => '12. PŘÍKLADY VĚRNOSTI',
+            'pdf' => 'https://www.fustero.es/cz_2025t212.pdf',
+            'pptx' => 'https://www.fustero.es/cz_2025t212.pptx',
+            'docx' => 'https://www.fustero.es/cz_resumen_2025t212.docx',
+            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t212.pdf'
+    
+        ],
+        [
+            'title' => '11. RÚT A ESTER',
+            'pdf' => 'https://www.fustero.es/cz_2025t211.pdf',
+            'pptx' => 'https://www.fustero.es/cz_2025t211.pptx',
+            'docx' => 'https://www.fustero.es/cz_resumen_2025t211.docx',
+            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t211.pdf'
+    
+        ],
+        [
+            'title' => '10. NÁM, KTERÉ ZASTIHL PŘELOM VĚKŮ',
+            'pdf' => 'https://www.fustero.es/cz_2025t210.pdf',
+            'pptx' => 'https://www.fustero.es/cz_2025t210.pptx',
+            'docx' => 'https://www.fustero.es/cz_resumen_2025t210.docx',
+            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t210.pdf'
+    
+        ],
+        [
+            'title' => '09. PROROCTVÍ V ŽALMECH (2)',
+            'pdf' => 'https://www.fustero.es/cz_2025t209.pdf',
+            'pptx' => 'https://www.fustero.es/cz_2025t209.pptx',
+            'docx' => 'https://www.fustero.es/cz_resumen_2025t209.docx',
+            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t209.pdf'
+    
+        ],
+]; 
+    
+    // print_r($dir);
+    // die;
+
+
+    $this->template->lessons = $lessons;
+
 }
 
 

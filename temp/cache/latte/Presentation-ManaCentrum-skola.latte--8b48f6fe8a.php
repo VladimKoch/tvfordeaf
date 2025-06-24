@@ -63,14 +63,14 @@ final class Template_8b48f6fe8a extends Latte\Runtime\Template
                 
                           <article class="card__article scale">
                         <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:archiv')) /* line 43 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:aktual')) /* line 43 */;
 		echo '" class="href">
                           <img src="';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 44 */;
 		echo '/uploads/img/check.png" class="card-img-top rounded-3" alt="..." style="height: 300px; width: 45%; object-fit: cover;">
                           </a>
                         </article>
-                          <h5 class="text-center">Aktuální čtrtletí</h5>
+                          <h5 class="text-center">Aktuální čtvrtletí</h5>
             </div>
 			</div>
 

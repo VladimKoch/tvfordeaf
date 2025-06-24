@@ -11,6 +11,7 @@ services:
 	- App\Model\ImageUploadFormFactory
 	- App\Service\YouTubeService
 	- App\Service\FusteroService
+	- App\Service\FusteroTitle
 
 
 
