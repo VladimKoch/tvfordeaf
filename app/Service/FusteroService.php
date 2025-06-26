@@ -28,6 +28,8 @@ class FusteroService
 
             // Základní cesta
                 $baseUrl = 'https://www.fustero.es/';
+
+                $results=[];
                 
             // Vyhledání img src
                 $src = $crawler

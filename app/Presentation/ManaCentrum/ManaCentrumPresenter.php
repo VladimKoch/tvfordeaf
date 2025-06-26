@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace App\Presentation\ManaCentrum;
 
-use GuzzleHttp\Client;
-use Symfony\Component\DomCrawler\Crawler;
-use DOMDocument;
-use DOMXPath;
-
 use Nette;
 
 
@@ -26,38 +21,42 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
     {
        
     }
-
+    /**
+    *  Hlavní metoda pro zobrazení stránky ManaCentrum v default.latte
+    */
     public function renderDefault()
     {   
-
         // Aktualizace fotky sobotní školy
 
         $imgString = $this->fusteroService->fetchPage();
 
         if(is_string($imgString)){
-        $setImg = $this->database->table('manacentrum')->get(9);
-        if($setImg['photo_url']!==$imgString)
-        {
-            $setImg->update([
-                'photo_url' => $imgString]);
-        };
-    }
+            $setImg = $this->database->table('manacentrum')->get(9);
+            if($setImg['photo_url']!==$imgString)
+            {
+                $setImg->update([
+                    'photo_url' => $imgString]);
+            };
+        }
 
          $this->template->posts= $this->database->table('manacentrum'); // získejte články podle volby menu
          
     }
+    /**
+    * Hlavní metoda pro zobrazení štránky školy v skola.latte
+    */
 
     public function renderSkola()
     {   
         $this->template->html = $this->fusteroService->fetchPage();
     }
 
-    
-
-    public function renderProdeti($page=1){
-
-
-
+        
+    /**
+    * Metroda pro zobrazení příběhů pro děti v prodeti.latte
+    */
+    public function renderProdeti($page=1)
+    {
 
           // Youtube playlist URL pro neslyšící
         $playlistUrl = 'https://www.youtube.com/playlist?list=PLGng993tSmjEqFx6w4ohGY3xJOXjtePtd';
@@ -65,50 +64,45 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         // spusť yt-dlp s JSON výstupem
         $jsonOutput = shell_exec('yt-dlp --flat-playlist -J ' . escapeshellarg($playlistUrl));
 
-        
+        //kontrola zda li se playlist načetl pokud ne zobrazí se chybová flash zpráva
         if (!$jsonOutput) {
             $this->flashMessage('Nepodařilo se načíst playlist.', 'danger');
             $this->template->pribehy = [];
             return;
         }
 
+        // Dekoduje JSON výstup do PHP objektu
         $data = json_decode($jsonOutput);
 
-            //   echo '<pre>';
-            //   print_r($data->entries);
-            //   echo '</pre>';
-            //   die;
-
-    
+        // Získání dat z einries
         $videos=$data->entries;
+        // Iniciializace pole pro uložení ID videí
         $videoId = [];
 
+        // Získání URL z videí pro vložení do databáze a šablony
         foreach($videos as $video){
             
             parse_str(parse_url($video->url, PHP_URL_QUERY), $query);
             $videoId[]= ['title'=>$video->title,'url'=>$query['v'] ?? null];
         }
-    // echo'<pre>';
-    // print_r($videoId);
-    // echo'</pre>';
-    // die;
 
+        // Získání vídeí pouze příběhy pro děti
         foreach($videoId as $video){
 
-         if (strpos($video['title'], 'Příběh') !== false) {
-            // vložit do tabulky pribehy
-             try {
-            $this->database->table('prodeti')->insert([
-                'title' => $video['title'],
-                'video_url' => $video['url'],
-                'created_at' => new \DateTime(),
-            ]);
-            } catch (\Nette\Database\UniqueConstraintViolationException $e) {
-                // Přeskoč duplicitní řádek
-                continue;
+            if (strpos($video['title'], 'Příběh') !== false) {
+                // vložit do tabulky pribehy
+                try {
+                $this->database->table('prodeti')->insert([
+                    'title' => $video['title'],
+                    'video_url' => $video['url'],
+                    'created_at' => new \DateTime(),
+                ]);
+                } catch (\Nette\Database\UniqueConstraintViolationException $e) {
+                    // Přeskoč duplicitní řádek
+                    continue;
+                }
             }
         }
-    }
 
         $itemsPerPage = self::ITEMS_PER_PAGE; //počet článku na stránku
 
@@ -132,9 +126,11 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         $this->template->pageCount = $pageCount;
     }
 
+    /**
+     * Metoda pro zobrazení kázání v kazaní.latte 
+     */
       public function renderVideos($page=1)
     {   
-
 
           // Youtube playlist URL pro neslyšící
         $playlistUrl = 'https://www.youtube.com/playlist?list=PLGng993tSmjEqFx6w4ohGY3xJOXjtePtd';
@@ -142,52 +138,45 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         // spusť yt-dlp s JSON výstupem
         $jsonOutput = shell_exec('yt-dlp --flat-playlist -J ' . escapeshellarg($playlistUrl));
 
-        
+        // kontrola zda li se playlist načetl pokud ne zobrazí se chybová flsah zpráva
         if (!$jsonOutput) {
             $this->flashMessage('Nepodařilo se načíst playlist.', 'danger');
             $this->template->pribehy = [];
             return;
         }
 
+        // Dekoduje JSON výstup do PHP objektu
         $data = json_decode($jsonOutput);
 
-            //   echo '<pre>';
-            //   print_r($data->entries);
-            //   echo '</pre>';
-            //   die;
-
-    
+        // Získání dat z netries
         $videos=$data->entries;
+        // inicializace pole pr uloení ID videí
         $videoId = [];
 
+        // Získání URL z videí pro vložení do databáze a šablony
         foreach($videos as $video){
             
             parse_str(parse_url($video->url, PHP_URL_QUERY), $query);
             $videoId[]= ['title'=>$video->title,'url'=>$query['v'] ?? null];
         }
-    // echo'<pre>';
-    // print_r($videoId);
-    // echo'</pre>';
-    // die;
-
+    
+        // Získání videí pouze kázání
         foreach($videoId as $video){
 
-         if (strpos($video['title'], 'Kázání') !== false) {
-            // vložit do tabulky pribehy
-             try {
-            $this->database->table('videos')->insert([
-                'title' => $video['title'],
-                'video_url' => $video['url'],
-                'created_at' => new \DateTime(),
-            ]);
-            } catch (\Nette\Database\UniqueConstraintViolationException $e) {
-                // Přeskoč duplicitní řádek
-                continue;
-            }
-        } 
-    }
-
-
+            if (strpos($video['title'], 'Kázání') !== false) {
+                // vložit do tabulky pribehy
+                try {
+                $this->database->table('videos')->insert([
+                    'title' => $video['title'],
+                    'video_url' => $video['url'],
+                    'created_at' => new \DateTime(),
+                ]);
+                } catch (\Nette\Database\UniqueConstraintViolationException $e) {
+                    // Přeskoč duplicitní řádek
+                    continue;
+                }
+            } 
+        }
 
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 
@@ -214,116 +203,26 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         $this->template->pageCount = $pageCount;
     }
 
-    public function renderArchiv(){
-        
-    }
-
 
     public function handleProxyImage(): void
-{
-    $url = 'https://www.fustero.es/index_cz.php';
-    // $url = 'https://fustero.es/2025t2cz.jpg';
-    $image = file_get_contents($url);
+    {
+        $url = 'https://www.fustero.es/index_cz.php';
+        // $url = 'https://fustero.es/2025t2cz.jpg';
+        $image = file_get_contents($url);
 
-    // $this->getHttpResponse()->setContentType('image/jpeg');
-    echo $image;
-    exit;
-}
+        // $this->getHttpResponse()->setContentType('image/jpeg');
+        echo $image;
+        exit;
+    }
 
-public function renderAktual()
-{   
+    /**
+     * Metoda pro zobrazení dat aktuálnní sbotní školy v aktual.latte
+     */
 
+    public function renderAktual()
+    {   
+        $index = $this->fusteroTitle->getTitlesFromFustero();
+        $this->template->lessons = $index;    
+    }
 
-
-
-
-
-    // $title = $this->fusteroTitle->getTitlesFromFustero();
-    // print_r($title);
-    // die;
-
-    $lessons = [
-
-        [
-            'title' => '01. Narození Mojžíše',
-            'pdf' => 'https://www.fustero.es/cz_2025t301.pdf',
-            'pptx' => 'https://www.fustero.es/cz_2025t301.pptx',
-            'docx' => 'https://www.fustero.es/cz_resumen_2025t301.docx',
-            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t301.pdf'
-        ],
-        [   'title'=>'02.HOŘÍCÍ KEŘ',
-            'pdf' => 'https://www.fustero.es/cz_2025t302.pdf',
-            'pptx' => 'https://www.fustero.es/cz_2025t302.pptx',
-            'docx' => 'https://www.fustero.es/cz_resumen_2025t302.docx',
-            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t302.pdf',
-        ],
-        [
-            'title' => '13. OBRAZY KONCE',
-            'pdf' => 'https://www.fustero.es/cz_2025t213.pdf',
-            'pptx' => 'https://www.fustero.es/cz_2025t213.pptx',
-            'docx' => 'https://www.fustero.es/cz_resumen_2025t213.docx',
-            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t213.pdf'
-    
-        ],
-        [
-            'title' => '12. PŘÍKLADY VĚRNOSTI',
-            'pdf' => 'https://www.fustero.es/cz_2025t212.pdf',
-            'pptx' => 'https://www.fustero.es/cz_2025t212.pptx',
-            'docx' => 'https://www.fustero.es/cz_resumen_2025t212.docx',
-            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t212.pdf'
-    
-        ],
-        [
-            'title' => '11. RÚT A ESTER',
-            'pdf' => 'https://www.fustero.es/cz_2025t211.pdf',
-            'pptx' => 'https://www.fustero.es/cz_2025t211.pptx',
-            'docx' => 'https://www.fustero.es/cz_resumen_2025t211.docx',
-            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t211.pdf'
-    
-        ],
-        [
-            'title' => '10. NÁM, KTERÉ ZASTIHL PŘELOM VĚKŮ',
-            'pdf' => 'https://www.fustero.es/cz_2025t210.pdf',
-            'pptx' => 'https://www.fustero.es/cz_2025t210.pptx',
-            'docx' => 'https://www.fustero.es/cz_resumen_2025t210.docx',
-            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t210.pdf'
-    
-        ],
-        [
-            'title' => '09. PROROCTVÍ V ŽALMECH (2)',
-            'pdf' => 'https://www.fustero.es/cz_2025t209.pdf',
-            'pptx' => 'https://www.fustero.es/cz_2025t209.pptx',
-            'docx' => 'https://www.fustero.es/cz_resumen_2025t209.docx',
-            'res_pdf' => 'https://www.fustero.es/cz_resumen_2025t209.pdf'
-    
-        ],
-]; 
-    
-    // print_r($dir);
-    // die;
-
-
-    $this->template->lessons = $lessons;
-
-}
-
-
-    // public function handleClick(): void
-    // {   
-        
-    //     if($this->isAjax()){
-            
-    //         bdump($this->isAjax());
-    //         $time = 'ogon';
-    //         $this->template->time = $time;
-    //         $this->redrawControl('mySnippet');
-  
-    //     }else{
-    //         $this->flashMessage('Neni AJax');
-    //         $this->redirect('this');
-    //     }
-
-    // }
-
-    
 }

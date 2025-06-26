@@ -100,7 +100,7 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1750685762,
+      1 => 1750842597,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -132,15 +132,15 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\YoutubeApi\\YoutubeApiPresenter.php',
       1 => 1747301414,
     ),
-    'App\\Service\\FusteroTitle' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\FuestroTitle.php',
-      1 => 1750685436,
-    ),
     'App\\Service\\FusteroService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\FusteroService.php',
-      1 => 1749543796,
+      1 => 1750771845,
+    ),
+    'App\\Service\\FusteroTitle' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\FusteroTitle.php',
+      1 => 1750836274,
     ),
     'App\\Service\\YouTubeService' => 
     array (
