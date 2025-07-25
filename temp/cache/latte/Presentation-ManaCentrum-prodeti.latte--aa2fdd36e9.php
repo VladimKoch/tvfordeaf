@@ -51,8 +51,8 @@ final class Template_aa2fdd36e9 extends Latte\Runtime\Template
       <div class="container px-4 py-5 pb-5" style="margin-top: 200px; margin-bottom: 100px;">
       <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 8 */;
-		echo '">Domů</a>-><a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:defaultL')) /* line 8 */;
+		echo '">Domů</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:default')) /* line 8 */;
 		echo '">ManaCentrum</a>
          <div class="mb-3 border-2" style="margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
               -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
@@ -71,7 +71,7 @@ final class Template_aa2fdd36e9 extends Latte\Runtime\Template
                               <!--This is the video embed section-->
                               <iframe width="100%" height="200px" src="https://www.youtube.com/embed/';
 			echo LR\Filters::escapeHtmlAttr($pribeh->video_url) /* line 22 */;
-			echo '" frameborder="0" allowfullscreen></iframe>
+			echo '"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
                             </div>
                             <p class="text-center">';
 			echo LR\Filters::escapeHtmlText($pribeh->title) /* line 24 */;
