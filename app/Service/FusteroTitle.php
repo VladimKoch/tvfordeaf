@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace App\Service;
 
 
-use DOMDocument;
-use DOMXPath;
-
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 

@@ -1,27 +1,27 @@
 <?php
 
 
-namespace App\MyApi\v1\Handlers;
+// namespace App\MyApi\v1\Handlers;
 
-use Nette;
+// use Nette;
 
 
-class UsersRepository
-{
+// class UsersRepository
+// {
 
-    public function __construct(private \Nette\Database\Explorer $database)
-    {
+//     public function __construct(private \Nette\Database\Explorer $database)
+//     {
         
-    }
+//     }
 
-    public function all()
-    {
-      return $this->database->table('users')->fetchAll();
+//     public function all()
+//     {
+//       return $this->database->table('users')->fetchAll();
 
-    }
+//     }
 
-    public function find(array $params)
-    {
+//     public function find(array $params)
+//     {
 
-    }
-}
+//     }
+// }

@@ -64,121 +64,79 @@ class Container_1fca97960e extends Nette\DI\Container
 			2 => [
 				'01',
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\Application\Routers\RouteList' => [['01']],
 		'App\Model\ArticleManager' => [['02']],
-		'Nette\Security\Authenticator' => [['03']],
-		'Nette\Security\IAuthenticator' => [['03']],
-		'App\Model\Auth' => [['03']],
-		'App\Model\UserManager' => [['04']],
-		'App\Model\PostManager' => [['05']],
-		'Tomaj\NetteApi\Handlers\BaseHandler' => [['06']],
-		'Tomaj\NetteApi\Handlers\ApiHandlerInterface' => [['06']],
-		'App\MyApi\v1\Handlers\UsersListingHandler' => [['06']],
-		'Tomaj\NetteApi\Link\ApiLink' => [['07']],
-		'Tomaj\NetteApi\Misc\IpDetectorInterface' => [['08']],
-		'Tomaj\NetteApi\Misc\IpDetector' => [['08']],
-		'App\MyApi\v1\Forms\ImgForm' => [['09']],
-		'App\Model\ImageUploadFormFactory' => [['010']],
-		'App\Service\YouTubeService' => [['011']],
-		'App\Service\FusteroService' => [['012']],
-		'App\Service\FusteroTitle' => [['013']],
+		'App\Model\PostManager' => [['03']],
+		'App\Service\YouTubeService' => [['04']],
+		'App\Service\FusteroService' => [['05']],
+		'App\Service\FusteroTitle' => [['06']],
 		'Nette\Application\UI\Presenter' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\Application\UI\Control' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\Application\UI\Component' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\ComponentModel\Container' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\ComponentModel\Component' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\Application\IPresenter' => [
@@ -194,115 +152,79 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.9',
 				'application.10',
 				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
-				'application.15',
-				'application.16',
 			],
 		],
 		'Nette\Application\UI\Renderable' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\Application\UI\StatePersistent' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\Application\UI\SignalReceiver' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\ComponentModel\IContainer' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
 		'Nette\ComponentModel\IComponent' => [
 			2 => [
 				'application.1',
-				'application.2',
 				'application.3',
+				'application.4',
 				'application.5',
 				'application.6',
 				'application.7',
 				'application.8',
 				'application.9',
-				'application.10',
-				'application.11',
-				'application.12',
-				'application.13',
-				'application.14',
 			],
 		],
-		'App\Presentation\Admin\AdminPresenter' => [2 => ['application.1']],
-		'App\Presentation\Api\ApiPresenter' => [2 => ['application.2']],
-		'App\Presentation\Error\Error4xx\Error4xxPresenter' => [2 => ['application.3']],
-		'App\Presentation\Error\Error5xx\Error5xxPresenter' => [2 => ['application.4']],
-		'App\Presentation\FitCentrum\FitCentrumPresenter' => [2 => ['application.5']],
-		'App\Presentation\Home\HomePresenter' => [2 => ['application.6']],
-		'App\Presentation\ImgApi\ImgApiPresenter' => [2 => ['application.7']],
-		'App\Presentation\ManaCentrum\ManaCentrumPresenter' => [2 => ['application.8']],
-		'App\Presentation\Post\PostPresenter' => [2 => ['application.9']],
-		'App\Presentation\Sign\SignPresenter' => [2 => ['application.10']],
-		'App\Presentation\Start\StartPresenter' => [2 => ['application.11']],
-		'App\Presentation\Table\TablePresenter' => [2 => ['application.12']],
-		'App\Presentation\Tip\TipPresenter' => [2 => ['application.13']],
-		'App\Presentation\YouTubeApi\YoutubeApiPresenter' => [2 => ['application.14']],
-		'NetteModule\ErrorPresenter' => [2 => ['application.15']],
-		'NetteModule\MicroPresenter' => [2 => ['application.16']],
-		'App\MyApi\v1\Handlers\UsersRepository' => [['014']],
+		'App\Presentation\Error\Error4xx\Error4xxPresenter' => [2 => ['application.1']],
+		'App\Presentation\Error\Error5xx\Error5xxPresenter' => [2 => ['application.2']],
+		'App\Presentation\FitCentrum\FitCentrumPresenter' => [2 => ['application.3']],
+		'App\Presentation\Home\HomePresenter' => [2 => ['application.4']],
+		'App\Presentation\ManaCentrum\ManaCentrumPresenter' => [2 => ['application.5']],
+		'App\Presentation\Post\PostPresenter' => [2 => ['application.6']],
+		'App\Presentation\Start\StartPresenter' => [2 => ['application.7']],
+		'App\Presentation\Tip\TipPresenter' => [2 => ['application.8']],
+		'App\Presentation\YouTubeApi\YoutubeApiPresenter' => [2 => ['application.9']],
+		'NetteModule\ErrorPresenter' => [2 => ['application.10']],
+		'NetteModule\MicroPresenter' => [2 => ['application.11']],
 	];
 
 
@@ -324,229 +246,31 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createService03(): App\Model\Auth
-	{
-		return new App\Model\Auth($this->getService('database.default.explorer'));
-	}
-
-
-	public function createService04(): App\Model\UserManager
-	{
-		return new App\Model\UserManager($this->getService('database.default.explorer'));
-	}
-
-
-	public function createService05(): App\Model\PostManager
+	public function createService03(): App\Model\PostManager
 	{
 		return new App\Model\PostManager($this->getService('database.default.explorer'));
 	}
 
 
-	public function createService06(): App\MyApi\v1\Handlers\UsersListingHandler
-	{
-		return new App\MyApi\v1\Handlers\UsersListingHandler($this->getService('014'));
-	}
-
-
-	public function createService07(): Tomaj\NetteApi\Link\ApiLink
-	{
-		return new Tomaj\NetteApi\Link\ApiLink($this->getService('application.linkGenerator'));
-	}
-
-
-	public function createService08(): Tomaj\NetteApi\Misc\IpDetector
-	{
-		return new Tomaj\NetteApi\Misc\IpDetector;
-	}
-
-
-	public function createService09(): App\MyApi\v1\Forms\ImgForm
-	{
-		return new App\MyApi\v1\Forms\ImgForm;
-	}
-
-
-	public function createService010(): App\Model\ImageUploadFormFactory
-	{
-		return new App\Model\ImageUploadFormFactory;
-	}
-
-
-	public function createService011(): App\Service\YouTubeService
+	public function createService04(): App\Service\YouTubeService
 	{
 		return new App\Service\YouTubeService;
 	}
 
 
-	public function createService012(): App\Service\FusteroService
+	public function createService05(): App\Service\FusteroService
 	{
 		return new App\Service\FusteroService;
 	}
 
 
-	public function createService013(): App\Service\FusteroTitle
+	public function createService06(): App\Service\FusteroTitle
 	{
 		return new App\Service\FusteroTitle;
 	}
 
 
-	public function createService014(): App\MyApi\v1\Handlers\UsersRepository
-	{
-		return new App\MyApi\v1\Handlers\UsersRepository($this->getService('database.default.explorer'));
-	}
-
-
-	public function createServiceApplication__1(): App\Presentation\Admin\AdminPresenter
-	{
-		$service = new App\Presentation\Admin\AdminPresenter;
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__10(): App\Presentation\Sign\SignPresenter
-	{
-		$service = new App\Presentation\Sign\SignPresenter(
-			$this->getService('database.default.explorer'),
-			$this->getService('security.user'),
-			$this->getService('04'),
-			$this->getService('03'),
-		);
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__11(): App\Presentation\Start\StartPresenter
-	{
-		$service = new App\Presentation\Start\StartPresenter(
-			$this->getService('02'),
-			$this->getService('http.request'),
-			$this->getService('database.default.explorer'),
-		);
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__12(): App\Presentation\Table\TablePresenter
-	{
-		$service = new App\Presentation\Table\TablePresenter(
-			$this->getService('database.default.explorer'),
-			$this->getService('security.user'),
-			$this->getService('04'),
-			$this->getService('03'),
-			$this,
-		);
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__13(): App\Presentation\Tip\TipPresenter
-	{
-		$service = new App\Presentation\Tip\TipPresenter(
-			$this->getService('02'),
-			$this->getService('http.request'),
-			$this->getService('database.default.explorer'),
-		);
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__14(): App\Presentation\YouTubeApi\YoutubeApiPresenter
-	{
-		$service = new App\Presentation\YouTubeApi\YoutubeApiPresenter($this->getService('011'));
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__15(): NetteModule\ErrorPresenter
-	{
-		return new NetteModule\ErrorPresenter($this->getService('tracy.logger'));
-	}
-
-
-	public function createServiceApplication__16(): NetteModule\MicroPresenter
-	{
-		return new NetteModule\MicroPresenter($this, $this->getService('http.request'), $this->getService('01'));
-	}
-
-
-	public function createServiceApplication__2(): App\Presentation\Api\ApiPresenter
-	{
-		$service = new App\Presentation\Api\ApiPresenter($this->getService('05'));
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__3(): App\Presentation\Error\Error4xx\Error4xxPresenter
+	public function createServiceApplication__1(): App\Presentation\Error\Error4xx\Error4xxPresenter
 	{
 		$service = new App\Presentation\Error\Error4xx\Error4xxPresenter;
 		$service->injectPrimary(
@@ -563,13 +287,25 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createServiceApplication__4(): App\Presentation\Error\Error5xx\Error5xxPresenter
+	public function createServiceApplication__10(): NetteModule\ErrorPresenter
+	{
+		return new NetteModule\ErrorPresenter($this->getService('tracy.logger'));
+	}
+
+
+	public function createServiceApplication__11(): NetteModule\MicroPresenter
+	{
+		return new NetteModule\MicroPresenter($this, $this->getService('http.request'), $this->getService('01'));
+	}
+
+
+	public function createServiceApplication__2(): App\Presentation\Error\Error5xx\Error5xxPresenter
 	{
 		return new App\Presentation\Error\Error5xx\Error5xxPresenter($this->getService('tracy.logger'));
 	}
 
 
-	public function createServiceApplication__5(): App\Presentation\FitCentrum\FitCentrumPresenter
+	public function createServiceApplication__3(): App\Presentation\FitCentrum\FitCentrumPresenter
 	{
 		$service = new App\Presentation\FitCentrum\FitCentrumPresenter(
 			$this->getService('02'),
@@ -590,7 +326,7 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createServiceApplication__6(): App\Presentation\Home\HomePresenter
+	public function createServiceApplication__4(): App\Presentation\Home\HomePresenter
 	{
 		$service = new App\Presentation\Home\HomePresenter(
 			$this->getService('02'),
@@ -611,31 +347,14 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createServiceApplication__7(): App\Presentation\ImgApi\ImgApiPresenter
-	{
-		$service = new App\Presentation\ImgApi\ImgApiPresenter($this->getService('010'), $this);
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
-	}
-
-
-	public function createServiceApplication__8(): App\Presentation\ManaCentrum\ManaCentrumPresenter
+	public function createServiceApplication__5(): App\Presentation\ManaCentrum\ManaCentrumPresenter
 	{
 		$service = new App\Presentation\ManaCentrum\ManaCentrumPresenter(
 			$this->getService('02'),
 			$this->getService('http.request'),
 			$this->getService('database.default.explorer'),
-			$this->getService('012'),
-			$this->getService('013'),
+			$this->getService('05'),
+			$this->getService('06'),
 		);
 		$service->injectPrimary(
 			$this->getService('http.request'),
@@ -651,9 +370,68 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createServiceApplication__9(): App\Presentation\Post\PostPresenter
+	public function createServiceApplication__6(): App\Presentation\Post\PostPresenter
 	{
 		$service = new App\Presentation\Post\PostPresenter($this->getService('02'), $this->getService('database.default.explorer'));
+		$service->injectPrimary(
+			$this->getService('http.request'),
+			$this->getService('http.response'),
+			$this->getService('application.presenterFactory'),
+			$this->getService('01'),
+			$this->getService('session.session'),
+			$this->getService('security.user'),
+			$this->getService('latte.templateFactory'),
+		);
+		$service->invalidLinkMode = 5;
+		return $service;
+	}
+
+
+	public function createServiceApplication__7(): App\Presentation\Start\StartPresenter
+	{
+		$service = new App\Presentation\Start\StartPresenter(
+			$this->getService('02'),
+			$this->getService('http.request'),
+			$this->getService('database.default.explorer'),
+		);
+		$service->injectPrimary(
+			$this->getService('http.request'),
+			$this->getService('http.response'),
+			$this->getService('application.presenterFactory'),
+			$this->getService('01'),
+			$this->getService('session.session'),
+			$this->getService('security.user'),
+			$this->getService('latte.templateFactory'),
+		);
+		$service->invalidLinkMode = 5;
+		return $service;
+	}
+
+
+	public function createServiceApplication__8(): App\Presentation\Tip\TipPresenter
+	{
+		$service = new App\Presentation\Tip\TipPresenter(
+			$this->getService('02'),
+			$this->getService('http.request'),
+			$this->getService('database.default.explorer'),
+		);
+		$service->injectPrimary(
+			$this->getService('http.request'),
+			$this->getService('http.response'),
+			$this->getService('application.presenterFactory'),
+			$this->getService('01'),
+			$this->getService('session.session'),
+			$this->getService('security.user'),
+			$this->getService('latte.templateFactory'),
+		);
+		$service->invalidLinkMode = 5;
+		return $service;
+	}
+
+
+	public function createServiceApplication__9(): App\Presentation\YouTubeApi\YoutubeApiPresenter
+	{
+		$service = new App\Presentation\YouTubeApi\YoutubeApiPresenter($this->getService('04'));
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -810,7 +588,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				func_num_args() && $service->addExtension(new Nette\Bridges\ApplicationLatte\UIExtension(func_get_arg(0)));
 				$service->addExtension(new Nette\Bridges\CacheLatte\CacheExtension($this->container->getService('cache.storage')));
 				$service->addExtension(new Nette\Bridges\FormsLatte\FormsExtension);
-				$service->addExtension(new App\Presentation\Accessory\LatteExtension);
 				return $service;
 			}
 		};
@@ -845,7 +622,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceSecurity__user(): Nette\Security\User
 	{
-		$service = new Nette\Security\User($this->getService('security.userStorage'), $this->getService('03'));
+		$service = new Nette\Security\User($this->getService('security.userStorage'));
 		$this->getService('tracy.bar')->addPanel(new Nette\Bridges\SecurityTracy\UserPanel($service));
 		return $service;
 	}

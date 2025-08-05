@@ -17,60 +17,10 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\ArticleManager.php',
       1 => 1749543762,
     ),
-    'App\\Model\\Auth' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\Auth.php',
-      1 => 1745999194,
-    ),
-    'App\\Model\\ImageUploadFormFactory' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\ImgForm.php',
-      1 => 1749460792,
-    ),
     'App\\Model\\PostManager' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\PostManager.php',
       1 => 1744289707,
-    ),
-    'App\\Model\\UserManager' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\UserManager.php',
-      1 => 1743583518,
-    ),
-    'App\\MyApi\\v1\\Forms\\ImgForm' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Forms\\ImgForm.php',
-      1 => 1744804683,
-    ),
-    'App\\MyApi\\v1\\Handlers\\UsersListingHandler' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Handlers\\UserListHandler.php',
-      1 => 1744635210,
-    ),
-    'App\\MyApi\\v1\\Handlers\\UsersRepository' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Handlers\\UsersRepository.php',
-      1 => 1744805080,
-    ),
-    'App\\MyApi\\v1\\Transformers\\UserTransformer' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Transformers\\UserTransformer.php',
-      1 => 1744628206,
-    ),
-    'App\\Presentation\\Accessory\\LatteExtension' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Accessory\\LatteExtension.php',
-      1 => 1738539948,
-    ),
-    'App\\Presentation\\Admin\\AdminPresenter' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Admin\\AdminPresenter.php',
-      1 => 1746001088,
-    ),
-    'App\\Presentation\\Api\\ApiPresenter' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Api\\ApiPresenter.php',
-      1 => 1744293433,
     ),
     'App\\Presentation\\Error\\Error4xx\\Error4xxPresenter' => 
     array (
@@ -92,11 +42,6 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Home\\HomePresenter.php',
       1 => 1749647662,
     ),
-    'App\\Presentation\\ImgApi\\ImgApiPresenter' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ImgApi\\ImgApiPresenter.php',
-      1 => 1746015256,
-    ),
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
@@ -107,20 +52,10 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Post\\PostPresenter.php',
       1 => 1743586933,
     ),
-    'App\\Presentation\\Sign\\SignPresenter' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Sign\\SignPresenter.php',
-      1 => 1746001938,
-    ),
     'App\\Presentation\\Start\\StartPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Start\\StartPresenter.php',
       1 => 1747127102,
-    ),
-    'App\\Presentation\\Table\\TablePresenter' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Table\\TablePresentation.php',
-      1 => 1746022024,
     ),
     'App\\Presentation\\Tip\\TipPresenter' => 
     array (
@@ -140,7 +75,7 @@ return array (
     'App\\Service\\FusteroTitle' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\FusteroTitle.php',
-      1 => 1750836274,
+      1 => 1754308271,
     ),
     'App\\Service\\YouTubeService' => 
     array (
@@ -153,5 +88,15 @@ return array (
   ),
   2 => 
   array (
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\Auth.php' => 1753429794,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\ImgForm.php' => 1753429804,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\UserManager.php' => 1754373895,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Forms\\ImgForm.php' => 1753429875,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Handlers\\UserListHandler.php' => 1753429884,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Handlers\\UsersRepository.php' => 1753429895,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\MyApi\\v1\\Transformers\\UserTransformer.php' => 1753429902,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Accessory\\LatteExtension.php' => 1753429911,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Admin\\AdminPresenter.php' => 1753430166,
+    'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Api\\ApiPresenter.php' => 1753430181,
   ),
 );

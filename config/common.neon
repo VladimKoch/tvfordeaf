@@ -16,7 +16,7 @@ latte:
 	strictTypes: yes
 	strictParsing: yes
 	extensions:
-		- App\Presentation\Accessory\LatteExtension
+		# - App\Presentation\Accessory\LatteExtension
 		# - contributte.mailing:Contributte\Mailing\DI\MAilingExtension
 		
 
