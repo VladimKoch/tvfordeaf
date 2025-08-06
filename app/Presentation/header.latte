@@ -1,81 +1,26 @@
- {* <nav class=" header fixed-top">
-        <a href="{link Home:default}">
-        <img src="{$basePath}/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ucho" style="border-radius: 20%; width:18%; height:18%">
-        </a>
-      
-      
-    </nav> *}
 
 
     
-
-<nav class="navbar navbar-expand-lg navbar-expand-sm header fixed-top" style="background: #2a359b;
+<nav class="navbar navbar-expand-lg navbar-expand-sm header fixed-top" style=" height: 50px; background: #2a359b;
 background: linear-gradient(19deg,rgba(42, 53, 155, 1) 19%, rgba(159, 188, 227, 1) 45%, rgba(255, 255, 255, 1) 60%);">
 		<div class="container-fluid">
 		<div class="collapse navbar-collapse" id="navmenu">
 
 			<a n:href="Home:default" class="navbar-brand">
           <div class="d-flex align-item:center">
-             <img src="{$basePath}/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ms-3 ucho" style="border-radius: 20%; width:8%; height:8%">
-            <h1 class="home" style="font-weight: bold;">Tv for Deaf</h1>
-             {* <img src="{$basePath}/uploads/img/holubice.png" alt="Symbol for Deaf" class="mt-2 hand" style="width:100px; height:60px;"> *}
+             <img src="{$basePath}/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ms-3 ucho" style="border-radius: 20%; width:6%; height:6%">
+            <h1 class="home" style="font-weight: bold; font-size:15px ">Tv for Deaf</h1>           
           </div> 
-            {* <img src="{$basePath}/uploads/img/ucho.jpg" style="height:25%;  width:25%; margin:0 50px;box-shadow: 12px 15px 18px -5px rgba(255,255,255,0.75);
-                    -webkit-box-shadow: 12px 15px 18px -5px rgba(255,255,255,0.75);
-                    -moz-box-shadow: 12px 15px 18px -5px rgba(255,255,255,0.75);" > *}
+          
                     </a>
 			<ul class="navbar-nav ms-auto">
-			{* {if !$user->isLoggedIn()} *}
 			<li class="nav-item mt-2" style="">
-        {* <h1 class="text-nowrap me-5 tv" style="font-weight:800;">TV for Deaf</h1> *}
-        {* <div> *}
-				<img src="{$basePath}/uploads/img/Fulllogo-origin.png" class="me-5 pb-1" style="height:60px; width:60px; transform: scale(1.2);">
-				{* <img src="{$basePath}/uploads/img/text-modra.png" class="me-5"> *}
-        {* </div> *}
-				{* <div style="font-size:100px" data-text="TV fo Deaf" class="text" id="text"> TV for Deaf </div> *}
+				<img src="{$basePath}/uploads/img/Fulllogo-origin.png" class="me-5 pb-1" style="height:40px; width:40px; transform: scale(1.2);">
+
 			</li>
 	
 			</ul>
-			{* <ul class="navbar-nav d-flex flex-row">
-            <!-- Icons -->
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://www.youtube.com/@LIGHTCzech" rel="nofollow"
-                target="_blank">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://www.facebook.com/mdbootstrap" rel="nofollow" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://twitter.com/MDBootstrap" rel="nofollow" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="https://github.com/mdbootstrap/mdb-ui-kit" rel="nofollow" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 me-lg-0" style="align-item:center">
-				<div id="current-time" class="nav-link"></div>
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-				{if $user->isLoggedIn()}<span class="nav-link"style="color:#3399FF">{$user->getIdentity()->email}</span>{/if}
-		
-            </li>
-          </ul> *}
+
 			</div>
 		</div>
 	</nav>
-{* <script type="text/javascript">
-var text = document.getElementById('text')
-var shadow = '';
-for(var i = 0; i < 10; i++)
-{
-	shadow +=(shadow? ',':'')+ -i*1+'px '+i*1+'px 0 #d9d9d9';
-}
-text.style.textShadow = shadow
-</script> *}

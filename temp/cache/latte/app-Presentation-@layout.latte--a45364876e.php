@@ -65,7 +65,7 @@ final class Template_a45364876e extends Latte\Runtime\Template
 <body>
 ';
 		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 48 */;
-		echo '	<div class="container">
+		echo '	<div class="container" style=" margin-bottom:100px;">
 ';
 		foreach ($flashes as $flash) /* line 50 */ {
 			echo '			<div class="alert alert-warning text-center">';
@@ -91,6 +91,8 @@ final class Template_a45364876e extends Latte\Runtime\Template
     <script type="text/javascript" src="';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 76 */;
 		echo '/js/mdb.umd.min.js"></script>
+
+	
 
 </body>
 

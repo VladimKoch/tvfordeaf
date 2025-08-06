@@ -3,21 +3,21 @@
 {block content}
 
 {* <div hx-target="this" hx-swap="outerHTML"> *}
-    <div class="container" style="margin-top: 150px; margin-bottom: 100px;">
-    <a n:href="Home:default">Domů</a>
-     <div class="mb-3 border-2" style="margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
+    <div class="container" style="margin-top: 100px; margin-bottom: 100px; width:60%;">
+    <a n:href="Home:default" style="text-decoration:none; color:green">Domů</a>
+     <div class="mb-3 border-2" style="height:70px;margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
         -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
-        -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:green" class="text-center">FitCentrum</h1>
-        <p class="text-center">Tady najdete vše ohledně zdraví, sportu, výživy</p></div>
+        -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:green; font-size:1.5rem" class="text-center">FitCentrum</h1>
+        <p class="text-center" style="font-size:0.875rem">Tady najdete vše ohledně zdraví, sportu, výživy</p></div>
             <!-- Post -->
-            <div class="row row-cols-2 row-cols-md-2 row-cols-lg-4 g-5"> 
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5"> 
 		          <div n:foreach="$topics as $topic">   
                 <div class="col-12">
                       <div class="card-group">
                         <div class="card card-fit card__container border-0">
                           <article class="card__article">
                           <a n:href="{$topic->presenter}:{$topic->action}" class="fit-href">
-                              <img src="{$basePath}/uploads/img/{$topic->photo_url}" class="card-img-top rounded-3 scale-down" alt="..." style="height: 350px; width: 100%; object-fit: cover;">
+                              <img src="{$basePath}/uploads/img/{$topic->photo_url}" class="card-img-top rounded-3 scale-down" alt="..." style="height: 250px; width: 100%; object-fit: cover;">
                               <div class="card-body card__data" style="background: rgb(18, 134, 0);background:linear-gradient(0deg,rgba(18, 134, 0,1) 0%, rgb(62, 180, 12) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
@@ -32,25 +32,7 @@
                 </div>
             </div>    
 			</div>
-    {* <nav aria-label="Jednoduchá stránkování" class="d-flex justify-content-center">
-  <ul class="pagination">
 
-    <li class="page-item {if $page <= 1}disabled{/if}">
-      <a class="page-link" href="{link this, page => $page - 1}">Předchozí</a>
-    </li>
-
-    {for $i = 1; $i <= $pageCount; $i++}
-      <li class="page-item {if $i === $page}active{/if}">
-        <a class="page-link" href="{link this, page => $i}">{$i}</a>
-      </li>
-    {/for}
-
-    <li class="page-item {if $page >= $pageCount}disabled{/if}">
-      <a class="page-link" href="{link this, page => $page + 1}">Další</a>
-    </li>
-
-  </ul>
-</nav> *}
 </div>
 
 {* </div> *}

@@ -11,6 +11,17 @@ database:
 	user: 'root'
 	password:
 
+# parameters:
+#     database:
+# 		dsn: 'mysql:host=md391.wedos.net;dbname=d380391_deaf;charset=utf8mb4'
+#         user: 'w380391_deaf'
+#         password: 'JFMeMcMT' # nahraď skutečným heslem pro webového uživatele
+
+# parameters:
+#     database:
+# 		dsn: 'mysql:host=md391.wedos.net;dbname=d380391_deaf;charset=utf8mb4'
+#         user: 'a380391_deaf'
+#         password: 'AqD6GqfV'
 
 latte:
 	strictTypes: yes
@@ -27,10 +38,10 @@ di:
 		tags: no
 
 
-parameters:
-	uploadDirImg: 'C:\xampp\htdocs\web\www\uploads\img'
-	uploadDirPng: 'C:\xampp\htdocs\web\www\uploads\png'
-	moveDir: '/../../../www/uploads/img/'
+# parameters:
+# 	uploadDirImg: 'C:\xampp\htdocs\web\www\uploads\img'
+# 	uploadDirPng: 'C:\xampp\htdocs\web\www\uploads\png'
+# 	moveDir: '/../../../www/uploads/img/'
 	# apiKey: 'AIzaSyDHlsSUNWn59jBbaw0tKjJZSRl01-r4H30'
 
 

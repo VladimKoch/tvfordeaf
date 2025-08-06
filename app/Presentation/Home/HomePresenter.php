@@ -13,8 +13,7 @@ final class HomePresenter extends Nette\Application\UI\Presenter
     
 
     public function __construct(private \App\Model\ArticleManager $article,
-                                private \Nette\Http\Request $request,
-                                private \Nette\Database\Explorer $database)
+                                )
     {
        
     }

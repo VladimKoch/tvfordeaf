@@ -17,19 +17,10 @@ final class RouterFactory
 	{
 		$router = new RouteList;
 		$router->addRoute('<presenter>/<action>[/<id>]', 'Home:default');
-		$router->addRoute('/api/v<version>/<package>[/<apiAction>][/<params>]', 'Api:Api:default');
-		$router->addRoute('page/<name>', 'Page:show');
+		$router->addRoute('<presenter>/<action>[/<id>]', 'FitCentrum:default');
 		
-		$router->addRoute('api/v<version>/<package>/<id>', [
-			'presenter' => 'Api:Api',
-			'action' => 'default',
-			'id' => [
-				Route::FilterIn => function ($id) {
-					$_GET['id'] = $id;
-					return $id;
-				}
-			],
-		]);
+		
+		
 		return $router;
 	}
 }

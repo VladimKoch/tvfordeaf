@@ -1,12 +1,12 @@
 # Apache configuration file (see https://httpd.apache.org/docs/current/mod/quickreference.html)
 
 # Allow access to all resources by default
-#Require all granted
+# Require all granted
 
-<Directory />
-    Order allow,deny
-    Allow from all
-</Directory>
+# <Directory />
+#      Order allow,deny
+#      Allow from all
+# </Directory>
 
 # Disable directory listing for security reasons
 <IfModule mod_autoindex.c>
@@ -16,6 +16,10 @@
 # Enable pretty URLs (removing the need for "index.php" in the URL)
 <IfModule mod_rewrite.c>
 	RewriteEngine On
+
+	# RewriteCond %{HTTPS} off
+	# RewriteRule (.*) https://%{SERVER_NAME}/$1 [R=301,L]
+	# Header set Content-Security-Policy "upgrade-insecure-requests;"
 
 	# Uncomment the next line if you want to set the base URL for rewrites
 	# RewriteBase /

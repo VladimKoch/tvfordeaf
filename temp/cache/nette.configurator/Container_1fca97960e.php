@@ -70,7 +70,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\Application\Routers\RouteList' => [['01']],
@@ -88,7 +87,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\Application\UI\Control' => [
@@ -100,7 +98,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\Application\UI\Component' => [
@@ -112,7 +109,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\ComponentModel\Container' => [
@@ -124,7 +120,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\ComponentModel\Component' => [
@@ -136,7 +131,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\Application\IPresenter' => [
@@ -151,7 +145,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.8',
 				'application.9',
 				'application.10',
-				'application.11',
 			],
 		],
 		'Nette\Application\UI\Renderable' => [
@@ -163,7 +156,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\Application\UI\StatePersistent' => [
@@ -175,7 +167,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\Application\UI\SignalReceiver' => [
@@ -187,7 +178,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\ComponentModel\IContainer' => [
@@ -199,7 +189,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'Nette\ComponentModel\IComponent' => [
@@ -211,7 +200,6 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.6',
 				'application.7',
 				'application.8',
-				'application.9',
 			],
 		],
 		'App\Presentation\Error\Error4xx\Error4xxPresenter' => [2 => ['application.1']],
@@ -222,9 +210,8 @@ class Container_1fca97960e extends Nette\DI\Container
 		'App\Presentation\Post\PostPresenter' => [2 => ['application.6']],
 		'App\Presentation\Start\StartPresenter' => [2 => ['application.7']],
 		'App\Presentation\Tip\TipPresenter' => [2 => ['application.8']],
-		'App\Presentation\YouTubeApi\YoutubeApiPresenter' => [2 => ['application.9']],
-		'NetteModule\ErrorPresenter' => [2 => ['application.10']],
-		'NetteModule\MicroPresenter' => [2 => ['application.11']],
+		'NetteModule\ErrorPresenter' => [2 => ['application.9']],
+		'NetteModule\MicroPresenter' => [2 => ['application.10']],
 	];
 
 
@@ -287,13 +274,7 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createServiceApplication__10(): NetteModule\ErrorPresenter
-	{
-		return new NetteModule\ErrorPresenter($this->getService('tracy.logger'));
-	}
-
-
-	public function createServiceApplication__11(): NetteModule\MicroPresenter
+	public function createServiceApplication__10(): NetteModule\MicroPresenter
 	{
 		return new NetteModule\MicroPresenter($this, $this->getService('http.request'), $this->getService('01'));
 	}
@@ -307,11 +288,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceApplication__3(): App\Presentation\FitCentrum\FitCentrumPresenter
 	{
-		$service = new App\Presentation\FitCentrum\FitCentrumPresenter(
-			$this->getService('02'),
-			$this->getService('http.request'),
-			$this->getService('database.default.explorer'),
-		);
+		$service = new App\Presentation\FitCentrum\FitCentrumPresenter($this->getService('database.default.explorer'));
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -328,11 +305,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceApplication__4(): App\Presentation\Home\HomePresenter
 	{
-		$service = new App\Presentation\Home\HomePresenter(
-			$this->getService('02'),
-			$this->getService('http.request'),
-			$this->getService('database.default.explorer'),
-		);
+		$service = new App\Presentation\Home\HomePresenter($this->getService('02'));
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -429,20 +402,9 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
-	public function createServiceApplication__9(): App\Presentation\YouTubeApi\YoutubeApiPresenter
+	public function createServiceApplication__9(): NetteModule\ErrorPresenter
 	{
-		$service = new App\Presentation\YouTubeApi\YoutubeApiPresenter($this->getService('04'));
-		$service->injectPrimary(
-			$this->getService('http.request'),
-			$this->getService('http.response'),
-			$this->getService('application.presenterFactory'),
-			$this->getService('01'),
-			$this->getService('session.session'),
-			$this->getService('security.user'),
-			$this->getService('latte.templateFactory'),
-		);
-		$service->invalidLinkMode = 5;
-		return $service;
+		return new NetteModule\ErrorPresenter($this->getService('tracy.logger'));
 	}
 
 
@@ -697,9 +659,6 @@ class Container_1fca97960e extends Nette\DI\Container
 	protected function getStaticParameters(): array
 	{
 		return [
-			'uploadDirImg' => 'C:\xampp\htdocs\web\www\uploads\img',
-			'uploadDirPng' => 'C:\xampp\htdocs\web\www\uploads\png',
-			'moveDir' => '/../../../www/uploads/img/',
 			'appDir' => 'C:\xampp\htdocs\tvfordeaf\app',
 			'wwwDir' => 'C:\xampp\htdocs\tvfordeaf\www',
 			'vendorDir' => 'C:\xampp\htdocs\tvfordeaf\vendor',

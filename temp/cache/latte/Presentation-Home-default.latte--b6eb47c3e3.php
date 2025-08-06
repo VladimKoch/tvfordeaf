@@ -32,7 +32,7 @@ final class Template_b6eb47c3e3 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['post' => '22'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['post' => '16'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -49,49 +49,43 @@ final class Template_b6eb47c3e3 extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '
-<div hx-target="this" hx-swap="outerHTML">
 
-    <div class="container " style="margin-top: 20px; margin-bottom: 100px;">
+    <div class="container" style="margin-top:100px; margin-bottom:100px; min-width:30%;width:60%;">
              <div class="card-overlay">
-            <div class="overlay"></div>
-            <div class="text">Připravujeme</div>
+           
           </div>
+
             <!-- Post -->
-            <div class="row row-cols-1 row-cols-md-2 g-5"> 
-          
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-5">           
 ';
-		foreach ($posts as $post) /* line 22 */ {
+		foreach ($posts as $post) /* line 16 */ {
 			echo '		          <div>
-              
               <div class="col-12">
-                
                       <div class="card-group">
                         <div class="card card__container border-0 rounded-3">
                           <article class="card__article">
                         <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 29 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 21 */;
 			echo '" class="href">
                           <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 30 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 22 */;
 			echo '/uploads/img/';
-			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 30 */;
-			echo '" class="card-img-top rounded-3 scale-down" alt="..." style="height: 300px; width: 100%; object-fit: cover;">
+			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 22 */;
+			echo '" class="card-img-top rounded-3 scale-down" alt="..." style="min-width:200px; height: 250px; width: 100%; object-fit: cover;">
                           <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
                             <span class="card__description" style="color:white">';
-			echo LR\Filters::escapeHtmlText($post->content) /* line 34 */;
+			echo LR\Filters::escapeHtmlText($post->content) /* line 26 */;
 			echo '</span>
                               <h2 class="card__title text-center"style="color:white">';
-			echo LR\Filters::escapeHtmlText($post->name) /* line 35 */;
+			echo LR\Filters::escapeHtmlText($post->name) /* line 27 */;
 			echo '</h2>
+                        
                           </div>
                           </a>
                         </article>
-                        </div>
-
-                        
-                  
+                        </div> 
                   </div>
                 </div>
             </div>
@@ -100,8 +94,6 @@ final class Template_b6eb47c3e3 extends Latte\Runtime\Template
 		}
 
 		echo '			</div>
-
-</div>
 
  
   <!--Main layout-->
