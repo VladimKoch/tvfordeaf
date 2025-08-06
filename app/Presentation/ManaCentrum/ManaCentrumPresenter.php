@@ -13,8 +13,7 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
     /** @var int počet položek na stránku */
     private const ITEMS_PER_PAGE = 12;
 
-    public function __construct(private \App\Model\ArticleManager $article,
-                                private \Nette\Http\Request $request,
+    public function __construct(
                                 private \Nette\Database\Explorer $database,
                                 private \App\Service\FusteroService $fusteroService,
                                 private \App\Service\FusteroTitle $fusteroTitle)

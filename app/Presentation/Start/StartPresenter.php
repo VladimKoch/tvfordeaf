@@ -13,8 +13,7 @@ final class StartPresenter extends Nette\Application\UI\Presenter
     /** @var int počet položek na stránku */
     private const ITEMS_PER_PAGE = 8;
 
-    public function __construct(private \App\Model\ArticleManager $article,
-                                private \Nette\Http\Request $request,
+    public function __construct(
                                 private \Nette\Database\Explorer $database)
     {
        
