@@ -20,31 +20,41 @@ final class Template_0f3b054958 extends Latte\Runtime\Template
 		}
 
 		echo '
-    
 
-<nav class="navbar navbar-expand-lg navbar-expand-sm header fixed-top" style=" height: 50px; background: #2a359b;
-background: linear-gradient(19deg,rgba(42, 53, 155, 1) 19%, rgba(159, 188, 227, 1) 45%, rgba(255, 255, 255, 1) 60%);">
+<nav class="navbar navbar-expand-lg navbar-expand-sm header" style=" height: 65px; width: 70%;  margin:auto; border-radius:0 0 10px 10px ">
 		<div class="container-fluid">
-		<div class="collapse navbar-collapse" id="navmenu">
-
+		<div class="collapse navbar-collapse" id="navmenu" syle="border:solid black 1px;">
+			<div style="display:flex; align-items:center; " >
 			<a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 17 */;
-		echo '" class="navbar-brand">
-          <div class="d-flex align-item:center">
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 9 */;
+		echo '"style="">
+			 
+      
              <img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 19 */;
-		echo '/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ms-3 ucho" style="border-radius: 20%; width:6%; height:6%">
-            <h1 class="home" style="font-weight: bold; font-size:15px ">Tv for Deaf</h1>
-          </div> 
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 12 */;
+		echo '/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ucho" style="border-radius: 20%; ">
                     </a>
+       
+		  
+			<ul class="nav-ul" style="display:flex; list-style-type: none; gap:15px;align-items:center;margin-top:10px; margin-right:10px;">
+				<li><a href="#">Možnosti</a></li>
+				<li><a href="#">O nás</a></li>
+				<li><a href="#">Novinky</a></li>
+				<li><a href="#">Pomoc</a></li>
+			</ul>
+		  
+		  </div>
+          
 			<ul class="navbar-nav ms-auto">
 			<li class="nav-item mt-2" style="">
 				<img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 32 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 27 */;
 		echo '/uploads/img/Fulllogo-origin.png" class="me-5 pb-1" style="height:40px; width:40px; transform: scale(1.2);">
+
 			</li>
 	
 			</ul>
+
 			</div>
 		</div>
 	</nav>

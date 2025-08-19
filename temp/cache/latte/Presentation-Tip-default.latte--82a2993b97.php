@@ -50,6 +50,8 @@ final class Template_82a2993b97 extends Latte\Runtime\Template
 
 		echo '
 <div  hx-swap="outerHTML">
+
+
     <div class="container " style="margin-top: 100px; margin-bottom: 100px;width:60%;">
     <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 11 */;
@@ -78,6 +80,7 @@ final class Template_82a2993b97 extends Latte\Runtime\Template
                                   <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
+                                
                                     <h5 class="card__title card-title text-center" style="color:white">';
 			echo LR\Filters::escapeHtmlText($topic->title) /* line 29 */;
 			echo '</h5>

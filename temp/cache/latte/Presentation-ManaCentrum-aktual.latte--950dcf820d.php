@@ -51,11 +51,11 @@ final class Template_950dcf820d extends Latte\Runtime\Template
 <div class="container " style="margin-top: 200px; margin-bottom: 100px;width:60%;">
     <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 4 */;
-		echo '">Domů</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
+		echo '"style="text-decoration:none">Domů</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:default')) /* line 4 */;
-		echo '">ManaCentrum</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
+		echo '"style="text-decoration:none">ManaCentrum</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Manacentrum:skola')) /* line 4 */;
-		echo '">Sobotní škola</a>
+		echo '"style="text-decoration:none">Sobotní škola</a>
        <div class="mb-3 border-2" style="height:70px;margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
             -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
             -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:blue;font-size:1.5rem" class="text-center">Sobotní škola</h1>

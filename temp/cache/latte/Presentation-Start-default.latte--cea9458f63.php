@@ -32,7 +32,7 @@ final class Template_cea9458f63 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['post' => '21'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['post' => '17'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -49,9 +49,10 @@ final class Template_cea9458f63 extends Latte\Runtime\Template
 
 		echo '
 
+
     <div class="container " style="margin-top: 100px; margin-bottom: 100px;width:60%;">
     <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 12 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 8 */;
 		echo '"style="text-decoration:none; color:blue">Domů</a>
      <div class="mb-3 border-2" style="height:70px;margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
 -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
@@ -62,7 +63,7 @@ final class Template_cea9458f63 extends Latte\Runtime\Template
             <!-- Post -->
             <div class="row row-cols-1 row-cols-md-2 g-5"> 
 ';
-		foreach ($posts as $post) /* line 21 */ {
+		foreach ($posts as $post) /* line 17 */ {
 			echo '		          <div>         
                 <div class="col-12">
                       <div class="card-group">
@@ -70,19 +71,21 @@ final class Template_cea9458f63 extends Latte\Runtime\Template
                           <article class="card__article">
                                                 
                             <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 27 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 23 */;
 			echo '" class="href">
                               <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 28 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 24 */;
 			echo '/uploads/img/';
-			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 28 */;
+			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 24 */;
 			echo '" class="card-img-top scale-down" alt="..." style="height: 250px; width: 100%; object-fit: cover;">
                                 <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
+                                
                                   <h5 class="card__title card-title text-center" style="color:white">';
-			echo LR\Filters::escapeHtmlText($post->title) /* line 33 */;
+			echo LR\Filters::escapeHtmlText($post->title) /* line 29 */;
 			echo '</h5>
+                          
                                 </div>
                             </a>
                         </article>

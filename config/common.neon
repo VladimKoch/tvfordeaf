@@ -45,3 +45,7 @@ di:
 	# apiKey: 'AIzaSyDHlsSUNWn59jBbaw0tKjJZSRl01-r4H30'
 
 
+# security:
+# 		contentSecurityPolicy:
+# 			script-src: ['self', 'https://www.youtube.com']
+# 			frame-src: ['self', 'https://www.youtube.com', 'https://www.youtube-nocookie.com']

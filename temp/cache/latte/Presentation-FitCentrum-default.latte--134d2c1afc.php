@@ -49,7 +49,7 @@ final class Template_134d2c1afc extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '
-    <div class="container" style="margin-top: 100px; margin-bottom: 100px; width:60%;">
+    <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 7 */;
 		echo '" style="text-decoration:none; color:green">Domů</a>
@@ -96,6 +96,7 @@ final class Template_134d2c1afc extends Latte\Runtime\Template
 		}
 
 		echo '			</div>
+
 </div>
 
 ';

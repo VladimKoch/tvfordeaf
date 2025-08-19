@@ -5,7 +5,7 @@ return array (
     'App\\Bootstrap' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Bootstrap.php',
-      1 => 1754384415,
+      1 => 1754547467,
     ),
     'App\\Core\\RouterFactory' => 
     array (
@@ -50,22 +50,22 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1750842597,
+      1 => 1754548437,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Post\\PostPresenter.php',
-      1 => 1743586933,
+      1 => 1754469039,
     ),
     'App\\Presentation\\Start\\StartPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Start\\StartPresenter.php',
-      1 => 1747127102,
+      1 => 1754469085,
     ),
     'App\\Presentation\\Tip\\TipPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Tip\\TipPresentation.php',
-      1 => 1747126932,
+      1 => 1754469262,
     ),
     'App\\Service\\FusteroService' => 
     array (
@@ -76,6 +76,11 @@ return array (
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\FusteroTitle.php',
       1 => 1754308271,
+    ),
+    'App\\Service\\VideosYoutubeService' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\VideosYoutubeService.php',
+      1 => 1754546544,
     ),
     'App\\Service\\YouTubeService' => 
     array (

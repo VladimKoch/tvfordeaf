@@ -37,9 +37,8 @@ final class Template_a45364876e extends Latte\Runtime\Template
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 9 */;
 		echo '/css/style.css">
 	<link rel="stylesheet" href="https://bootswatch.com/5/spacelab/bootstrap.min.css">
-	
-	
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://unpkg.com/naja@2/dist/Naja.min.js"></script>
 	<script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.min.js"></script>
@@ -48,7 +47,7 @@ final class Template_a45364876e extends Latte\Runtime\Template
 
 
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 32 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 20 */;
 		echo '/js/bootstrap.bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -59,17 +58,19 @@ final class Template_a45364876e extends Latte\Runtime\Template
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
 
+	<link rel="icon" type="image/x-icon" href="https://tvfordeaf.com/favicon.ico">
+
 
 </head>
 
 <body>
 ';
-		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 48 */;
+		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 38 */;
 		echo '	<div class="container" style=" margin-bottom:100px;">
 ';
-		foreach ($flashes as $flash) /* line 50 */ {
+		foreach ($flashes as $flash) /* line 40 */ {
 			echo '			<div class="alert alert-warning text-center">';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 51 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 41 */;
 			echo '</div>
 ';
 
@@ -78,22 +79,20 @@ final class Template_a45364876e extends Latte\Runtime\Template
 		echo '	</div>
 
 ';
-		$this->renderBlock('content', [], 'html') /* line 63 */;
-		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 67 */;
+		$this->renderBlock('content', [], 'html') /* line 53 */;
+		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 57 */;
 		echo '
 
 
-
-	
 	<script>window.scrollTo({ top: 0, behavior: \'smooth\' });</script>
 
 	 <!-- MDB -->
     <script type="text/javascript" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 76 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 64 */;
 		echo '/js/mdb.umd.min.js"></script>
 
-	
 
+	
 </body>
 
 </html>
@@ -106,7 +105,7 @@ final class Template_a45364876e extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['flash' => '50'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['flash' => '40'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}

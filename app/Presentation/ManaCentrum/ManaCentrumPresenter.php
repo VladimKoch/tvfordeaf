@@ -16,7 +16,9 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
     public function __construct(
                                 private \Nette\Database\Explorer $database,
                                 private \App\Service\FusteroService $fusteroService,
-                                private \App\Service\FusteroTitle $fusteroTitle)
+                                private \App\Service\FusteroTitle $fusteroTitle,
+                                
+                                )
     {
        
     }
@@ -42,7 +44,7 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
          
     }
     /**
-    * Hlavní metoda pro zobrazení štránky školy v skola.latte
+    * Hlavní metoda pro zobrazení stránky školy v skola.latte
     */
 
     public function renderSkola()
@@ -52,57 +54,11 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
 
         
     /**
-    * Metroda pro zobrazení příběhů pro děti v prodeti.latte
+    * Funkce pro zobrazení příběhů pro děti v prodeti.latte
     */
     public function renderProdeti($page=1)
     {
-
-          // Youtube playlist URL pro neslyšící
-        $playlistUrl = 'https://www.youtube.com/playlist?list=PLGng993tSmjEqFx6w4ohGY3xJOXjtePtd';
-
-        // spusť yt-dlp s JSON výstupem
-        $jsonOutput = shell_exec('yt-dlp --flat-playlist -J ' . escapeshellarg($playlistUrl));
-
-        //kontrola zda li se playlist načetl pokud ne zobrazí se chybová flash zpráva
-        if (!$jsonOutput) {
-            $this->flashMessage('Nepodařilo se načíst playlist.', 'danger');
-            $this->template->pribehy = [];
-            return;
-        }
-
-        // Dekoduje JSON výstup do PHP objektu
-        $data = json_decode($jsonOutput);
-
-        // Získání dat z einries
-        $videos=$data->entries;
-        // Iniciializace pole pro uložení ID videí
-        $videoId = [];
-
-        // Získání URL z videí pro vložení do databáze a šablony
-        foreach($videos as $video){
             
-            parse_str(parse_url($video->url, PHP_URL_QUERY), $query);
-            $videoId[]= ['title'=>$video->title,'url'=>$query['v'] ?? null];
-        }
-
-        // Získání vídeí pouze příběhy pro děti
-        foreach($videoId as $video){
-
-            if (strpos($video['title'], 'Příběh') !== false) {
-                // vložit do tabulky pribehy
-                try {
-                $this->database->table('prodeti')->insert([
-                    'title' => $video['title'],
-                    'video_url' => $video['url'],
-                    'created_at' => new \DateTime(),
-                ]);
-                } catch (\Nette\Database\UniqueConstraintViolationException $e) {
-                    // Přeskoč duplicitní řádek
-                    continue;
-                }
-            }
-        }
-
         $itemsPerPage = self::ITEMS_PER_PAGE; //počet článku na stránku
 
         $proDeti = $this->database->table('prodeti')->page($page,$itemsPerPage); // získejte články podle volby menu
@@ -126,56 +82,12 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
     }
 
     /**
-     * Metoda pro zobrazení kázání v kazaní.latte 
+     * Funkce pro zobrazení kázání v kazaní.latte 
      */
       public function renderVideos($page=1)
     {   
 
-          // Youtube playlist URL pro neslyšící
-        $playlistUrl = 'https://www.youtube.com/playlist?list=PLGng993tSmjEqFx6w4ohGY3xJOXjtePtd';
-
-        // spusť yt-dlp s JSON výstupem
-        $jsonOutput = shell_exec('yt-dlp --flat-playlist -J ' . escapeshellarg($playlistUrl));
-
-        // kontrola zda li se playlist načetl pokud ne zobrazí se chybová flsah zpráva
-        if (!$jsonOutput) {
-            $this->flashMessage('Nepodařilo se načíst playlist.', 'danger');
-            $this->template->pribehy = [];
-            return;
-        }
-
-        // Dekoduje JSON výstup do PHP objektu
-        $data = json_decode($jsonOutput);
-
-        // Získání dat z netries
-        $videos=$data->entries;
-        // inicializace pole pr uloení ID videí
-        $videoId = [];
-
-        // Získání URL z videí pro vložení do databáze a šablony
-        foreach($videos as $video){
-            
-            parse_str(parse_url($video->url, PHP_URL_QUERY), $query);
-            $videoId[]= ['title'=>$video->title,'url'=>$query['v'] ?? null];
-        }
-    
-        // Získání videí pouze kázání
-        foreach($videoId as $video){
-
-            if (strpos($video['title'], 'Kázání') !== false) {
-                // vložit do tabulky pribehy
-                try {
-                $this->database->table('videos')->insert([
-                    'title' => $video['title'],
-                    'video_url' => $video['url'],
-                    'created_at' => new \DateTime(),
-                ]);
-                } catch (\Nette\Database\UniqueConstraintViolationException $e) {
-                    // Přeskoč duplicitní řádek
-                    continue;
-                }
-            } 
-        }
+        
 
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 

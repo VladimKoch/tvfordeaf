@@ -78,6 +78,7 @@ class Container_1fca97960e extends Nette\DI\Container
 		'App\Service\YouTubeService' => [['04']],
 		'App\Service\FusteroService' => [['05']],
 		'App\Service\FusteroTitle' => [['06']],
+		'App\Service\VideosYoutubeService' => [['07']],
 		'Nette\Application\UI\Presenter' => [
 			2 => [
 				'application.1',
@@ -257,6 +258,12 @@ class Container_1fca97960e extends Nette\DI\Container
 	}
 
 
+	public function createService07(): App\Service\VideosYoutubeService
+	{
+		return new App\Service\VideosYoutubeService($this->getService('database.default.explorer'));
+	}
+
+
 	public function createServiceApplication__1(): App\Presentation\Error\Error4xx\Error4xxPresenter
 	{
 		$service = new App\Presentation\Error\Error4xx\Error4xxPresenter;
@@ -323,8 +330,6 @@ class Container_1fca97960e extends Nette\DI\Container
 	public function createServiceApplication__5(): App\Presentation\ManaCentrum\ManaCentrumPresenter
 	{
 		$service = new App\Presentation\ManaCentrum\ManaCentrumPresenter(
-			$this->getService('02'),
-			$this->getService('http.request'),
 			$this->getService('database.default.explorer'),
 			$this->getService('05'),
 			$this->getService('06'),
@@ -345,7 +350,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceApplication__6(): App\Presentation\Post\PostPresenter
 	{
-		$service = new App\Presentation\Post\PostPresenter($this->getService('02'), $this->getService('database.default.explorer'));
+		$service = new App\Presentation\Post\PostPresenter($this->getService('database.default.explorer'));
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -362,11 +367,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceApplication__7(): App\Presentation\Start\StartPresenter
 	{
-		$service = new App\Presentation\Start\StartPresenter(
-			$this->getService('02'),
-			$this->getService('http.request'),
-			$this->getService('database.default.explorer'),
-		);
+		$service = new App\Presentation\Start\StartPresenter($this->getService('database.default.explorer'));
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -383,11 +384,7 @@ class Container_1fca97960e extends Nette\DI\Container
 
 	public function createServiceApplication__8(): App\Presentation\Tip\TipPresenter
 	{
-		$service = new App\Presentation\Tip\TipPresenter(
-			$this->getService('02'),
-			$this->getService('http.request'),
-			$this->getService('database.default.explorer'),
-		);
+		$service = new App\Presentation\Tip\TipPresenter($this->getService('database.default.explorer'));
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
