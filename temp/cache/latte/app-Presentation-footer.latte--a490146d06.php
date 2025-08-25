@@ -35,43 +35,43 @@ final class Template_a490146d06 extends Latte\Runtime\Template
 
       <div class="footer-columns col-12 col-md-6 d-flex flex-column flex-sm-row justify-content-around text-center text-sm-start">
         <div class="mb-4 mb-sm-0">
-          <h6 class="">Support</h6>
+          <h6 class="">Podpora</h6>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white text-decoration-none">Help</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Access</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Guides</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Nápověda</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Přístup</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Příručky</a></li>
             <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Kontakt</a></li>
           </ul>
         </div>
         <div class="mb-4 mb-sm-0">
-          <h6 class="">Community</h6>
+          <h6 class="">Komunita</h6>
           <ul class="list-unstyled">
             <li><a href="#" class="text-white text-decoration-none">Forum</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Events</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Stories</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Groups</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Connect</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Události</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Příběhy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Skupiny</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Spojit</a></li>
           </ul>
         </div>
         <div class="mb-4 mb-sm-0">
-          <h6 class="">Resources</h6>
+          <h6 class="">Zdroje</h6>
           <ul class="list-unstyled">
             <li><a href="#" class="text-white text-decoration-none">Blog</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Tips</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Tools</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Partners</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Updates</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Tipy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Nástroje</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Partneři</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Aktualizace</a></li>
           </ul>
         </div>
         <div class="mb-4 mb-sm-0">
-          <h6 class="">Legal</h6>
+          <h6 class="">Právní</h6>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white text-decoration-none">Terms</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Privacy</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Podmínky</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Ochrana Soukromí</a></li>
             <li><a href="#" class="text-white text-decoration-none">Cookies</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Policy</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Notice</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Zásady</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Oznámení</a></li>
           </ul>
         </div>
       </div>

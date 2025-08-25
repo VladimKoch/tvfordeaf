@@ -152,7 +152,7 @@ body {
 }
 
 /*------------------ H1 Tv for Deaf css ---------------*/
-.header .tv {
+/* .header .tv {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     background: linear-gradient(to right, #0c4394, #bcd3fa);
@@ -160,10 +160,10 @@ body {
     -webkit-text-fill-color: transparent;
     margin: auto 10px;
     transition: background 0.5s ease;
-}
+} */
 
 /*--------------- H1 Home css ---------------*/
-.header .home {
+/* .header .home {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     background: linear-gradient(to right, #f2f3f4, #ffffff);
@@ -171,18 +171,18 @@ body {
     -webkit-text-fill-color: transparent;
     margin: auto 10px;
     transition: background 0.5s ease;
-}
-.home:hover {
+} */
+/* .home:hover {
     background: linear-gradient(to right, #ffffff, #0158d9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background 0.5s ease-in-out;
-}
-.hand:hover{
+} */
+/* .hand:hover{
   box-shadow: #1c00bb ;
   transform: scale(0.9);
   transition: transform 0.5 ease-in-out;
-}
+} */
 a {
   text-decoration:none;
 }
@@ -355,4 +355,32 @@ h6{
   .navbar-nav.ms-auto.d-flex.align-items-center {
       display: none !important; /* Skryje logo "TV FOR DEAF" v mobilní verzi */
   }
+}
+
+/* Cookie Banner */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+.cookie-banner button {
+  margin: 0 5px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cookie-banner button:first-of-type {
+  background: #28a745; /* zelené tlačítko */
+  color: white;
+}
+.cookie-banner button:last-of-type {
+  background: #dc3545; /* červené tlačítko */
+  color: white;
 }

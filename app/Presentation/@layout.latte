@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="{$basePath}/css/bootstrap-icons.css">
@@ -20,8 +22,23 @@
 
 	<link rel="icon" type="image/x-icon" href="https://tvfordeaf.com/favicon.ico">
 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+
+
 
 	{* <title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title> *}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5HERJSYQJK"></script>
+
+{* <script n:syntax="off">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5HERJSYQJK');
+</script> *}
+
 </head>
 
 <body>
@@ -49,6 +66,91 @@
 
 
 
+	{* <div id="cookie-consent" class="cookie-banner" n:if="!$presenter->getSession('consent')->get('analytics')">
+    <p>
+        Tento web používá cookies pro měření návštěvnosti (Google Analytics).  
+        Chcete je povolit?
+    </p>
+    <button id="accept-analytics">Povolit</button>
+    <button id="decline-analytics">Odmítnout</button>
+</div> *}
+
+{* pokud je souhlas, vlož GA script *}
+{* {if $presenter->getSession('consent')->get('analytics')}
+    <script n:syntax="off">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5HERJSYQJK'); // vlož svůj GA měřící kód
+    </script>
+{/if} *}
+
+{* <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const acceptBtn = document.getElementById("accept-analytics");
+    const declineBtn = document.getElementById("decline-analytics");
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener("click", () => {
+            fetch("{link Cookie:acceptAnalytics}")
+                .then(() => location.reload());
+        });
+    }
+    if (declineBtn) {
+        declineBtn.addEventListener("click", () => {
+            fetch("{link Cookie:declineAnalytics}")
+                .then(() => location.reload());
+        });
+    }
+});
+</script> *}
+
+
+
+
+	  <!-- 🍪 Lišta souhlasu s cookies 🍪 -->
+    {* <div id="cookie-consent-bar" style="
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333; /* Tmavé pozadí */
+        color: white; /* Bílý text */
+        padding: 15px 20px;
+        text-align: center;
+        z-index: 9999; /* Zajišťuje, že je nad ostatním obsahem */
+        display: none; /* Skryté, dokud JS nezjistí, že souhlas nebyl udělen */
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2); /* Jemný stín */
+    ">
+        Tento web používá cookies pro zlepšení služeb. Pokračováním souhlasíte s jejich použitím.
+        <a href="/zasady-ochrany-osobnich-udaju" style="color: #66b3ff; text-decoration: underline; margin-left: 10px;">Více informací</a>
+        <button onclick="acceptCookies()" style="
+            background-color: #007bff; /* Modré tlačítko */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        ">Rozumím a Souhlasím</button>
+        <button onclick="rejectCookies()" style="
+            background-color: #dc3545; /* Červené tlačítko */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        ">Odmítnout</button>
+    </div> *}
+
+
+
+
 	<script>window.scrollTo({ top: 0, behavior: 'smooth' });</script>
 
 	 <!-- MDB -->
@@ -61,6 +163,142 @@
 	<script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.min.js"></script>
 	<script src="https://unpkg.com/nette.ajax.js"></script>
 	<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
+	 {* <script>
+        // Funkce pro nastavení cookie
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                let date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+        }
+
+        // Funkce pro získání cookie
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for(let i=0;i < ca.length;i++) {
+                let c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        // Zkontroluje cookie při načtení stránky
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const consentBar = document.getElementById('cookie-consent-bar');
+            const consentGiven = getCookie('cookie_consent');
+
+            if (consentGiven === 'accepted') {
+                consentBar.style.display = 'none';
+                // Spustí Google Analytics, pokud souhlas již byl dán (pro případ, že by se nespustil v <head>)
+                if (typeof gtag === 'function' && !window.gtagInitialized) {
+                    gtag('config', 'G-5HERJSYQJK'); // Znovu nahraďte G-5HERJSYQJK vaším Measurement ID
+                    window.gtagInitialized = true; // Zabrání vícenásobné inicializaci
+                }
+            } else {
+                consentBar.style.display = 'block'; // Zobrazí lištu, pokud souhlas není
+            }
+        });
+
+        // Funkce pro přijetí cookies
+        function acceptCookies() {
+            setCookie('cookie_consent', 'accepted', 365); // Souhlas na 365 dní
+            document.getElementById('cookie-consent-bar').style.display = 'none';
+            // Spustí Google Analytics, jakmile uživatel přijme cookies
+            if (typeof gtag === 'function' && !window.gtagInitialized) {
+                gtag('config', 'G-5HERJSYQJK'); // Nahraďte G-5HERJSYQJK vaším Measurement ID
+                window.gtagInitialized = true;
+            }
+        }
+
+        // Funkce pro odmítnutí cookies (v tomto případě je pouze skryje)
+        function rejectCookies() {
+            setCookie('cookie_consent', 'rejected', 365); // Lze uložit jako odmítnuto, ale pro jednoduchost je to jen skrytí
+            document.getElementById('cookie-consent-bar').style.display = 'none';
+            // Zde by se NEMĚLA spouštět Google Analytics ani jiné sledovací skripty
+        }
+
+        // Scroll to top on page load
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    </script> *}
+
+	{* Cookie z gitu *}
+
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<script n:syntax="off">
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    type: "opt-in",
+    palette: {
+      popup: { background: "#000" },
+      button: { background: "#f1d600" }
+    },
+    theme: "classic",
+    content: {
+      message: "Tento web používá cookies.",
+      allow: "Povolit vše",
+      deny: "Odmítnout vše",
+      link: "Nastavení",
+      href: "www.facebook.com",
+      target: "_self"
+    },
+    onInitialise: function (status) {
+      if (this.hasConsented()) {
+        enableAll();
+      }
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) {
+        enableAll();
+      } else {
+        disableAll();
+      }
+    }
+  });
+
+  // vlastní funkce
+  function enableAll() {
+    loadGoogleAnalytics();
+    loadMarketing();
+  }
+
+  function disableAll() {
+    console.log("Vše zakázáno");
+  }
+
+  // příklad – načtení jen GA
+  function loadGoogleAnalytics() {
+    if (window.gaLoaded) return;
+    window.gaLoaded = true;
+
+    var s = document.createElement("script");
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-5HERJSYQJK";
+    s.async = true;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '5HERJSYQJK');
+  }
+
+  function loadMarketing() {
+    console.log("Načtení marketingového trackingu…");
+    // sem přidáš kód pro FB Pixel, reklamy apod.
+  }
+
+  // tady by sis udělal vlastní dialog pro detailní nastavení
+  // a podle toho volal loadGoogleAnalytics() / loadMarketing()
+});
+</script>
+
+
+
 
 	
 </body>

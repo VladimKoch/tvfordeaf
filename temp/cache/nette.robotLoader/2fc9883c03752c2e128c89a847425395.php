@@ -27,6 +27,11 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Accessory\\LatteExtension.php',
       1 => 1738539948,
     ),
+    'App\\Presentation\\Cookie\\CookiePresenter' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Cookie\\CookiePresenter.php',
+      1 => 1755689123,
+    ),
     'App\\Presentation\\Error\\Error4xx\\Error4xxPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Error\\Error4xx\\Error4xxPresenter.php',
@@ -94,6 +99,16 @@ return array (
     'null' => 1,
     'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
     'App\\Presentation\\Home\\HomeTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 1,
+    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 1,
+    'App\\Presentation\\Tip\\TipDefaultTemplate' => 3,
+    'App\\Presentation\\Tip\\TipTemplate' => 3,
+    'App\\Presentation\\Start\\StartDefaultTemplate' => 1,
+    'App\\Presentation\\Start\\StartTemplate' => 1,
   ),
   2 => 
   array (
