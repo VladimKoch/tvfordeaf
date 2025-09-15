@@ -47,7 +47,7 @@ final class Template_a490146d06 extends Latte\Runtime\Template
         <div class="mb-4 mb-sm-0">
           <h6 class="">Komunita</h6>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white text-decoration-none">Forum</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Fórum</a></li>
             <li><a href="#" class="text-white text-decoration-none">Události</a></li>
             <li><a href="#" class="text-white text-decoration-none">Příběhy</a></li>
             <li><a href="#" class="text-white text-decoration-none">Skupiny</a></li>
@@ -64,7 +64,7 @@ final class Template_a490146d06 extends Latte\Runtime\Template
             <li><a href="#" class="text-white text-decoration-none">Aktualizace</a></li>
           </ul>
         </div>
-        <div class="mb-4 mb-sm-0">
+        <div class="text-enter mb-4 mb-sm-0">
           <h6 class="">Právní</h6>
           <ul class="list-unstyled">
             <li><a href="#" class="text-white text-decoration-none">Podmínky</a></li>
@@ -87,8 +87,8 @@ final class Template_a490146d06 extends Latte\Runtime\Template
         <p class="m-0">&copy; 2025 TVforDeaf</p>
       </div>
 
-      <div class="col-12 col-md-6 text-center text-md-end">
-        <ul class="ul list-inline m-0 gap:20px;">
+      <div class="col-12 col-md-6 text-center text-md-center">
+        <ul class="ul list-inline m-0">
           <li class="list-inline-item"><a href="https://facebook.com"target="_blank" class="fs-4"><i class="bi bi-facebook"></i></a></li>
           <li class="list-inline-item"><a href="https://youtube.com"target="_blank" class="fs-4"><i class="bi bi-youtube"></i></a></li>
           <li class="list-inline-item"><a href="https://linkedin.com"target="_blank" class="fs-4"><i class="bi bi-linkedin"></i></a></li>

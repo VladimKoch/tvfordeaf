@@ -55,7 +55,7 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1754548437,
+      1 => 1757932853,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -85,7 +85,7 @@ return array (
     'App\\Service\\VideosYoutubeService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\VideosYoutubeService.php',
-      1 => 1754546544,
+      1 => 1757932997,
     ),
     'App\\Service\\YouTubeService' => 
     array (
@@ -95,8 +95,8 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 1,
-    'null' => 1,
+    'Nette\\Bridges\\Assets\\DIExtension' => 3,
+    'null' => 3,
     'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
     'App\\Presentation\\Home\\HomeTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
@@ -109,6 +109,12 @@ return array (
     'App\\Presentation\\Tip\\TipTemplate' => 3,
     'App\\Presentation\\Start\\StartDefaultTemplate' => 1,
     'App\\Presentation\\Start\\StartTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumVideosTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumStudiumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumOldtestamentTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumNewtestamentTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumNewtestamenTemplate' => 2,
   ),
   2 => 
   array (

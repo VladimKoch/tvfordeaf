@@ -32,7 +32,7 @@ final class Template_950dcf820d extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['lesson' => '25, 89', 'docLink' => '35', 'jpgLink' => '90'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['lesson' => '28, 84', 'docLink' => '34', 'jpgLink' => '85'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -48,7 +48,7 @@ final class Template_950dcf820d extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '
-<div class="container " style="margin-top: 100px; margin-bottom: 100px;width:60%;">
+<div class="container " style="margin-top: 50px; margin-bottom: 100px;width:60%;">
     <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 4 */;
 		echo '"style="text-decoration:none; color:blue">Domů</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
@@ -63,100 +63,101 @@ final class Template_950dcf820d extends Latte\Runtime\Template
         </div>
 
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Název lekce</th>
-                <th>Datum</th>
-                <th>Prezentace PDF</th>
-                <th>Prezentace PowerPoint</th>
-                <th>Souhrn Word</th>
-                <th>Souhrn PDF</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container py-5">
+
+    <!-- Responzivní tabulka -->
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Název lekce</th>
+                    <th>Datum</th>
+                    <th>Prezentace PDF</th>
+                    <th>Prezentace PowerPoint</th>
+                    <th>Souhrn Word</th>
+                    <th>Souhrn PDF</th>
+                </tr>
+            </thead>
+            <tbody>
 ';
-		foreach ($lessons as $lesson) /* line 25 */ {
+		foreach ($lessons as $lesson) /* line 28 */ {
 			echo '                <tr>
                     <td><strong>';
-			echo LR\Filters::escapeHtmlText($lesson['title']) /* line 28 */;
+			echo LR\Filters::escapeHtmlText($lesson['title']) /* line 30 */;
 			echo '</strong></td>
                     <td><strong>';
-			echo LR\Filters::escapeHtmlText($lesson['date']) /* line 30 */;
+			echo LR\Filters::escapeHtmlText($lesson['date']) /* line 31 */;
 			echo '</strong></td>
-                   
                     <td>
 ';
-			if (!empty($lesson['documents'])) /* line 34 */ {
-				foreach ($lesson['documents'] as $docLink) /* line 35 */ {
-					if (str_contains($docLink, 'Zalm')) /* line 36 */ {
-						echo '                                <a href="';
-						echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($docLink)) /* line 37 */;
-						echo '" style="text-decoration:none"  target="_blank" download>
-                                    <img src="';
-						echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 38 */;
-						echo '/uploads/img/pdf.png" width="30" height="30">
-                                    <span style="color: #d32f2f;">PDF</span>
-                                </a>
+			if (!empty($lesson['documents'])) /* line 33 */ {
+				foreach ($lesson['documents'] as $docLink) /* line 34 */ {
+					if (str_contains($docLink, 'Zalm')) /* line 35 */ {
+						echo '                                    <a href="';
+						echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($docLink)) /* line 36 */;
+						echo '" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
+                                        <img src="';
+						echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 37 */;
+						echo '/uploads/img/pdf.png" width="30" height="30" class="me-1">
+                                        <span class="text-danger">PDF</span>
+                                    </a>
 ';
 					}
 
 				}
 
 			}
-			if (isset($lesson['documents']['pdf'])) /* line 45 */ {
+			echo "\n";
+			if (isset($lesson['documents']['pdf'])) /* line 44 */ {
 				echo '                            <a href="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['pdf'])) /* line 46 */;
-				echo '" style="text-decoration:none" target="_blank" download>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['pdf'])) /* line 45 */;
+				echo '" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
                                 <img src="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 47 */;
-				echo '/uploads/img/pdf.png" width="30" height="30">
-                                <span style="color: #d32f2f;">PDF</span>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 46 */;
+				echo '/uploads/img/pdf.png" width="30" height="30" class="me-1">
+                                <span class="text-danger">PDF</span>
                             </a>
 ';
 			}
 			echo '                    </td>
-
                     <td>
 ';
-			if (isset($lesson['documents']['pptx'])) /* line 55 */ {
+			if (isset($lesson['documents']['pptx'])) /* line 52 */ {
 				echo '                            <a href="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['pptx'])) /* line 56 */;
-				echo '" style="text-decoration:none" target="_blank" download>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['pptx'])) /* line 53 */;
+				echo '" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
                                 <img src="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 57 */;
-				echo '/uploads/img/pptx.png" width="30" height="30">
-                                <span style="color: #fc7f03;">PPTX</span>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 54 */;
+				echo '/uploads/img/pptx.png" width="30" height="30" class="me-1">
+                                <span class="text-warning">PPTX</span>
                             </a>
 ';
 			}
 			echo '                    </td>
-
                     <td>
 ';
-			if (isset($lesson['documents']['docx'])) /* line 65 */ {
+			if (isset($lesson['documents']['docx'])) /* line 60 */ {
 				echo '                            <a href="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['docx'])) /* line 66 */;
-				echo '" style="text-decoration:none" target="_blank" download>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['docx'])) /* line 61 */;
+				echo '" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
                                 <img src="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 67 */;
-				echo '/uploads/img/docx.png" width="30" height="30">
-                                <span style="color: #1976d2;">DOCX</span>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 62 */;
+				echo '/uploads/img/docx.png" width="30" height="30" class="me-1">
+                                <span class="text-primary">DOCX</span>
                             </a>
 ';
 			}
 			echo '                    </td>
-
                     <td>
 ';
-			if (isset($lesson['documents']['res_pdf'])) /* line 75 */ {
+			if (isset($lesson['documents']['res_pdf'])) /* line 68 */ {
 				echo '                            <a href="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['res_pdf'])) /* line 76 */;
-				echo '" style="text-decoration:none" target="_blank" download>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($lesson['documents']['res_pdf'])) /* line 69 */;
+				echo '" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
                                 <img src="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 77 */;
-				echo '/uploads/img/pdf.png" width="30" height="30">
-                                <span style="color: #d32f2f;">PDF</span>
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 70 */;
+				echo '/uploads/img/pdf.png" width="30" height="30" class="me-1">
+                                <span class="text-danger">PDF</span>
                             </a>
 ';
 			}
@@ -166,21 +167,24 @@ final class Template_950dcf820d extends Latte\Runtime\Template
 
 		}
 
-		echo '        </tbody>
-    </table>
-        <h1 class="text-center" style="color:blue">Obrázky k lekcím</h1>
-    <div class="row g-4 py-5 row-cols-2 row-cols-lg-4">
+		echo '            </tbody>
+        </table>
+    </div>
+
+    <!-- Obrázky k lekcím -->
+    <h1 class="text-center mb-4" style="color:blue">Verše k lekcím</h1>
+    <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4">
 ';
-		foreach ($lessons as $lesson) /* line 89 */ {
-			foreach ($lesson['documents'] as $jpgLink) /* line 90 */ {
-				if (str_ends_with($jpgLink, '.jpg')) /* line 91 */ {
+		foreach ($lessons as $lesson) /* line 84 */ {
+			foreach ($lesson['documents'] as $jpgLink) /* line 85 */ {
+				if (str_ends_with($jpgLink, '.jpg')) /* line 86 */ {
 					echo '                    <div class="col">
                         <a href="';
-					echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($jpgLink)) /* line 93 */;
-					echo '">
+					echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($jpgLink)) /* line 88 */;
+					echo '" target="_blank">
                             <img src="';
-					echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($jpgLink)) /* line 94 */;
-					echo '" alt="Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+					echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($jpgLink)) /* line 89 */;
+					echo '" alt="Image" class="img-fluid rounded shadow-sm">
                         </a>
                     </div>
 ';
@@ -192,6 +196,7 @@ final class Template_950dcf820d extends Latte\Runtime\Template
 		}
 
 		echo '    </div>
+</div>
 </div>
         
 ';

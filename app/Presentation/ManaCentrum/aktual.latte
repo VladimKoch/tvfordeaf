@@ -1,6 +1,6 @@
 {block content}
 
-<div class="container " style="margin-top: 100px; margin-bottom: 100px;width:60%;">
+<div class="container " style="margin-top: 50px; margin-bottom: 100px;width:60%;">
     <a n:href="Home:default"style="text-decoration:none; color:blue">Domů</a> <i class="fa-solid fa-arrow-right"></i> <a n:href="ManaCentrum:default"style="text-decoration:none; color:blue">ManaCentrum</a> <i class="fa-solid fa-arrow-right"></i> <a n:href="Manacentrum:skola"style="text-decoration:none; color:blue">Sobotní škola</a>
        <div class="mb-3 border-2" style="height:70px;margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
             -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
@@ -9,94 +9,90 @@
         </div>
 
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Název lekce</th>
-                <th>Datum</th>
-                <th>Prezentace PDF</th>
-                <th>Prezentace PowerPoint</th>
-                <th>Souhrn Word</th>
-                <th>Souhrn PDF</th>
-            </tr>
-        </thead>
-        <tbody>
-        {* Data z fustero webu *}
-            {foreach $lessons as $lesson}
+    <div class="container py-5">
+
+    <!-- Responzivní tabulka -->
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+            <thead class="table-light">
                 <tr>
-                {* Název *}
+                    <th>Název lekce</th>
+                    <th>Datum</th>
+                    <th>Prezentace PDF</th>
+                    <th>Prezentace PowerPoint</th>
+                    <th>Souhrn Word</th>
+                    <th>Souhrn PDF</th>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach $lessons as $lesson}
+                <tr>
                     <td><strong>{$lesson['title']}</strong></td>
-                {* Datum *}
                     <td><strong>{$lesson['date']}</strong></td>
-                   
                     <td>
-                    {* PDF zalmy *}
                         {if !empty($lesson['documents'])}
                             {foreach $lesson['documents'] as $docLink}
                                 {if str_contains($docLink,'Zalm')}
-                                <a href="{$docLink}" style="text-decoration:none"  target="_blank" download>
-                                    <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30">
-                                    <span style="color: #d32f2f;">PDF</span>
-                                </a>
+                                    <a href="{$docLink}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
+                                        <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30" class="me-1">
+                                        <span class="text-danger">PDF</span>
+                                    </a>
                                 {/if}
                             {/foreach}
                         {/if}
-                        {* PDF prezentace *}
+
                         {if isset($lesson['documents']['pdf'])}
-                            <a href="{$lesson['documents']['pdf']}" style="text-decoration:none" target="_blank" download>
-                                <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30">
-                                <span style="color: #d32f2f;">PDF</span>
+                            <a href="{$lesson['documents']['pdf']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
+                                <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30" class="me-1">
+                                <span class="text-danger">PDF</span>
                             </a>
                         {/if}
                     </td>
-
                     <td>
-                    {* Power Point preztentace *}
                         {if isset($lesson['documents']['pptx'])}
-                            <a href="{$lesson['documents']['pptx']}" style="text-decoration:none" target="_blank" download>
-                                <img src="{$basePath}/uploads/img/pptx.png" width="30" height="30">
-                                <span style="color: #fc7f03;">PPTX</span>
+                            <a href="{$lesson['documents']['pptx']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
+                                <img src="{$basePath}/uploads/img/pptx.png" width="30" height="30" class="me-1">
+                                <span class="text-warning">PPTX</span>
                             </a>
                         {/if}
                     </td>
-
                     <td>
-                    {* Resume DOCX *}
                         {if isset($lesson['documents']['docx'])}
-                            <a href="{$lesson['documents']['docx']}" style="text-decoration:none" target="_blank" download>
-                                <img src="{$basePath}/uploads/img/docx.png" width="30" height="30">
-                                <span style="color: #1976d2;">DOCX</span>
+                            <a href="{$lesson['documents']['docx']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
+                                <img src="{$basePath}/uploads/img/docx.png" width="30" height="30" class="me-1">
+                                <span class="text-primary">DOCX</span>
                             </a>
                         {/if}
                     </td>
-
                     <td>
-                    {* Resume PDF *}
                         {if isset($lesson['documents']['res_pdf'])}
-                            <a href="{$lesson['documents']['res_pdf']}" style="text-decoration:none" target="_blank" download>
-                                <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30">
-                                <span style="color: #d32f2f;">PDF</span>
+                            <a href="{$lesson['documents']['res_pdf']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
+                                <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30" class="me-1">
+                                <span class="text-danger">PDF</span>
                             </a>
                         {/if}
                     </td>
                 </tr>
-            {/foreach}
-        </tbody>
-    </table>
-              {* JPG obrázky k lekcím *}
-        <h1 class="text-center" style="color:blue">Obrázky k lekcím</h1>
-    <div class="row g-4 py-5 row-cols-2 row-cols-lg-4">
+                {/foreach}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Obrázky k lekcím -->
+    <h1 class="text-center mb-4" style="color:blue">Verše k lekcím</h1>
+    <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4">
         {foreach $lessons as $lesson}
             {foreach $lesson['documents'] as $jpgLink}
                 {if str_ends_with($jpgLink, '.jpg')}
                     <div class="col">
-                        <a href="{$jpgLink}">
-                            <img src="{$jpgLink}" alt="Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+                        <a href="{$jpgLink}" target="_blank">
+                            <img src="{$jpgLink}" alt="Image" class="img-fluid rounded shadow-sm">
                         </a>
                     </div>
                 {/if}
             {/foreach}
         {/foreach}
     </div>
+</div>
 </div>
         

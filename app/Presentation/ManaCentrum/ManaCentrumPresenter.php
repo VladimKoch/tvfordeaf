@@ -17,6 +17,7 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
                                 private \Nette\Database\Explorer $database,
                                 private \App\Service\FusteroService $fusteroService,
                                 private \App\Service\FusteroTitle $fusteroTitle,
+                                private \App\Service\VideosYoutubeService $videosYoutubeService
                                 
                                 )
     {
@@ -95,6 +96,69 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
          $this->template->videos = $kazani; // získejte videa na stránku 
          
         $totalItems = $kazani->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+
+      public function renderOldTestament($page=1)
+    {   
+
+        $this->videosYoutubeService->bibleProjectOld();
+        // die;
+        
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $bibleProject = $this->database->table('oldtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
+         $this->template->videos = $bibleProject; // získejte videa na stránku 
+         
+        $totalItems = $bibleProject->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+      public function renderNewTestament($page=1)
+    {   
+
+        $this->videosYoutubeService->bibleProjectNew();
+        // die;
+        
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $bibleProject = $this->database->table('newtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
+         $this->template->videos = $bibleProject; // získejte videa na stránku 
+         
+        $totalItems = $bibleProject->count('*'); // celkový počet článků
         $pageCount = (int) ceil($totalItems / $itemsPerPage);
 
         // Ošetření neplatné stránky

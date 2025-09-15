@@ -4,7 +4,8 @@
 
 
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+	{* <meta name="viewport" content="width=device-width"> *}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="{$basePath}/css/bootstrap-icons.css">
 	
 	<link rel="stylesheet" href="{$basePath}/css/style.css">
@@ -31,123 +32,33 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HERJSYQJK"></script>
 
-{* <script n:syntax="off">
+<script n:syntax="off">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-5HERJSYQJK');
-</script> *}
+</script>
 
 </head>
 
 <body>
 	{* Header *}
+	<div class="container" style="">
 	{include 'header.latte'}
-	<div class="container" style=" margin-bottom:100px;">
+  <div class="" style=""><p style="color:blackgrey; font-family: font-family: Open Sans, sans-serif;" class="text-center">Skutečný hlas, skutečný dopad</p>
+            </div>
 		{foreach $flashes as $flash}
 			<div class="alert alert-warning text-center">{$flash->message}</div>
 		{/foreach}
 	</div>
 
-	{* {if !isset($_COOKIE['cookie_consent'])}
-    <div id="cookie-bar" style="position: fixed; bottom: 0; width: 100%; background: #222; color: white; padding: 10px; text-align: center; z-index: 1000;">
-        Tento web používá cookies pro zlepšení služeb. 
-        <button onclick="acceptCookies()">Přijmout</button>
-        <button onclick="rejectCookies()">Odmítnout</button>
-    </div>
-	{/if} *}
 
 	{include content}
 	{* <div n:snippet="flashes" id="flashes"> *}
 	{* Flashes *}
 
 	{include 'footer.latte'}
-
-
-
-	{* <div id="cookie-consent" class="cookie-banner" n:if="!$presenter->getSession('consent')->get('analytics')">
-    <p>
-        Tento web používá cookies pro měření návštěvnosti (Google Analytics).  
-        Chcete je povolit?
-    </p>
-    <button id="accept-analytics">Povolit</button>
-    <button id="decline-analytics">Odmítnout</button>
-</div> *}
-
-{* pokud je souhlas, vlož GA script *}
-{* {if $presenter->getSession('consent')->get('analytics')}
-    <script n:syntax="off">
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5HERJSYQJK'); // vlož svůj GA měřící kód
-    </script>
-{/if} *}
-
-{* <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const acceptBtn = document.getElementById("accept-analytics");
-    const declineBtn = document.getElementById("decline-analytics");
-
-    if (acceptBtn) {
-        acceptBtn.addEventListener("click", () => {
-            fetch("{link Cookie:acceptAnalytics}")
-                .then(() => location.reload());
-        });
-    }
-    if (declineBtn) {
-        declineBtn.addEventListener("click", () => {
-            fetch("{link Cookie:declineAnalytics}")
-                .then(() => location.reload());
-        });
-    }
-});
-</script> *}
-
-
-
-
-	  <!-- 🍪 Lišta souhlasu s cookies 🍪 -->
-    {* <div id="cookie-consent-bar" style="
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333; /* Tmavé pozadí */
-        color: white; /* Bílý text */
-        padding: 15px 20px;
-        text-align: center;
-        z-index: 9999; /* Zajišťuje, že je nad ostatním obsahem */
-        display: none; /* Skryté, dokud JS nezjistí, že souhlas nebyl udělen */
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.2); /* Jemný stín */
-    ">
-        Tento web používá cookies pro zlepšení služeb. Pokračováním souhlasíte s jejich použitím.
-        <a href="/zasady-ochrany-osobnich-udaju" style="color: #66b3ff; text-decoration: underline; margin-left: 10px;">Více informací</a>
-        <button onclick="acceptCookies()" style="
-            background-color: #007bff; /* Modré tlačítko */
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin-left: 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-        ">Rozumím a Souhlasím</button>
-        <button onclick="rejectCookies()" style="
-            background-color: #dc3545; /* Červené tlačítko */
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin-left: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-        ">Odmítnout</button>
-    </div> *}
-
 
 
 
@@ -225,11 +136,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Scroll to top on page load
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    </script> *}
+    </script>  *}
 
 	{* Cookie z gitu *}
 
-	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+ {* <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
 <script n:syntax="off">
 window.addEventListener("load", function(){
   window.cookieconsent.initialise({
@@ -295,7 +206,7 @@ window.addEventListener("load", function(){
   // tady by sis udělal vlastní dialog pro detailní nastavení
   // a podle toho volal loadGoogleAnalytics() / loadMarketing()
 });
-</script>
+</script> *}
 
 
 

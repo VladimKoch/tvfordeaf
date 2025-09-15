@@ -14,6 +14,18 @@
 }
 
 /*=============== CARD ===============*/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* zabrání horizontálnímu posunu */
+}
+
+.container, .wrapper {
+  max-width: 100%;    /* aby se nikdy nepřetáhla šířka */
+  margin: 0 auto;     /* vycentrování obsahu */
+}
+
 .card__container {
   display: grid;
   row-gap: 3.5rem;
@@ -201,6 +213,8 @@ a {
   color: white;
   padding: 40px 20px;
   margin-top: 40px;
+  margin:auto;
+    
 }
 .footer-container {
   display: grid;
@@ -239,7 +253,7 @@ a {
 }
 .footer-logo{
   padding-bottom: 20px;
-  width:500px;
+  width:auto;
 }
 .footer-columns {
   display: grid;
@@ -335,16 +349,16 @@ h6{
     width:100% !important;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 578px) {
   .card__container {
-    min-width: 60vw !important;
-    max-width: 100vw !important;
+    min-width: 60% !important;
+    max-width: 100% !important;
     margin: 0 auto;
   }
   .container {
-    min-width: 100vw !important;
-    width: 100vw !important;
-    padding: 0 !important;
+    /* min-width: 100% !important; */
+    min-width: 100% !important;
+    /* padding-bottom: 100px !important; */
   }
   .home{
     font-size:10px;
@@ -355,11 +369,12 @@ h6{
   .navbar-nav.ms-auto.d-flex.align-items-center {
       display: none !important; /* Skryje logo "TV FOR DEAF" v mobilní verzi */
   }
+  
 }
 
 /* Cookie Banner */
 
-.cookie-banner {
+ .cookie-banner {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -384,3 +399,6 @@ h6{
   background: #dc3545; /* červené tlačítko */
   color: white;
 }
+
+
+

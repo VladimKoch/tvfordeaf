@@ -27,6 +27,11 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Accessory\\LatteExtension.php',
       1 => 1738539948,
     ),
+    'App\\Presentation\\Cookie\\CookiePresenter' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Cookie\\CookiePresenter.php',
+      1 => 1755689123,
+    ),
     'App\\Presentation\\Error\\Error4xx\\Error4xxPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Error\\Error4xx\\Error4xxPresenter.php',
@@ -50,7 +55,7 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1754548437,
+      1 => 1757930565,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -80,7 +85,7 @@ return array (
     'App\\Service\\VideosYoutubeService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\VideosYoutubeService.php',
-      1 => 1754546544,
+      1 => 1757930164,
     ),
     'App\\Service\\YouTubeService' => 
     array (

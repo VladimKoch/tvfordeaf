@@ -122,4 +122,135 @@ class VideosYoutubeService
 
                 } while ($nextPageToken);
     }
+
+    public function bibleProjectOld()
+    {
+        //playlist id
+        $apiKey = "AIzaSyC1XfUNh-tAz3UZWAix43J_cr2v-XNU6H4";
+        $playlistIdOld = "PL3SgRG0V2xXLilBpOLEUPlVd3riCYo32_";
+
+        $nextPageToken = '';
+        do {
+            // Sestavení URL
+            $apiUrl = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=$playlistIdOld&key=$apiKey";
+            if ($nextPageToken) {
+                $apiUrl .= "&pageToken=" . urlencode($nextPageToken);
+            }
+                //Response from Youtube API
+                $response = file_get_contents($apiUrl);
+
+                if (!$response) {
+                    throw new \RuntimeException('Nepodařilo se nahrát data z Youtube API');
+                    
+                }
+
+                // Dekoduje JSON výstup do PHP objektu
+                $data = json_decode($response);
+
+                // echo '<pre>';
+                // print_r($data->items);
+                // echo'</pre>';
+                // die;
+
+    
+        // Získání vídeí starý zákon
+        foreach($data->items as $item){
+          
+
+            $title = $item->snippet->title ?? null;
+            $jpg = $item->snippet->thumbnails->standard->url ?? null;
+            $videoId = $item->snippet->resourceId->videoId ?? null;
+
+            
+            // if (strpos($item->snippet->title, 'Kázání') !== false) {
+                // vložit do tabulky pribehy
+                // $title = $item->snippet->title ?? null;
+                // $videoId = $item->snippet->resourceId->videoId ?? null;
+                if ($title && $videoId) {
+      
+                        try {
+                            $this->database->table('oldtestament')->insert([
+                                    'testament'=> 'Starý Zákon',
+                                    'title' => $title,
+                                    'video_url' => $videoId,
+                                    'jpg_url'=>$jpg,
+                                    'created_at' => new \DateTime(),
+                                ]);
+                                } catch (\Nette\Database\UniqueConstraintViolationException $e) {
+                                        // Přeskoč duplicitní řádek
+                                        continue;
+                                    }
+                                }
+                            }
+                        // }
+                       // Příprava na další stránku
+                        $nextPageToken = $data->nextPageToken ?? null;
+
+                } while ($nextPageToken);
+    }
+    public function bibleProjectNew()
+    {
+        //playlist id
+        $apiKey = "AIzaSyC1XfUNh-tAz3UZWAix43J_cr2v-XNU6H4";
+        $playlistIdNew = "PL3SgRG0V2xXJciGjZfWRg2FINfOh6klaF";
+
+        $nextPageToken = '';
+        do {
+            // Sestavení URL
+            $apiUrl = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=$playlistIdNew&key=$apiKey";
+            if ($nextPageToken) {
+                $apiUrl .= "&pageToken=" . urlencode($nextPageToken);
+            }
+                //Response from Youtube API
+                $response = file_get_contents($apiUrl);
+
+                if (!$response) {
+                    throw new \RuntimeException('Nepodařilo se nahrát data z Youtube API');
+                    
+                }
+
+                // Dekoduje JSON výstup do PHP objektu
+                $data = json_decode($response);
+
+                // echo '<pre>';
+                // print_r($data->items);
+                // echo'</pre>';
+                // die;
+
+    
+        // Získání vídeí starý zákon
+        foreach($data->items as $item){
+          
+
+            $title = $item->snippet->title ?? null;
+            $jpg = $item->snippet->thumbnails->standard->url ?? null;
+            $videoId = $item->snippet->resourceId->videoId ?? null;
+
+            
+            // if (strpos($item->snippet->title, 'Kázání') !== false) {
+                // vložit do tabulky pribehy
+                // $title = $item->snippet->title ?? null;
+                // $videoId = $item->snippet->resourceId->videoId ?? null;
+                if ($title && $videoId) {
+      
+                        try {
+                            $this->database->table('newtestament')->insert([
+                                    'testament'=> 'Nový Zákon',
+                                    'title' => $title,
+                                    'video_url' => $videoId,
+                                    'jpg_url'=>$jpg,
+                                    'created_at' => new \DateTime(),
+                                ]);
+                                } catch (\Nette\Database\UniqueConstraintViolationException $e) {
+                                        // Přeskoč duplicitní řádek
+                                        continue;
+                                    }
+                                }
+                            }
+                        // }
+                       // Příprava na další stránku
+                        $nextPageToken = $data->nextPageToken ?? null;
+
+                } while ($nextPageToken);
+    }
 }
