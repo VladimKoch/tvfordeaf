@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 namespace App\Presentation\ManaCentrum;
+use App\Presenters\BasePresenter;
 
 use Nette;
 
 
-final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
+final class ManaCentrumPresenter extends BasePresenter
 {   
 
     /** @var int počet položek na stránku */
@@ -18,7 +19,6 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
                                 private \App\Service\FusteroService $fusteroService,
                                 private \App\Service\FusteroTitle $fusteroTitle,
                                 private \App\Service\VideosYoutubeService $videosYoutubeService
-                                
                                 )
     {
        
@@ -59,6 +59,7 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
     */
     public function renderProdeti($page=1)
     {
+        // $this->videosYoutubeService->videosProdeti(); // Nahrátí videí z Youtube do DB
             
         $itemsPerPage = self::ITEMS_PER_PAGE; //počet článku na stránku
 
@@ -87,7 +88,7 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
      */
       public function renderVideos($page=1)
     {   
-
+        $this->videosYoutubeService->videosKazani(); // Nahrátí videí z Youtube do DB
         
 
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
@@ -125,7 +126,12 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 
          $bibleProject = $this->database->table('oldtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
-         $this->template->videos = $bibleProject; // získejte videa na stránku 
+                // echo '<pre>';
+                // print_r($bibleProject);
+                // echo'</pre>';
+                // die;
+
+         $this->template->olds = $bibleProject; // získejte videa na stránku 
          
         $totalItems = $bibleProject->count('*'); // celkový počet článků
         $pageCount = (int) ceil($totalItems / $itemsPerPage);
@@ -146,6 +152,8 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         $this->template->page = $page;
         $this->template->pageCount = $pageCount;
     }
+
+
       public function renderNewTestament($page=1)
     {   
 
@@ -156,8 +164,9 @@ final class ManaCentrumPresenter extends Nette\Application\UI\Presenter
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 
          $bibleProject = $this->database->table('newtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
-         $this->template->videos = $bibleProject; // získejte videa na stránku 
-         
+
+         $this->template->news = $bibleProject; // získejte videa na stránku
+
         $totalItems = $bibleProject->count('*'); // celkový počet článků
         $pageCount = (int) ceil($totalItems / $itemsPerPage);
 

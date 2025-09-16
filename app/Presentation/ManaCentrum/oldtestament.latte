@@ -16,15 +16,15 @@
             <!-- Post -->
             <div class="row g-4 py-5 row-cols-md-2 row-cols-lg-3"> 
           
-		          <div n:foreach="$videos as $video">
+		          <div n:foreach="$olds as $old">
               
               <div class="col-12">
                 
                       <div class="card-group rounded-3">
                         <div class="card border-0 rounded-3">
                           
-                            <a href="https://www.youtube.com/embed/{$video->video_url}" target="_blank">
-                            <img src="{$video->jpg_url}" alt="{$video->title}" style="min-width:100%; height:200px; object-fit:cover;">
+                            <a href="https://www.youtube.com/embed/{$old->video_url}" target="_blank">
+                            <img src="{$old->jpg_url}" alt="{$old->title}" style="min-width:100%; height:200px; object-fit:cover;">
                             </a>
                          
                             

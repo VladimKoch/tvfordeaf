@@ -55,26 +55,34 @@ final class Template_a45364876e extends Latte\Runtime\Template
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HERJSYQJK"></script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
+';
+		if ($hasAnalyticsConsent) /* line 43 */ {
+			echo '    <!-- Google tag (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HERJSYQJK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag(\'js\', new Date());
 
-  gtag(\'config\', \'G-5HERJSYQJK\');
-</script>
+        gtag(\'config\', \'G-5HERJSYQJK\', { \'anonymize_ip\': true });
+    </script>
+';
+		}
+		echo '
 
 </head>
+
 
 <body>
 	<div class="container" style="">
 ';
-		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 48 */;
+		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 62 */;
 		echo '  <div class="" style=""><p style="color:blackgrey; font-family: font-family: Open Sans, sans-serif;" class="text-center">Skutečný hlas, skutečný dopad</p>
             </div>
 ';
-		foreach ($flashes as $flash) /* line 51 */ {
+		foreach ($flashes as $flash) /* line 65 */ {
 			echo '			<div class="alert alert-warning text-center">';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 52 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 66 */;
 			echo '</div>
 ';
 
@@ -82,10 +90,36 @@ final class Template_a45364876e extends Latte\Runtime\Template
 
 		echo '	</div>
 
-
 ';
-		$this->renderBlock('content', [], 'html') /* line 57 */;
-		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 61 */;
+		$this->renderBlock('content', [], 'html') /* line 74 */;
+		if (!$cookiesAccepted) /* line 78 */ {
+			if (!$cookiesAccepted) /* line 79 */ {
+				echo '      <div id="cookie-consent" class="cookie-bar">
+    <div class="cookie-bar-content">
+        <img src="';
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 81 */;
+				echo '/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
+        <p>
+            Používáme soubory cookie, abychom zajistili co nejlepší uživatelský zážitek. Pokračováním v používání našeho webu s tím souhlasíte.
+        </p>
+        <div class="cookie-bar-buttons">
+            <a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 86 */;
+				echo '" class="btn-accept" >Rozumím</a>
+            <a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['essentials'])) /* line 87 */;
+				echo '" class="btn-accept">Pouze nezbytné</a>
+            <a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 88 */;
+				echo '" class="btn-info">Více informací</a>
+        </div>
+    </div>
+</div>
+';
+			}
+		}
+		echo "\n";
+		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 94 */;
 		echo '
 
 
@@ -93,7 +127,7 @@ final class Template_a45364876e extends Latte\Runtime\Template
 
 	 <!-- MDB -->
     <script type="text/javascript" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 68 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 101 */;
 		echo '/js/mdb.umd.min.js"></script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -105,7 +139,18 @@ final class Template_a45364876e extends Latte\Runtime\Template
 	<script src="https://unpkg.com/htmx.org@2.0.4"></script>
 
 
-
+<script>
+    document.addEventListener(\'DOMContentLoaded\', function() {
+        const acceptButton = document.querySelector(\'.btn-accept\');
+        if (acceptButton) {
+            acceptButton.addEventListener(\'click\', function(e) {
+                e.preventDefault();
+                document.getElementById(\'cookie-consent\').style.display = \'none\';
+                fetch(acceptButton.href);
+            });
+        }
+    });
+</script>
 
 	
 </body>
@@ -120,7 +165,7 @@ final class Template_a45364876e extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['flash' => '51'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['flash' => '65'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}

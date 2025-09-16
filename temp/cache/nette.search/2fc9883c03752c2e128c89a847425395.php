@@ -5,7 +5,12 @@ return array (
     'App\\Bootstrap' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Bootstrap.php',
-      1 => 1754547467,
+      1 => 1757941830,
+    ),
+    'App\\Components\\cookie\\CookieComponent' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\components\\cookie\\CookieComponent.php',
+      1 => 1758014763,
     ),
     'App\\Core\\RouterFactory' => 
     array (
@@ -27,6 +32,11 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Accessory\\LatteExtension.php',
       1 => 1738539948,
     ),
+    'App\\Presenters\\BasePresenter' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\BasePresenter.php',
+      1 => 1758027401,
+    ),
     'App\\Presentation\\Cookie\\CookiePresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Cookie\\CookiePresenter.php',
@@ -45,17 +55,17 @@ return array (
     'App\\Presentation\\FitCentrum\\FitCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\FitCentrum\\FitCentrumPresenter.php',
-      1 => 1754376026,
+      1 => 1758021666,
     ),
     'App\\Presentation\\Home\\HomePresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Home\\HomePresenter.php',
-      1 => 1754376094,
+      1 => 1758027430,
     ),
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1757930565,
+      1 => 1758021601,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -65,12 +75,12 @@ return array (
     'App\\Presentation\\Start\\StartPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Start\\StartPresenter.php',
-      1 => 1754469085,
+      1 => 1758021621,
     ),
     'App\\Presentation\\Tip\\TipPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Tip\\TipPresentation.php',
-      1 => 1754469262,
+      1 => 1758021632,
     ),
     'App\\Service\\FusteroService' => 
     array (
@@ -85,7 +95,7 @@ return array (
     'App\\Service\\VideosYoutubeService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\VideosYoutubeService.php',
-      1 => 1757930164,
+      1 => 1757937634,
     ),
     'App\\Service\\YouTubeService' => 
     array (

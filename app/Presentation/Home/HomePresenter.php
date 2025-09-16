@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 namespace App\Presentation\Home;
-
+use App\Components\cookie\CookieComponent;
+use App\Presenters\BasePresenter;
 use Nette;
 
 
-final class HomePresenter extends Nette\Application\UI\Presenter
+final class HomePresenter extends BasePresenter
 {   
 
     
@@ -53,50 +54,59 @@ final class HomePresenter extends Nette\Application\UI\Presenter
    
 }
 
-    public function renderShow($postId): void
-    {
-        
-        $posts = $this->article->findAllArticles()->get($postId);
-        
-        if($posts){
-            $this->template->posts = $posts;
-            $comments = $posts->related('comments');
-            if($comments){
-                $this->template->comments = $comments;
-            }else{$this->error('Comenty nebyly nalezeny');
+//  /** @var string[] */
+//     protected array $acceptedCookies = [];
 
-            }
-        }else{
+//     public function startup(): void
+//     {
+//         parent::startup();
 
-            $this->error('Posty nebyly nalezeny');
-        }
+//         $cookie = $this->getHttpRequest()->getCookie('cookies_accepted');
+//         $this->acceptedCookies = $cookie ? json_decode($cookie, true) : [];
+//     }
 
-        // if($postId){
-        //     $comments = $this->database->table('posts')->get($postId);
-        //     if(!$comments)
-        //     {
-        //         $this->error('Stránka nebyla nalezena');
-        //     }
-        //     $this->template->comments = $comments->related('comments');
-        // }
-    }
+//     protected function beforeRender(): void
+//     {
+//         parent::beforeRender();
 
-    public function handleClick(): void
-    {   
-        
-        if($this->isAjax()){
-            
-            bdump($this->isAjax());
-            $time = 'ogon';
-            $this->template->time = $time;
-            $this->redrawControl('mySnippet');
-  
-        }else{
-            $this->flashMessage('Neni AJax');
-            $this->redirect('this');
-        }
+//         // pošleme info do šablon
+//         $this->template->cookiesAccepted = !empty($this->acceptedCookies);
+//         $this->template->hasAnalyticsConsent = in_array('analytics', $this->acceptedCookies, true);
+//         $this->template->hasMarketingConsent = in_array('marketing', $this->acceptedCookies, true);
+//     }
 
-    }
+//     public function handleAcceptCookies(string $category = 'all'): void
+//     {
+//         $this->acceptedCookies = match ($category) {
+//             'all' => ['essentials', 'analytics', 'marketing'],
+//             'analytics' => ['essentials', 'analytics'],
+//             'marketing' => ['essentials', 'analytics', 'marketing'],
+//             default => ['essentials'],
+//         };
 
-    
+//         $this->getHttpResponse()->setCookie(
+//             'cookies_accepted',
+//             json_encode($this->acceptedCookies),
+//             strtotime('+1 year'),
+//             '/',       // path
+//             null,      // domain
+//             true,      // secure (https only)
+//             true,      // httpOnly
+//             'Strict'   // SameSite
+//         );
+
+//         if ($this->isAjax()) {
+//             $this->sendJson(['status' => 'ok']);
+//         } else {
+//             $this->redirect('this');
+//         }
+//     }
+
+//     public function handleMoreInfo(): void
+//     {
+//         $this->redirect('Home:cookies'); 
+//     }
+
+   
+ 
 }

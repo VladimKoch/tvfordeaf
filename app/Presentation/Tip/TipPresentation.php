@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 namespace App\Presentation\Tip;
+use App\Presenters\BasePresenter;
 
 use Nette;
 
 
-final class TipPresenter extends Nette\Application\UI\Presenter
+final class TipPresenter extends BasePresenter
 {   
 
     /** @var int počet položek na stránku */

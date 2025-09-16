@@ -50,7 +50,7 @@ final class Template_cea9458f63 extends Latte\Runtime\Template
 		echo '
 
 
-    <div class="container " style="margin-top: 100px; margin-bottom: 100px;width:60%;">
+    <div class="container " style="margin-top: 50px; margin-bottom: 100px;width:60%;">
     <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 8 */;
 		echo '"style="text-decoration:none; color:blue">Domů</a>

@@ -39,15 +39,19 @@ final class Template_0f3b054958 extends Latte\Runtime\Template
         <div class="collapse navbar-collapse" id="navmenu">
 
             <ul class="nav-ul navbar-nav" style="list-style-type: none; gap:15px; margin-left: 20px;">
-                <li class="nav-item"><a class="nav-link" href="#">Možnosti</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">O nás</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Novinky</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Pomoc</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 18 */;
+		echo '"><i class="fa fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-bars"></i> Možnosti</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> O nás</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-newspaper"></i> Novinky</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-suitcase-medical"></i> Pomoc</a></li>
             </ul>
             <ul class="navbar-nav ms-auto d-flex align-items-center">
                 <li class="nav-item">
                     <img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 24 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 26 */;
 		echo '/uploads/img/Fulllogo-origin.png" class="me-5 pb-1" style="height:40px; width:40px; transform: scale(1.2);">
                 </li>
             </ul>

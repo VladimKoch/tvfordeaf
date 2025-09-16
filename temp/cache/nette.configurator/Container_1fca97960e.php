@@ -63,6 +63,7 @@ class Container_1fca97960e extends Nette\DI\Container
 		'ArrayAccess' => [
 			2 => [
 				'01',
+				'08',
 				'application.1',
 				'application.2',
 				'application.4',
@@ -80,20 +81,9 @@ class Container_1fca97960e extends Nette\DI\Container
 		'App\Service\FusteroService' => [['05']],
 		'App\Service\FusteroTitle' => [['06']],
 		'App\Service\VideosYoutubeService' => [['07']],
-		'Nette\Application\UI\Presenter' => [
-			2 => [
-				'application.1',
-				'application.2',
-				'application.4',
-				'application.5',
-				'application.6',
-				'application.7',
-				'application.8',
-				'application.9',
-			],
-		],
 		'Nette\Application\UI\Control' => [
 			2 => [
+				'08',
 				'application.1',
 				'application.2',
 				'application.4',
@@ -106,6 +96,7 @@ class Container_1fca97960e extends Nette\DI\Container
 		],
 		'Nette\Application\UI\Component' => [
 			2 => [
+				'08',
 				'application.1',
 				'application.2',
 				'application.4',
@@ -118,6 +109,7 @@ class Container_1fca97960e extends Nette\DI\Container
 		],
 		'Nette\ComponentModel\Container' => [
 			2 => [
+				'08',
 				'application.1',
 				'application.2',
 				'application.4',
@@ -129,6 +121,85 @@ class Container_1fca97960e extends Nette\DI\Container
 			],
 		],
 		'Nette\ComponentModel\Component' => [
+			2 => [
+				'08',
+				'application.1',
+				'application.2',
+				'application.4',
+				'application.5',
+				'application.6',
+				'application.7',
+				'application.8',
+				'application.9',
+			],
+		],
+		'Nette\Application\UI\Renderable' => [
+			2 => [
+				'08',
+				'application.1',
+				'application.2',
+				'application.4',
+				'application.5',
+				'application.6',
+				'application.7',
+				'application.8',
+				'application.9',
+			],
+		],
+		'Nette\Application\UI\StatePersistent' => [
+			2 => [
+				'08',
+				'application.1',
+				'application.2',
+				'application.4',
+				'application.5',
+				'application.6',
+				'application.7',
+				'application.8',
+				'application.9',
+			],
+		],
+		'Nette\Application\UI\SignalReceiver' => [
+			2 => [
+				'08',
+				'application.1',
+				'application.2',
+				'application.4',
+				'application.5',
+				'application.6',
+				'application.7',
+				'application.8',
+				'application.9',
+			],
+		],
+		'Nette\ComponentModel\IContainer' => [
+			2 => [
+				'08',
+				'application.1',
+				'application.2',
+				'application.4',
+				'application.5',
+				'application.6',
+				'application.7',
+				'application.8',
+				'application.9',
+			],
+		],
+		'Nette\ComponentModel\IComponent' => [
+			2 => [
+				'08',
+				'application.1',
+				'application.2',
+				'application.4',
+				'application.5',
+				'application.6',
+				'application.7',
+				'application.8',
+				'application.9',
+			],
+		],
+		'App\Components\cookie\CookieComponent' => [['08']],
+		'Nette\Application\UI\Presenter' => [
 			2 => [
 				'application.1',
 				'application.2',
@@ -155,69 +226,12 @@ class Container_1fca97960e extends Nette\DI\Container
 				'application.11',
 			],
 		],
-		'Nette\Application\UI\Renderable' => [
-			2 => [
-				'application.1',
-				'application.2',
-				'application.4',
-				'application.5',
-				'application.6',
-				'application.7',
-				'application.8',
-				'application.9',
-			],
-		],
-		'Nette\Application\UI\StatePersistent' => [
-			2 => [
-				'application.1',
-				'application.2',
-				'application.4',
-				'application.5',
-				'application.6',
-				'application.7',
-				'application.8',
-				'application.9',
-			],
-		],
-		'Nette\Application\UI\SignalReceiver' => [
-			2 => [
-				'application.1',
-				'application.2',
-				'application.4',
-				'application.5',
-				'application.6',
-				'application.7',
-				'application.8',
-				'application.9',
-			],
-		],
-		'Nette\ComponentModel\IContainer' => [
-			2 => [
-				'application.1',
-				'application.2',
-				'application.4',
-				'application.5',
-				'application.6',
-				'application.7',
-				'application.8',
-				'application.9',
-			],
-		],
-		'Nette\ComponentModel\IComponent' => [
-			2 => [
-				'application.1',
-				'application.2',
-				'application.4',
-				'application.5',
-				'application.6',
-				'application.7',
-				'application.8',
-				'application.9',
-			],
-		],
 		'App\Presentation\Cookie\CookiePresenter' => [2 => ['application.1']],
 		'App\Presentation\Error\Error4xx\Error4xxPresenter' => [2 => ['application.2']],
 		'App\Presentation\Error\Error5xx\Error5xxPresenter' => [2 => ['application.3']],
+		'App\Presenters\BasePresenter' => [
+			2 => ['application.4', 'application.5', 'application.6', 'application.8', 'application.9'],
+		],
 		'App\Presentation\FitCentrum\FitCentrumPresenter' => [2 => ['application.4']],
 		'App\Presentation\Home\HomePresenter' => [2 => ['application.5']],
 		'App\Presentation\ManaCentrum\ManaCentrumPresenter' => [2 => ['application.6']],
@@ -274,6 +288,12 @@ class Container_1fca97960e extends Nette\DI\Container
 	public function createService07(): App\Service\VideosYoutubeService
 	{
 		return new App\Service\VideosYoutubeService($this->getService('database.default.explorer'));
+	}
+
+
+	public function createService08(): App\Components\cookie\CookieComponent
+	{
+		return new App\Components\cookie\CookieComponent($this->getService('http.response'));
 	}
 
 

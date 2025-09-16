@@ -1,0 +1,108 @@
+<?php
+
+declare(strict_types=1);
+
+use Latte\Runtime as LR;
+
+/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation\Home/cookies.latte */
+final class Template_18d27486d7 extends Latte\Runtime\Template
+{
+	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Home/cookies.latte';
+
+	public const Blocks = [
+		['content' => 'blockContent'],
+	];
+
+
+	public function main(array $ʟ_args): void
+	{
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		if ($this->global->snippetDriver?->renderSnippets($this->blocks[self::LayerSnippet], $this->params)) {
+			return;
+		}
+
+		$this->renderBlock('content', get_defined_vars()) /* line 1 */;
+	}
+
+
+	/** {block content} on line 1 */
+	public function blockContent(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<div class="container text-center">
+<h1>Informace o používání cookies</h1>
+
+<p>
+Na našem webu používáme soubory cookies, které nám pomáhají zajistit správné fungování stránek, měřit jejich návštěvnost a zlepšovat vaše uživatelské prostředí. 
+Některé cookies jsou nezbytné, jiné si můžete povolit nebo zakázat.
+</p>
+
+<table class="cookies-table">
+    <thead>
+        <tr>
+            <th>Název cookie</th>
+            <th>Účel</th>
+            <th>Kategorie</th>
+            <th>Doba uložení</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>PHPSESSID</td>
+            <td>Udržuje relaci uživatele (přihlášení, košík).</td>
+            <td>Nezbytné</td>
+            <td>Do zavření prohlížeče</td>
+        </tr>
+        <tr>
+            <td>nette-samesite</td>
+            <td>Bezpečnostní cookie frameworku Nette proti CSRF útokům.</td>
+            <td>Nezbytné</td>
+            <td>Do zavření prohlížeče</td>
+        </tr>
+        <tr>
+            <td>cookies_accepted</td>
+            <td>Ukládá volby uživatele ohledně souhlasu s cookies.</td>
+            <td>Nezbytné</td>
+            <td>1 rok</td>
+        </tr>
+        <tr>
+            <td>_ga</td>
+            <td>Google Analytics – měří návštěvnost a chování na webu.</td>
+            <td>Analytické</td>
+            <td>2 roky</td>
+        </tr>
+        <tr>
+            <td>_gid</td>
+            <td>Google Analytics – odlišuje jednotlivé uživatele.</td>
+            <td>Analytické</td>
+            <td>24 hodin</td>
+        </tr>
+        <tr>
+            <td>_fbp</td>
+            <td>Facebook Pixel – měření a cílení reklam.</td>
+            <td>Marketingové</td>
+            <td>3 měsíce</td>
+        </tr>
+        <tr>
+            <td>_gcl_au</td>
+            <td>Google Ads – remarketing a měření konverzí.</td>
+            <td>Marketingové</td>
+            <td>90 dní</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+Podrobnosti o zpracování osobních údajů naleznete v našich <a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:privacy')) /* line 66 */;
+		echo '" style="text-decoration:none; color:#0047d4">zásadách ochrany soukromí</a>.
+</p>
+</div>
+';
+	}
+}

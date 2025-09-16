@@ -97,6 +97,36 @@ final class Template_b6eb47c3e3 extends Latte\Runtime\Template
 
 		echo '			</div>
 
+';
+		if (!$cookiesAccepted) /* line 42 */ {
+			if (!$cookiesAccepted) /* line 43 */ {
+				echo '      <div id="cookie-consent" class="cookie-bar">
+    <div class="cookie-bar-content">
+        <img src="';
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 45 */;
+				echo '/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
+        <p>
+            Používáme soubory cookie, abychom zajistili co nejlepší uživatelský zážitek. Pokračováním v používání našeho webu s tím souhlasíte.
+        </p>
+        <div class="cookie-bar-buttons">
+            <a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 50 */;
+				echo '" class="btn-accept" >Rozumím</a>
+            <a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['essentials'])) /* line 51 */;
+				echo '" class="btn-accept">Pouze nezbytné</a>
+            <a href="';
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 52 */;
+				echo '" class="btn-info">Více informací</a>
+        </div>
+    </div>
+</div>
+';
+			}
+		}
+		echo '
+
+
  
   <!--Main layout-->
 </div>

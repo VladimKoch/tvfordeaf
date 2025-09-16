@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 namespace App\Presentation\Start;
+use App\Presenters\BasePresenter;
 
 use Nette;
 
 
-final class StartPresenter extends Nette\Application\UI\Presenter
+final class StartPresenter extends BasePresenter
 {   
 
     /** @var int počet položek na stránku */

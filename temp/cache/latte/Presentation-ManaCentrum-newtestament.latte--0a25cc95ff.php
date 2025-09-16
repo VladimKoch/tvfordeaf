@@ -32,7 +32,7 @@ final class Template_0a25cc95ff extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['video' => '19'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['new' => '19'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -66,7 +66,7 @@ final class Template_0a25cc95ff extends Latte\Runtime\Template
             <div class="row g-4 py-5 row-cols-sm-1 row-cols-md-2 row-cols-lg-3"> 
           
 ';
-		foreach ($videos as $video) /* line 19 */ {
+		foreach ($news as $new) /* line 19 */ {
 			echo '		          <div>
               
               <div class="col-12">
@@ -75,12 +75,12 @@ final class Template_0a25cc95ff extends Latte\Runtime\Template
                         <div class="card border-0 rounded-3">
                           
                             <a href="https://www.youtube.com/embed/';
-			echo LR\Filters::escapeHtmlAttr($video->video_url) /* line 26 */;
+			echo LR\Filters::escapeHtmlAttr($new->video_url) /* line 26 */;
 			echo '" target="_blank">
                             <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($video->jpg_url)) /* line 27 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($new->jpg_url)) /* line 27 */;
 			echo '" alt="';
-			echo LR\Filters::escapeHtmlAttr($video->title) /* line 27 */;
+			echo LR\Filters::escapeHtmlAttr($new->title) /* line 27 */;
 			echo '" style="min-width:100%; height:200px; object-fit:cover;">
                             </a>
                          
@@ -89,39 +89,42 @@ final class Template_0a25cc95ff extends Latte\Runtime\Template
                         </div>
                   </div>
                 </div>
+
             </div>
 ';
 
 		}
 
 		echo ' 
-			</div>
+	    	</div>
+           
+
     <nav aria-label="Jednoduchá stránkování" class="d-flex justify-content-center">
   <ul class="pagination">
 
     <li class="page-item ';
-		if ($page <= 1) /* line 43 */ {
+		if ($page <= 1) /* line 46 */ {
 			echo 'disabled';
 		}
 		echo '">
       <a class="page-link" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page - 1])) /* line 44 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page - 1])) /* line 47 */;
 		echo '">Předchozí</a>
     </li>
 
 ';
 		for ($i = 1;
 		$i <= $pageCount;
-		$i++) /* line 47 */ {
+		$i++) /* line 50 */ {
 			echo '      <li class="page-item ';
-			if ($i === $page) /* line 48 */ {
+			if ($i === $page) /* line 51 */ {
 				echo 'active';
 			}
 			echo '">
         <a class="page-link" href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $i])) /* line 49 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $i])) /* line 52 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($i) /* line 49 */;
+			echo LR\Filters::escapeHtmlText($i) /* line 52 */;
 			echo '</a>
       </li>
 ';
@@ -129,12 +132,12 @@ final class Template_0a25cc95ff extends Latte\Runtime\Template
 		}
 		echo '
     <li class="page-item ';
-		if ($page >= $pageCount) /* line 53 */ {
+		if ($page >= $pageCount) /* line 56 */ {
 			echo 'disabled';
 		}
 		echo '">
       <a class="page-link" href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page + 1])) /* line 54 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('this', ['page' => $page + 1])) /* line 57 */;
 		echo '">Další</a>
     </li>
 

@@ -6,6 +6,7 @@ services:
 	- App\Service\FusteroService
 	- App\Service\FusteroTitle
 	- App\Service\VideosYoutubeService
+	- App\Components\cookie\CookieComponent
 
 
 

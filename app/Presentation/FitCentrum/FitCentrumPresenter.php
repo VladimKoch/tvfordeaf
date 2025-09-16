@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 namespace App\Presentation\FitCentrum;
+use App\Presenters\BasePresenter;
 
 use Nette;
 
 
-final class FitCentrumPresenter extends Nette\Application\UI\Presenter
+final class FitCentrumPresenter extends BasePresenter
 {   
 
     /** @var int počet položek na stránku */

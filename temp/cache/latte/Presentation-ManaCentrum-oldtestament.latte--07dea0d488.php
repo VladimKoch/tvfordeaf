@@ -32,7 +32,7 @@ final class Template_07dea0d488 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['video' => '19'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['old' => '19'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -66,7 +66,7 @@ final class Template_07dea0d488 extends Latte\Runtime\Template
             <div class="row g-4 py-5 row-cols-md-2 row-cols-lg-3"> 
           
 ';
-		foreach ($videos as $video) /* line 19 */ {
+		foreach ($olds as $old) /* line 19 */ {
 			echo '		          <div>
               
               <div class="col-12">
@@ -75,12 +75,12 @@ final class Template_07dea0d488 extends Latte\Runtime\Template
                         <div class="card border-0 rounded-3">
                           
                             <a href="https://www.youtube.com/embed/';
-			echo LR\Filters::escapeHtmlAttr($video->video_url) /* line 26 */;
+			echo LR\Filters::escapeHtmlAttr($old->video_url) /* line 26 */;
 			echo '" target="_blank">
                             <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($video->jpg_url)) /* line 27 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($old->jpg_url)) /* line 27 */;
 			echo '" alt="';
-			echo LR\Filters::escapeHtmlAttr($video->title) /* line 27 */;
+			echo LR\Filters::escapeHtmlAttr($old->title) /* line 27 */;
 			echo '" style="min-width:100%; height:200px; object-fit:cover;">
                             </a>
                          

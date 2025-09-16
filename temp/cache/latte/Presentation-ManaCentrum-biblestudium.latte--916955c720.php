@@ -50,7 +50,7 @@ final class Template_916955c720 extends Latte\Runtime\Template
             <div class="row row-cols-sm-1 row-cols-md-2 g-5" style="margin-top:20px;"> 
                 <article class="card__article scale">
                   <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('manacentrum:oldtestament')) /* line 14 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:oldtestament')) /* line 14 */;
 		echo '" class="href">
                     <img src="https://i.ytimg.com/vi/x0tXKeoKWOo/sddefault.jpg" class="card-img-top rounded-3" alt="..." style="width:100%; max-height:200px; object-fit:cover;">
                   </a>
@@ -58,13 +58,16 @@ final class Template_916955c720 extends Latte\Runtime\Template
                   
                       <article class="card__article scale">
                         <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('manacentrum:newtestament')) /* line 22 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:newtestament')) /* line 22 */;
 		echo '" class="href">
                           <img src="https://i.ytimg.com/vi/Yi93iPzrVXI/sddefault.jpg" class="card-img-top rounded-3" alt="..." style="width:100%; max-height:200px; object-fit:cover;">
                         </a>
                       </article>
                         
 			            </div>
+                         <div class="text-center mt-4">
+                           <p>© Copyright 2025 BibleProject</p> <a href="https://bibleproject.com/czech/" style="text-decoration:none; color:blue"target="_blank">https://bibleproject.com/czech/</a>
+                        </div>
 
 </div>
  
