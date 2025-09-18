@@ -32,7 +32,7 @@ final class Template_b6eb47c3e3 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['post' => '20'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['post' => '22'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -57,31 +57,35 @@ final class Template_b6eb47c3e3 extends Latte\Runtime\Template
            
           </div>
 
+          <img src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 18 */;
+		echo '/uploads/img/underconstruction.png" alt="Under Construction" class="img-fluid" style="width:100%; height:auto; max-width:300px; display:block; margin-left:auto; margin-right:auto;">
+
             <!-- Post -->
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-5">           
 ';
-		foreach ($posts as $post) /* line 20 */ {
+		foreach ($posts as $post) /* line 22 */ {
 			echo '		          <div>
               <div class="col-12">
                       <div class="card-group">
                         <div class="card card__container border-0 rounded-3">
                           <article class="card__article">
                         <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 25 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$post->presenter}:{$post->action}")) /* line 27 */;
 			echo '" class="href">
                           <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 26 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 28 */;
 			echo '/uploads/img/';
-			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 26 */;
+			echo LR\Filters::escapeHtmlAttr($post->photo_url) /* line 28 */;
 			echo '" class="card-img-top rounded-3 scale-down" alt="..." style="min-width:200px; height: 250px; width: 100%; object-fit: cover;">
                           <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
                             <span class="card__description" style="color:white">';
-			echo LR\Filters::escapeHtmlText($post->content) /* line 30 */;
+			echo LR\Filters::escapeHtmlText($post->content) /* line 32 */;
 			echo '</span>
                               <h2 class="card__title text-center"style="color:white">';
-			echo LR\Filters::escapeHtmlText($post->name) /* line 31 */;
+			echo LR\Filters::escapeHtmlText($post->name) /* line 33 */;
 			echo '</h2>
                         
                           </div>
@@ -98,25 +102,25 @@ final class Template_b6eb47c3e3 extends Latte\Runtime\Template
 		echo '			</div>
 
 ';
-		if (!$cookiesAccepted) /* line 42 */ {
-			if (!$cookiesAccepted) /* line 43 */ {
+		if (!$cookiesAccepted) /* line 44 */ {
+			if (!$cookiesAccepted) /* line 45 */ {
 				echo '      <div id="cookie-consent" class="cookie-bar">
     <div class="cookie-bar-content">
         <img src="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 45 */;
+				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 47 */;
 				echo '/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
         <p>
             Používáme soubory cookie, abychom zajistili co nejlepší uživatelský zážitek. Pokračováním v používání našeho webu s tím souhlasíte.
         </p>
         <div class="cookie-bar-buttons">
             <a href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 50 */;
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 52 */;
 				echo '" class="btn-accept" >Rozumím</a>
             <a href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['essentials'])) /* line 51 */;
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['essentials'])) /* line 53 */;
 				echo '" class="btn-accept">Pouze nezbytné</a>
             <a href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 52 */;
+				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 54 */;
 				echo '" class="btn-info">Více informací</a>
         </div>
     </div>

@@ -82,25 +82,14 @@ Některé cookies jsou nezbytné, jiné si můžete povolit nebo zakázat.
             <td>Analytické</td>
             <td>24 hodin</td>
         </tr>
-        <tr>
-            <td>_fbp</td>
-            <td>Facebook Pixel – měření a cílení reklam.</td>
-            <td>Marketingové</td>
-            <td>3 měsíce</td>
-        </tr>
-        <tr>
-            <td>_gcl_au</td>
-            <td>Google Ads – remarketing a měření konverzí.</td>
-            <td>Marketingové</td>
-            <td>90 dní</td>
-        </tr>
+  
     </tbody>
 </table>
 
 <p>
 Podrobnosti o zpracování osobních údajů naleznete v našich <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:privacy')) /* line 66 */;
-		echo '" style="text-decoration:none; color:#0047d4">zásadách ochrany soukromí</a>.
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:privacy')) /* line 55 */;
+		echo '" style="text-decoration:none; color:blue">zásadách ochrany soukromí</a>.
 </p>
 </div>
 ';

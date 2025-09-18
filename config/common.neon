@@ -11,6 +11,8 @@ database:
 	user: 'root'
 	password:
 
+
+
 # parameters:
 #     database:
 # 		dsn: 'mysql:host=md391.wedos.net;dbname=d380391_deaf;charset=utf8mb4'
@@ -29,6 +31,7 @@ latte:
 	extensions:
 		# - App\Presentation\Accessory\LatteExtension
 		# - contributte.mailing:Contributte\Mailing\DI\MAilingExtension
+		# mail: Nette\Mail\DI\MailExtension
 		
 
 
@@ -44,6 +47,9 @@ di:
 # 	moveDir: '/../../../www/uploads/img/'
 	# apiKey: 'AIzaSyDHlsSUNWn59jBbaw0tKjJZSRl01-r4H30'
 
+
+# extensions:
+# 	mail: Nette\Mail\DI\MailExtension
 
 # security:
 # 		contentSecurityPolicy:

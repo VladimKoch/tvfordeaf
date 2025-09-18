@@ -46,7 +46,7 @@ Chráníme vaše osobní údaje a dbáme na jejich bezpečné zpracování v sou
     <h2>1. Správce údajů</h2>
     <p>
         Správcem osobních údajů je <strong>TVFORDEAF</strong>, dostupný na adrese 
-        <a href="mailto:info@tvfordeaf.com" style="text-decoration:none; color:#0047d4">info@tvfordeaf.com</a>.
+        <a href="mailto:tvfordeaf@gmail.com" style="text-decoration:none; color:blue">tvfordeaf@gmail.com</a>.
     </p>
 </div>
 
@@ -109,13 +109,13 @@ Chráníme vaše osobní údaje a dbáme na jejich bezpečné zpracování v sou
     <h2>7. Kontakt</h2>
     <p>
         Pokud máte dotazy nebo chcete uplatnit svá práva, kontaktujte nás na 
-        <a href="mailto:info@tvfordeaf.com"style="text-decoration:none; color:#0047d4;">info@tvfordeaf.com</a>.
+        <a href="mailto:tvfordeaf@gmail.com"style="text-decoration:none; color:blue;">tvfordeaf@gmail.com</a>.
     </p>
 </div>
 <p>
 Zpět na informace o <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:cookies')) /* line 81 */;
-		echo '"style="text-decoration:none; color:#0047d4">zásadách používání cookies</a>.
+		echo '"style="text-decoration:none; color:blue">zásadách používání cookies</a>.
 </p>
 </div>
 ';

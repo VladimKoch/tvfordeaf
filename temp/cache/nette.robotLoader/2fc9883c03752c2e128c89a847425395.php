@@ -35,7 +35,7 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\BasePresenter.php',
-      1 => 1758027401,
+      1 => 1758116879,
     ),
     'App\\Presentation\\Cookie\\CookiePresenter' => 
     array (
@@ -65,7 +65,7 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1758021601,
+      1 => 1758189609,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -95,7 +95,7 @@ return array (
     'App\\Service\\VideosYoutubeService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\VideosYoutubeService.php',
-      1 => 1757937634,
+      1 => 1758189812,
     ),
     'App\\Service\\YouTubeService' => 
     array (
@@ -107,27 +107,17 @@ return array (
   array (
     'Nette\\Bridges\\Assets\\DIExtension' => 3,
     'null' => 3,
+    'Nette\\Mail\\DI\\MailExtension' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumStudiumTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
     'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
     'App\\Presentation\\Home\\HomeTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
-    'App\\Presentation\\Tip\\TipDefaultTemplate' => 3,
-    'App\\Presentation\\Tip\\TipTemplate' => 3,
-    'App\\Presentation\\Start\\StartDefaultTemplate' => 2,
-    'App\\Presentation\\Start\\StartTemplate' => 2,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumVideosTemplate' => 1,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumStudiumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumOldtestamentTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumNewtestamentTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumNewtestamenTemplate' => 3,
-    'App\\Presentation\\Legal\\LegalPresenter' => 3,
+    'App\\Presentation\\Home\\HomePrivacyTemplate' => 2,
     'App\\Presentation\\Home\\HomeCookiesTemplate' => 3,
-    'App\\Presentation\\Home\\HomePrivacyTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumPritomnapravdaTemplate' => 3,
   ),
   2 => 
   array (

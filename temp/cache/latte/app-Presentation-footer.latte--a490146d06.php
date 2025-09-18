@@ -28,11 +28,22 @@ final class Template_a490146d06 extends Latte\Runtime\Template
     <div class="row align-items-start gy-5">
       
       <div class="col-12 col-md-6 d-flex flex-column align-items-center align-items-md-start text-center text-md-start">
+        
         <div class="footer-logo img-fluid"><img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 11 */;
-		echo '/uploads/img/logo-white-ruka.png" style="height:30px;width:30px;filter: brightness(0) invert(1);"> TVFORDEAF</div>
-      </div>
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 12 */;
+		echo '/uploads/img/logo-white-ruka.png" style="height:30px;width:30px;filter: brightness(0) invert(1);"> TVFORDEAF
+        </div>
+        <div class="col-8 mt-3 m-auto">
+        <p> Napište nám:</p>
+        <div class="contact-form-container">
+';
+		$ʟ_tmp = $this->global->uiControl->getComponent('contactForm');
+		if ($ʟ_tmp instanceof Nette\Application\UI\Renderable) $ʟ_tmp->redrawControl(null, false);
+		$ʟ_tmp->render() /* line 17 */;
 
+		echo '        </div>
+        </div>
+      </div>
       <div class="footer-columns col-12 col-md-6 d-flex flex-column flex-sm-row justify-content-around text-center text-sm-start">
         <div class="mb-4 mb-sm-0">
           <h6 class="">Podpora</h6>
@@ -68,8 +79,12 @@ final class Template_a490146d06 extends Latte\Runtime\Template
           <h6 class="">Právní</h6>
           <ul class="list-unstyled">
             <li><a href="#" class="text-white text-decoration-none">Podmínky</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Ochrana Soukromí</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Cookies</a></li>
+            <li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:privacy')) /* line 58 */;
+		echo '" class="text-white text-decoration-none">Ochrana Soukromí</a></li>
+            <li><a href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:cookies')) /* line 59 */;
+		echo '" class="text-white text-decoration-none">Cookies</a></li>
             <li><a href="#" class="text-white text-decoration-none">Zásady</a></li>
             <li><a href="#" class="text-white text-decoration-none">Oznámení</a></li>
           </ul>

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 use Latte\Runtime as LR;
 
-/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation\@layout.latte */
+/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation/@layout.latte */
 final class Template_a45364876e extends Latte\Runtime\Template
 {
-	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\@layout.latte';
+	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation/@layout.latte';
 
 
 	public function main(array $ʟ_args): void
@@ -77,11 +77,11 @@ final class Template_a45364876e extends Latte\Runtime\Template
 	<div class="container" style="">
 ';
 		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 62 */;
-		echo '  <div class="" style=""><p style="color:blackgrey; font-family: font-family: Open Sans, sans-serif;" class="text-center">Skutečný hlas, skutečný dopad</p>
-            </div>
+		echo '  <div class="" style=""><p style="color:blackgrey; font-family: font-family: Open Sans, sans-serif;" class="text-center">Skutečný hlas, skutečný dopad</p></div>
+		
 ';
 		foreach ($flashes as $flash) /* line 65 */ {
-			echo '			<div class="alert alert-warning text-center">';
+			echo '			<div class="alert alert-info text-center">';
 			echo LR\Filters::escapeHtmlText($flash->message) /* line 66 */;
 			echo '</div>
 ';
@@ -92,33 +92,32 @@ final class Template_a45364876e extends Latte\Runtime\Template
 
 ';
 		$this->renderBlock('content', [], 'html') /* line 74 */;
-		if (!$cookiesAccepted) /* line 78 */ {
-			if (!$cookiesAccepted) /* line 79 */ {
-				echo '      <div id="cookie-consent" class="cookie-bar">
+		echo '      
+';
+		if (!$cookiesAccepted) /* line 79 */ {
+			echo '      <div id="cookie-consent" class="cookie-bar">
     <div class="cookie-bar-content">
         <img src="';
-				echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 81 */;
-				echo '/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 81 */;
+			echo '/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
         <p>
             Používáme soubory cookie, abychom zajistili co nejlepší uživatelský zážitek. Pokračováním v používání našeho webu s tím souhlasíte.
         </p>
         <div class="cookie-bar-buttons">
             <a href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 86 */;
-				echo '" class="btn-accept" >Rozumím</a>
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 86 */;
+			echo '" class="btn-accept" >Rozumím</a>
             <a href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['essentials'])) /* line 87 */;
-				echo '" class="btn-accept">Pouze nezbytné</a>
-            <a href="';
-				echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 88 */;
-				echo '" class="btn-info">Více informací</a>
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 88 */;
+			echo '" class="btn-info">Více informací</a>
         </div>
     </div>
 </div>
 ';
-			}
 		}
-		echo "\n";
+		echo '    
+
+';
 		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 94 */;
 		echo '
 
@@ -137,20 +136,11 @@ final class Template_a45364876e extends Latte\Runtime\Template
 	<script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.min.js"></script>
 	<script src="https://unpkg.com/nette.ajax.js"></script>
 	<script src="https://unpkg.com/htmx.org@2.0.4"></script>
+	<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 110 */;
+		echo '/js/script.js"></script>
 
 
-<script>
-    document.addEventListener(\'DOMContentLoaded\', function() {
-        const acceptButton = document.querySelector(\'.btn-accept\');
-        if (acceptButton) {
-            acceptButton.addEventListener(\'click\', function(e) {
-                e.preventDefault();
-                document.getElementById(\'cookie-consent\').style.display = \'none\';
-                fetch(acceptButton.href);
-            });
-        }
-    });
-</script>
 
 	
 </body>

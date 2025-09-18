@@ -456,7 +456,7 @@ h6{
     }
 }
 
-/* Cookie Banner */
+/* Cookie Banner design */
 
 .cookies-table {
     width: 100%;
@@ -475,7 +475,7 @@ h6{
 }
 
 .cookies-table thead {
-    background: #002b7f; /* tmavě modrá podle tvého webu */
+    background: #002b7f; /* tmavě modrá */
     color: #fff;
 }
 
@@ -507,4 +507,132 @@ h6{
 ul{
   list-style-type: none;
 }
+
+/* Form Footer */
+
+/* Příklad základního stylu */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container button {
+    background-color: #023062;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-button-container {
+    display: flex;
+    justify-content: center; /* Zarovná obsah na střed */
+    width: 100%; /* Ujistí se, že zabírá celou šířku */
+}
+
+/* Contact Form */
+
+/* Styly pro kontaktní formulář v footeru */
+.contact-form-container {
+    padding: 10px 0;
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-container label {
+    color: #ffffff; /* Bílý text pro popisky */
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+    width: 100%;
+    /* padding: 10px; */
+    margin-bottom: 15px;
+    border: 1px solid #4a6fa8; /* Jemný modrý rámeček */
+    border-radius: 4px;
+    background-color: #fafafa; /* Světlejší pozadí pro inputy */
+    color: #003fbd; /* Tmavý text v inputech */
+    font-size: 1em;
+}
+
+.contact-form-container input[type="text"]::placeholder,
+.contact-form-container input[type="email"]::placeholder,
+.contact-form-container textarea::placeholder {
+    color: #6a8bb8; /* Barva placeholderu */
+}
+
+.contact-form-container input[type="text"]:focus,
+.contact-form-container input[type="email"]:focus,
+.contact-form-container textarea:focus {
+    border-color: #007bff; /* Modrý rámeček při focusu */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.contact-form-container textarea {
+    resize: vertical; /* Povolit vertikální změnu velikosti */
+    min-height: 50px;
+}
+
+.contact-form-container button[type="submit"] {
+    background-color: #007bff; /* Modré tlačítko */
+    color: #ffffff; /* Bílý text tlačítka */
+    /* padding: 12px 20px; */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-container button[type="submit"]:hover {
+    background-color: #00264e; /* Tmavší modrá při najetí */
+}
+
+/* Styly pro flash zprávy (success/error) */
+.flashMessage.success {
+    background-color: #d4edda;
+    color: #191fc5;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.flashMessage.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
 

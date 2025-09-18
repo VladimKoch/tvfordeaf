@@ -8,9 +8,16 @@ services:
 	- App\Service\VideosYoutubeService
 	- App\Components\cookie\CookieComponent
 
+# mailer:
+#     # Použijte standardní sekci "mailer" pro konfiguraci.
+#     smtp:
+#         host: smtp.gmail.com
+#         port: 465 # nebo 587
+#         username: tvfordeaf@gmail.com
+#         password: 'sxyf rnhs jpoq lsro'
+#         secure: ssl # pro port 465 použijte ssl, pro 587 použijte tls
 
 
-	
 
 search:
 	-	in: %appDir%

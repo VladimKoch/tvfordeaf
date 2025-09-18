@@ -115,6 +115,38 @@ final class ManaCentrumPresenter extends BasePresenter
         $this->template->page = $page;
         $this->template->pageCount = $pageCount;
     }
+    /**
+     * Funkce pro zobrazení kázání v kazaní.latte 
+     */
+      public function renderPritomnaPravda($page=1)
+    {   
+        $this->videosYoutubeService->videosPritomnaPravda(); // Nahrátí videí z Youtube do DB
+
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $kazani = $this->database->table('pritomnapravda')->page($page,$itemsPerPage); // získejte články podle volby menu
+         $this->template->videos = $kazani; // získejte videa na stránku 
+         
+        $totalItems = $kazani->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
 
       public function renderOldTestament($page=1)
     {   

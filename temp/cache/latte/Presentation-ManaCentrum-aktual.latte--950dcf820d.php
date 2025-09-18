@@ -67,8 +67,8 @@ final class Template_950dcf820d extends Latte\Runtime\Template
 
     <!-- Responzivní tabulka -->
     <div class="table-responsive">
-        <table class="table table-bordered align-middle text-center">
-            <thead class="table-light">
+        <table class="table table-bordered cookies-table align-middle text-center">
+            <thead class="table-light cookies-table thead">
                 <tr>
                     <th>Název lekce</th>
                     <th>Datum</th>
