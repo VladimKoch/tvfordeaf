@@ -29,9 +29,9 @@ final class Template_a490146d06 extends Latte\Runtime\Template
       
       <div class="col-12 col-md-6 d-flex flex-column align-items-center align-items-md-start text-center text-md-start">
         
-        <div class="footer-logo img-fluid"><img src="';
+        <div class="footer-logo img-fluid">TV for DEAF <img src="';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 12 */;
-		echo '/uploads/img/logo-white-ruka.png" style="height:30px;width:30px;filter: brightness(0) invert(1);"> TVFORDEAF
+		echo '/uploads/img/logo-white-ruka.png" style="height:30px;width:30px;filter: brightness(0) invert(1);"> 
         </div>
         <div class="col-8 mt-3 m-auto">
         <p> Napište nám:</p>
@@ -99,7 +99,7 @@ final class Template_a490146d06 extends Latte\Runtime\Template
 
     <div class="row align-items-center">
       <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
-        <p class="m-0">&copy; 2025 TVforDeaf</p>
+        <p class="m-0">&copy; 2025 TV for Deaf</p>
       </div>
 
       <div class="col-12 col-md-6 text-center text-md-center">

@@ -95,7 +95,7 @@ return array (
     'App\\Service\\VideosYoutubeService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\VideosYoutubeService.php',
-      1 => 1758189812,
+      1 => 1758191128,
     ),
     'App\\Service\\YouTubeService' => 
     array (
@@ -118,6 +118,8 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 1,
     'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 1,
     'App\\Presentation\\ManaCentrum\\ManaCentrumPritomnapravdaTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumOldtestamentTemplate' => 1,
   ),
   2 => 
   array (

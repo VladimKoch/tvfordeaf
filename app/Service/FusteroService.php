@@ -45,13 +45,39 @@ class FusteroService
                     $img = $baseUrl . $src;
                 
                     //adresa pro uložení obrázku
-                    $file ='C:\xampp\htdocs\tvfordeaf\www\uploads\img\\'.$src;
+                    // $file ='C:\xampp\htdocs\tvfordeaf\www\uploads\img\\'.$src;
+
+
+                        // adressa pro produkci
+                        $root_dir = $_SERVER['DOCUMENT_ROOT'];
+
+                        // /data/web/virtuals/380391/virtual/www
+
+                        // echo $root_dir;
+                        // die;
+
+                        // Sestaví cestu k adresáři pro nahrávání
+                        // Použijte '/' jako oddělovač adresářů, je to kompatibilní s Windows i Unix/Linux.
+                        $upload_dir = $root_dir . '/uploads/img/'; 
+
+                        // Zabráníme dvojitému lomítku, pokud DOCUMENT_ROOT končí lomítkem.
+                        $upload_dir = rtrim($root_dir, '/\\') . '/uploads/img/'; 
+
+                        // Váš kód pro cestu k souboru by pak vypadal takto:
+                        $file = $upload_dir . $src;
+
+                        // echo $file;
+                        // die;
+
                   
                         //Kontrola zda li obrázek již je stažen
                         if(!file_exists($file))
                         {   
+                            // echo 'stahuji obrázek';
+                            // die;
                             //stžení obrázku
                             $imageData = @file_get_contents($img);
+
                            
                                 //kontrola stažení
                                 if ($imageData === false) {
@@ -60,7 +86,7 @@ class FusteroService
                                 // Uložení na disk
                                 file_put_contents($file, $imageData);
 
-                                // pokud soubor jpg neexistuje stáhne a uloží do složky a odešle string pro databázy
+                                // pokud soubor jpg neexistuje stáhne a uloží do složky a odešle string do databáze
                                 return $src;
                         }
                 // Pokud již je soubor s názvem jpg obrázku je uložen v adresaři nepošle string do databáze  
