@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Načti repozitář
+        uses: actions/checkout@v4
+
+      - name: Nainstaluj PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, pdo, pdo_mysql
+
+      - name: Nainstaluj Composer balíčky
+        run: composer install
+
+      - name: Spusť PHPStan
+        run: php vendor/bin/phpstan analyse -c phpstan.neon

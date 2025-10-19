@@ -1,0 +1,70 @@
+{* This is the welcome page, you can delete it *}
+{layout '../@layout.latte'}
+{block content}
+
+{* <div hx-target="this" hx-swap="outerHTML"> *}
+{* {include '../header.latte'} *}
+
+
+     {* <div class="" style=""><p style="color:blackgrey; font-family: font-family: Open Sans, sans-serif;" class="text-center">Skutečný hlas, skutečný dopad</p>
+            </div> *}
+    <div class="container" style="margin-bottom:100px; padding-bottom:100px; min-width:30%;width:60%;margin:auto">
+             <div class="mb-3" style="height:70px;"><h1 style="color:black; font-family: font-family: Open Sans, sans-serif;" class="text-center">Stránky pro ty, kteří slyší očima</h1>
+            </div>
+             <div class="card-overlay">
+           
+          </div>
+
+          <img src="{$basePath}/uploads/img/underconstruction.png" alt="Under Construction" class="img-fluid" style="width:100%; height:auto; max-width:300px; display:block; margin-left:auto; margin-right:auto;">
+
+            <!-- Post -->
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-5">           
+		          <div n:foreach="$posts as $post">
+              <div class="col-12">
+                      <div class="card-group">
+                        <div class="card card__container border-0 rounded-3">
+                          <article class="card__article">
+                        <a n:href="{$post->presenter}:{$post->action}" class="href">
+                          <img src="{$basePath}/uploads/img/{$post->photo_url}" class="card-img-top rounded-3 scale-down" alt="..." style="min-width:200px; height: 250px; width: 100%; object-fit: cover;">
+                          <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+                                                                  -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
+                            <span class="card__description" style="color:white">{$post->content}</span>
+                              <h2 class="card__title text-center"style="color:white">{$post->name}</h2>
+                        
+                          </div>
+                          </a>
+                        </article>
+                        </div> 
+                  </div>
+                </div>
+            </div>
+			</div>
+
+    {if !$cookiesAccepted}
+      <div id="cookie-consent" class="cookie-bar" n:if="!$cookiesAccepted">
+    <div class="cookie-bar-content">
+        <img src="{$basePath}/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
+        <p>
+            Používáme soubory cookie, abychom zajistili co nejlepší uživatelský zážitek. Pokračováním v používání našeho webu s tím souhlasíte.
+        </p>
+        <div class="cookie-bar-buttons">
+            <a n:href="acceptCookies! all" class="btn-accept" >Rozumím</a>
+            <a n:href="acceptCookies! essentials" class="btn-accept">Pouze nezbytné</a>
+            <a href="{link moreInfo!}" class="btn-info">Více informací</a>
+        </div>
+    </div>
+</div>
+    {/if}
+
+
+
+{* </div> *}
+
+ 
+    {* </div> *}
+  {* </main> *}
+  <!--Main layout-->
+{* {include '../footer.latte'} *}
+</div>
+{/block}

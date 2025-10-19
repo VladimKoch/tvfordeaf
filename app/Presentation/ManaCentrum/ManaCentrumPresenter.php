@@ -1,0 +1,244 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Presentation\ManaCentrum;
+use App\Presenters\BasePresenter;
+
+use Nette;
+
+
+final class ManaCentrumPresenter extends BasePresenter
+{   
+
+    /** @var int počet položek na stránku */
+    private const ITEMS_PER_PAGE = 12;
+
+    public function __construct(
+                                private \Nette\Database\Explorer $database,
+                                private \App\Service\FusteroService $fusteroService,
+                                private \App\Service\FusteroTitle $fusteroTitle,
+                                private \App\Service\VideosYoutubeService $videosYoutubeService
+                                )
+    {
+       
+    }
+    /**
+    *  Hlavní metoda pro zobrazení stránky ManaCentrum v default.latte
+    */
+    public function renderDefault()
+    {   
+        // Aktualizace fotky sobotní školy
+
+        $imgString = $this->fusteroService->fetchPage();
+
+        if(is_string($imgString)){
+            $setImg = $this->database->table('manacentrum')->get(9);
+            if($setImg['photo_url']!==$imgString)
+            {
+                $setImg->update([
+                    'photo_url' => $imgString]);
+            };
+        }
+
+         $this->template->posts= $this->database->table('manacentrum'); // získejte články podle volby menu
+         
+    }
+    /**
+    * Hlavní metoda pro zobrazení stránky školy v skola.latte
+    */
+
+    public function renderSkola()
+    {   
+        $this->template->html = $this->fusteroService->fetchPage();
+    }
+
+        
+    /**
+    * Funkce pro zobrazení příběhů pro děti v prodeti.latte
+    */
+    public function renderProdeti($page=1)
+    {
+        // $this->videosYoutubeService->videosProdeti(); // Nahrátí videí z Youtube do DB
+            
+        $itemsPerPage = self::ITEMS_PER_PAGE; //počet článku na stránku
+
+        $proDeti = $this->database->table('prodeti')->page($page,$itemsPerPage); // získejte články podle volby menu
+        $this->template->pribehy = $proDeti; // získejte videa na stránku
+        
+        //-- Pagination --//
+
+        $totalItems = $proDeti->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+            // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+         // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+
+    /**
+     * Funkce pro zobrazení kázání v kazaní.latte 
+     */
+      public function renderVideos($page=1)
+    {   
+        $this->videosYoutubeService->videosKazani(); // Nahrátí videí z Youtube do DB
+        
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $kazani = $this->database->table('videos')->page($page,$itemsPerPage); // získejte články podle volby menu
+         $this->template->videos = $kazani; // získejte videa na stránku 
+         
+        $totalItems = $kazani->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+    /**
+     * Funkce pro zobrazení kázání v kazaní.latte 
+     */
+      public function renderPritomnaPravda($page=1)
+    {   
+        $this->videosYoutubeService->videosPritomnaPravda(); // Nahrátí videí z Youtube do DB
+
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $kazani = $this->database->table('pritomnapravda')->page($page,$itemsPerPage); // získejte články podle volby menu
+         $this->template->videos = $kazani; // získejte videa na stránku 
+         
+        $totalItems = $kazani->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+
+      public function renderOldTestament($page=1)
+    {   
+
+        $this->videosYoutubeService->bibleProjectOld();
+        // die;
+        
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $bibleProject = $this->database->table('oldtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
+                // echo '<pre>';
+                // print_r($bibleProject);
+                // echo'</pre>';
+                // die;
+
+         $this->template->olds = $bibleProject; // získejte videa na stránku 
+         
+        $totalItems = $bibleProject->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+
+
+      public function renderNewTestament($page=1)
+    {   
+
+        $this->videosYoutubeService->bibleProjectNew();
+        // die;
+        
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $bibleProject = $this->database->table('newtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
+
+         $this->template->news = $bibleProject; // získejte videa na stránku
+
+        $totalItems = $bibleProject->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+
+
+    public function handleProxyImage(): void
+    {
+        $url = 'https://www.fustero.es/index_cz.php';
+        // $url = 'https://fustero.es/2025t2cz.jpg';
+        $image = file_get_contents($url);
+
+        // $this->getHttpResponse()->setContentType('image/jpeg');
+        echo $image;
+        exit;
+    }
+
+    /**
+     * Metoda pro zobrazení dat aktuálnní sbotní školy v aktual.latte
+     */
+
+    public function renderAktual()
+    {   
+        $index = $this->fusteroTitle->getTitlesFromFustero();
+        $this->template->lessons = $index;    
+    }
+
+}

@@ -1,0 +1,23 @@
+services:
+	- App\Core\RouterFactory::createRouter
+	- App\Model\ArticleManager
+	
+	
+	- App\Model\PostManager
+	- App\Service\YouTubeService
+	- App\Service\FusteroService
+	- App\Service\FusteroTitle
+
+
+
+	
+
+search:
+	-	in: %appDir%
+		classes:
+			- *Facade
+			- *Factory
+			- *Repository
+			- *Service
+
+	
