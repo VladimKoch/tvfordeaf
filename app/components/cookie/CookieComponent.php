@@ -17,7 +17,7 @@ class CookieComponent extends Control
 
     public function render()
     {   
-        
+        // Cookies
         $this->template->setFile(__DIR__ . '/cookieComponent.latte');
         $this->template->render();
     }
