@@ -17,6 +17,12 @@ class CookieComponent extends Control
 
     public function render()
     {   
+        
+        $this->beforeRender();
+
+        // // 1. Logika (původně v beforeRender)
+        // $this->cookiesAccepted = $this->httpRequest->getCookie('cookies_accepted') === '1';
+        // $this->template->cookiesAccepted = $this->cookiesAccepted;
         // Cookies
         $this->template->setFile(__DIR__ . '/cookieComponent.latte');
         $this->template->render();
@@ -34,7 +40,7 @@ class CookieComponent extends Control
 
         // Volitelně přesměrování zpět, aby se stránka obnovila a lišta zmizela
         if ($this->httpRequest->isAjax()) {
-            $this->sendJson(['status' => 'ok']);
+            $this->getPresenter()->sendJson(['status' => 'ok']);
         } else {
             $this->redirect('this');
         }

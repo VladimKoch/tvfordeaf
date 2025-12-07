@@ -390,7 +390,7 @@ class Container_4d01def601 extends Nette\DI\Container
 
 	public function createServiceApplication__7(): App\Presentation\Post\PostPresenter
 	{
-		$service = new App\Presentation\Post\PostPresenter($this->getService('database.default.explorer'));
+		$service = new App\Presentation\Post\PostPresenter;
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
