@@ -13,10 +13,11 @@ class FusteroService
     /**
      * Stáhne obrázek z webu a uloží ho do složky.
      *
-     * @param string $url      URL obrázku ke stažení
+     * @param string $baseUrl Základní URL adresa webu
+     * @param string $html Cestat odkud se má obrázek stáhnout
      * @param string $savePath Cesta, kam se má obrázek uložit
-     * @param Crawler          Classa pro čtení z webu.
-     * @return string|null     String pokud úspěšně a není v adresáři, jinak false
+     * @param Crawler $crawler Classa pro čtení z webu.
+     * @return string|false String pokud úspěšně a není v adresáři, jinak false
      */
     public function fetchPage(): string|false
     {   

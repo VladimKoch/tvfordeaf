@@ -34,7 +34,7 @@ class CookieComponent extends Control
 
         // Volitelně přesměrování zpět, aby se stránka obnovila a lišta zmizela
         if ($this->httpRequest->isAjax()) {
-            $this->httpRequest->sendJson(['status' => 'ok']);
+            $this->httpResponse->sendJson(['status' => 'ok']);
         } else {
             $this->redirect('this');
         }
