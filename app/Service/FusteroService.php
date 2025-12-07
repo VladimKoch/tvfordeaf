@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use GuzzleHttp\Client;
+// use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
 class FusteroService
@@ -13,12 +13,9 @@ class FusteroService
     /**
      * Stáhne obrázek z webu a uloží ho do složky.
      *
-     * @param string $baseUrl Základní URL adresa webu
-     * @param string $html Cestat odkud se má obrázek stáhnout
-     * @param string $savePath Cesta, kam se má obrázek uložit
-     * @param Crawler $crawler Classa pro čtení z webu.
-     * @return string|false String pokud úspěšně a není v adresáři, jinak false
+     * @return string|false Název souboru pokud se nově stáhl, jinak false (chyba nebo již existuje)
      */
+
     public function fetchPage(): string|false
     {   
             // Hledání v html kontentu
