@@ -14,7 +14,8 @@ class CookieComponent extends Control
     }
 
     public function render()
-    {
+    {   
+        
         $this->template->setFile(__DIR__ . '/cookieComponent.latte');
         $this->template->render();
     }
@@ -31,7 +32,7 @@ class CookieComponent extends Control
 
         // Volitelně přesměrování zpět, aby se stránka obnovila a lišta zmizela
         if ($this->isAjax()) {
-            $this->sendJson(['status' => 'ok']);
+            $this->getPresenter()->sendJson(['status' => 'ok']);
         } else {
             $this->redirect('this');
         }
@@ -39,11 +40,12 @@ class CookieComponent extends Control
 
     protected function beforeRender()
     {
+        // $cookies = $this->httpRequest->getCookies();
         // Kontrola, zda již uživatel cookies přijal
-        $this->cookiesAccepted = $this->getHttpRequest()->getCookie('cookies_accepted') === '1';
+        $this->cookiesAccepted = $this->httpRequest->getCookie('cookies_accepted') === '1';
         $this->template->cookiesAccepted = $this->cookiesAccepted;
 
-        // ... váš další kód před renderováním ...
+        
     }
     
     // Volitelná akce pro "Více informací"
