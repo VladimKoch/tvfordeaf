@@ -14,7 +14,7 @@ return array(
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
-    'Nette\\' => array($vendorDir . '/nette/application/src', $vendorDir . '/nette/utils/src'),
+    'Nette\\' => array($vendorDir . '/nette/application/src', $vendorDir . '/nette/http/src', $vendorDir . '/nette/utils/src'),
     'Masterminds\\' => array($vendorDir . '/masterminds/html5/src'),
     'League\\Fractal\\' => array($vendorDir . '/league/fractal/src'),
     'JsonSchema\\' => array($vendorDir . '/justinrainbow/json-schema/src/JsonSchema'),

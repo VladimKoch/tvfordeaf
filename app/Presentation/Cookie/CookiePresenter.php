@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace App\Presentation\Cookie;
 
 use Nette;
-use Nette\Http\Request;
+// use Nette\Http\Request;
 
 final class CookiePresenter extends Nette\Application\UI\Presenter
 {
 
 
-    private Request $httpRequest;
+    // private Request $httpRequest;
 
     // Předáme si Request přes konstruktor
-    public function __construct(Request $httpRequest)
-    {
-        $this->httpRequest = $httpRequest;
-    }
+    // public function __construct(Request $httpRequest)
+    // {
+    //     $this->httpRequest = $httpRequest;
+    // }
 
 
     
