@@ -5,7 +5,7 @@ return array (
     'App\\Bootstrap' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Bootstrap.php',
-      1 => 1760901152,
+      1 => 1760983728,
     ),
     'App\\Components\\cookie\\CookieComponent' => 
     array (
@@ -105,8 +105,14 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 1,
-    'null' => 1,
+    'Nette\\Bridges\\Assets\\DIExtension' => 2,
+    'null' => 2,
+    'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
+    'App\\Presentation\\Home\\HomeTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumPritomnapravdaTemplate' => 3,
+    'App\\Presentation\\Uploads\\UploadsPresenter' => 3,
   ),
   2 => 
   array (

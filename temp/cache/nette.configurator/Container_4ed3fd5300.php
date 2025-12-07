@@ -503,9 +503,9 @@ class Container_4ed3fd5300 extends Nette\DI\Container
 	public function createServiceDatabase__default__connection(): Nette\Database\Connection
 	{
 		$service = new Nette\Database\Connection(
-			'mysql:host=md391.wedos.net;dbname=d380391_deaf;charset=utf8mb4',
-			/*sensitive{*/'w380391_deaf'/*}*/,
-			/*sensitive{*/'JFMeMcMT'/*}*/,
+			'mysql:host=127.0.0.1;dbname=tvfordeaf;charset=utf8mb4',
+			/*sensitive{*/'root'/*}*/,
+			/*sensitive{*/''/*}*/,
 			[],
 		);
 		Nette\Bridges\DatabaseTracy\ConnectionPanel::initialize(
