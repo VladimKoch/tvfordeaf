@@ -16,7 +16,7 @@ use App\Presenters\BasePresenter;
  * Handles uncaught exceptions and errors, and logs them.
  */
 #[Requires(forward: true)]
-final class Error5xxPresenter implements BasePresenter
+final class Error5xxPresenter implements Nette\Application\IPresenter
 {
 	public function __construct(
 		private ILogger $logger,

@@ -216,11 +216,11 @@ class Container_4d01def601 extends Nette\DI\Container
 			],
 		],
 		'App\Presentation\Cookie\CookiePresenter' => [2 => ['application.1']],
+		'App\Presenters\BasePresenter' => [
+			2 => ['application.2', 'application.4', 'application.5', 'application.6', 'application.8', 'application.9'],
+		],
 		'App\Presentation\Error\Error4xx\Error4xxPresenter' => [2 => ['application.2']],
 		'App\Presentation\Error\Error5xx\Error5xxPresenter' => [2 => ['application.3']],
-		'App\Presenters\BasePresenter' => [
-			2 => ['application.4', 'application.5', 'application.6', 'application.8', 'application.9'],
-		],
 		'App\Presentation\FitCentrum\FitCentrumPresenter' => [2 => ['application.4']],
 		'App\Presentation\Home\HomePresenter' => [2 => ['application.5']],
 		'App\Presentation\ManaCentrum\ManaCentrumPresenter' => [2 => ['application.6']],

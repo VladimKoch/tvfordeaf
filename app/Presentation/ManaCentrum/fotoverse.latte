@@ -13,7 +13,7 @@
         {if $fotovers}
             <div class="fotoverse-container">
                 <h4 class="text-center mb-4">Fotoverš pro dnešní den {$fotovers->display_date|date:'j. n. Y'}</h4>
-                <img src="{$basePath}/images/verses/{$fotovers->image_path}" alt="Fotoverš pro dnešní den" style="width:60%;" class="d-block mx-auto mb-4">
+                <img src="{$basePath}/images/verses/{$fotovers->image_path}" alt="Fotoverš pro dnešní den" style="width:80%;" class="d-block mx-auto mb-4">
                 <blockquote class="verse-text">
                     {* {$fotovers->verse_text|breaklines} *}
                     {* datum: {$fotovers->display_date|date:'j. n. Y'} *}

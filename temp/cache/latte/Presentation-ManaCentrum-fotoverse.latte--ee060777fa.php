@@ -69,7 +69,7 @@ final class Template_ee060777fa extends Latte\Runtime\Template
 			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 16 */;
 			echo '/images/verses/';
 			echo LR\Filters::escapeHtmlAttr($fotovers->image_path) /* line 16 */;
-			echo '" alt="Fotoverš pro dnešní den" style="width:60%;" class="d-block mx-auto mb-4">
+			echo '" alt="Fotoverš pro dnešní den" style="width:80%;" class="d-block mx-auto mb-4">
                 <blockquote class="verse-text">
                 </blockquote>
             </div>
