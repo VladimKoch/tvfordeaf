@@ -9,13 +9,14 @@ use Nette\Application\Attributes\Requires;
 use Nette\Application\Responses;
 use Nette\Http;
 use Tracy\ILogger;
+use App\Presenters\BasePresenter;
 
 
 /**
  * Handles uncaught exceptions and errors, and logs them.
  */
 #[Requires(forward: true)]
-final class Error5xxPresenter implements Nette\Application\IPresenter
+final class Error5xxPresenter implements BasePresenter
 {
 	public function __construct(
 		private ILogger $logger,

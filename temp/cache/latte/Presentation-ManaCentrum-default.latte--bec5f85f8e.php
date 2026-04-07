@@ -10,7 +10,7 @@ final class Template_bec5f85f8e extends Latte\Runtime\Template
 	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum/default.latte';
 
 	public const Blocks = [
-		['content' => 'blockContent'],
+		['title' => 'blockTitle', 'content' => 'blockContent'],
 	];
 
 
@@ -23,6 +23,8 @@ final class Template_bec5f85f8e extends Latte\Runtime\Template
 			return;
 		}
 
+		$this->renderBlock('title', get_defined_vars()) /* line 2 */;
+		echo "\n";
 		$this->renderBlock('content', get_defined_vars()) /* line 3 */;
 	}
 
@@ -37,6 +39,13 @@ final class Template_bec5f85f8e extends Latte\Runtime\Template
 			}
 		}
 		return get_defined_vars();
+	}
+
+
+	/** {block title} on line 2 */
+	public function blockTitle(array $ʟ_args): void
+	{
+		echo 'ManaCentrum';
 	}
 
 

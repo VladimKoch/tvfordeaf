@@ -90,7 +90,7 @@ return array (
     'App\\Service\\FusteroService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\FusteroService.php',
-      1 => 1765093168,
+      1 => 1775585414,
     ),
     'App\\Service\\FusteroTitle' => 
     array (
@@ -114,9 +114,12 @@ return array (
     'null' => 3,
     'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
     'App\\Presentation\\Home\\HomeTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 2,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumFotoverseTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 1,
   ),
   2 => 
   array (

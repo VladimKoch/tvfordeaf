@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 use Latte\Runtime as LR;
 
-/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation\@layout.latte */
+/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation/@layout.latte */
 final class Template_8095147802 extends Latte\Runtime\Template
 {
-	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\@layout.latte';
+	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation/@layout.latte';
 
 
 	public function main(array $ʟ_args): void
@@ -39,7 +39,18 @@ final class Template_8095147802 extends Latte\Runtime\Template
     <meta name="description" content="TV for Deaf is a platform dedicated to providing hope and information in sign language for the deaf community. Our mission is to ensure accessibility and inclusivity through visual communication." />
     <meta name="keywords" content="TV for Deaf, sign language, hope, health, deaf community, accessibility, inclusivity, visual communication, informations" />
 	 
-        <!-- Font Awesome -->
+    <!-- Title -->
+    <title>';
+		if ($this->hasBlock('title')) /* line 19 */ {
+			$this->renderBlock('title', [], function ($s, $type) {
+				$ʟ_fi = new LR\FilterInfo($type);
+				return LR\Filters::convertTo($ʟ_fi, 'html', $this->filters->filterContent('stripHtml', $ʟ_fi, $s));
+			}) /* line 19 */;
+			echo ' | ';
+		}
+		echo 'TV for Deaf</title>
+        
+     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" />
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
@@ -57,7 +68,7 @@ final class Template_8095147802 extends Latte\Runtime\Template
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HERJSYQJK"></script>
 
 ';
-		if ($hasAnalyticsConsent) /* line 44 */ {
+		if ($hasAnalyticsConsent) /* line 47 */ {
 			echo '    <!-- Google tag (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HERJSYQJK"></script>
     <script>
@@ -77,13 +88,13 @@ final class Template_8095147802 extends Latte\Runtime\Template
 <body>
 	<div class="container" style="">
 ';
-		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 63 */;
+		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 66 */;
 		echo '  <div class="" style=""><p style="color:blackgrey; font-family: font-family: Open Sans, sans-serif;" class="text-center">Skutečný hlas, skutečný dopad</p></div>
 		
 ';
-		foreach ($flashes as $flash) /* line 66 */ {
+		foreach ($flashes as $flash) /* line 69 */ {
 			echo '			<div class="alert alert-info text-center">';
-			echo LR\Filters::escapeHtmlText($flash->message) /* line 67 */;
+			echo LR\Filters::escapeHtmlText($flash->message) /* line 70 */;
 			echo '</div>
 ';
 
@@ -92,24 +103,24 @@ final class Template_8095147802 extends Latte\Runtime\Template
 		echo '	</div>
 
 ';
-		$this->renderBlock('content', [], 'html') /* line 75 */;
+		$this->renderBlock('content', [], 'html') /* line 78 */;
 		echo '      
 ';
-		if (!$cookiesAccepted) /* line 80 */ {
+		if (!$cookiesAccepted) /* line 83 */ {
 			echo '      <div id="cookie-consent" class="cookie-bar">
     <div class="cookie-bar-content">
         <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 82 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 85 */;
 			echo '/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
         <p>
             Používáme soubory cookie, abychom zajistili co nejlepší uživatelský zážitek. Pokračováním v používání našeho webu s tím souhlasíte.
         </p>
         <div class="cookie-bar-buttons">
             <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 87 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 90 */;
 			echo '" class="btn-accept" >Rozumím</a>
             <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 89 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 92 */;
 			echo '" class="btn-info">Více informací</a>
         </div>
     </div>
@@ -119,7 +130,7 @@ final class Template_8095147802 extends Latte\Runtime\Template
 		echo '    
 
 ';
-		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 95 */;
+		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 98 */;
 		echo '
 
 
@@ -127,7 +138,7 @@ final class Template_8095147802 extends Latte\Runtime\Template
 
 	 <!-- MDB -->
     <script type="text/javascript" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 102 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 105 */;
 		echo '/js/mdb.umd.min.js"></script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -138,7 +149,7 @@ final class Template_8095147802 extends Latte\Runtime\Template
 	<script src="https://unpkg.com/nette.ajax.js"></script>
 	<script src="https://unpkg.com/htmx.org@2.0.4"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 111 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 114 */;
 		echo '/js/script.js"></script>
 
 
@@ -156,7 +167,7 @@ final class Template_8095147802 extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['flash' => '66'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['flash' => '69'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
