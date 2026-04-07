@@ -3,21 +3,29 @@
 declare(strict_types=1);
 
 namespace App\Presentation\Home;
+
+
 use App\Components\cookie\CookieComponent;
 use App\Presenters\BasePresenter;
 use Nette;
+use Nette\Utils\Finder;
 
+use \App\Model\ArticleManager;
 
 final class HomePresenter extends BasePresenter
 {   
 
     
 
-    public function __construct(private \App\Model\ArticleManager $article,
+    public function __construct(private ArticleManager $article,
                                 )
-    {
-       
-    }
+    {}
+
+
+    public function renderProcessPhotos(): void
+{
+    
+}
 
     public function renderDefault()
     {       
@@ -51,6 +59,60 @@ final class HomePresenter extends BasePresenter
         // $this->template->page = $page;
         // $this->template->lastPage = $lastPage;
         // $this->template->time = date('H:i:s');
+
+    //     // Absolutní cesty ke složkám (upravte podle struktury vašeho projektu)
+    // $sourceDir = __DIR__ . '/../../../www/images/verses_source';
+    // $targetDir = __DIR__ . '/../../../www/images/verses';
+
+    // // 1. Načtení všech fotek (podporuje jpg, jpeg, png)
+    // $files = [];
+    // foreach (Finder::findFiles('*.jpg', '*.jpeg', '*.png')->in($sourceDir) as $file) {
+    //     $files[] = $file;
+    // }
+
+    // // Volitelné: Seřazení souborů podle abecedy
+    // usort($files, fn($a, $b) => strcmp($a->getFilename(), $b->getFilename()));
+
+    // // 2. Příprava data od 1.1.2026 na celý rok
+    // $start = new \DateTime('2026-01-01');
+    // $end = new \DateTime('2027-01-01');
+    // $interval = new \DateInterval('P1D');
+    // $period = new \DatePeriod($start, $interval, $end);
+
+    // $fileIndex = 0;
+    // $totalFiles = count($files);
+
+    // foreach ($period as $date) {
+    //     $dateString = $date->format('Y-m-d');
+        
+    //     // Pokud máme ještě nějakou nepřiřazenou fotku
+    //     if ($fileIndex < $totalFiles) {
+    //         $originalFile = $files[$fileIndex];
+    //         $extension = strtolower($originalFile->getExtension());
+    //         $newFileName = $dateString . '.' . $extension; // např. 2026-01-01.jpg
+            
+    //         // Zkopírujeme soubor pod novým názvem (bezpečnější než přesunout)
+    //         copy($originalFile->getPathname(), $targetDir . '/' . $newFileName);
+            
+    //         $imagePath = $newFileName;
+    //         $fileIndex++;
+    //     } else {
+    //         // Fotky došly (jsme u dne 261), použijeme výchozí obrázek
+    //         $imagePath = 'default.jpg'; 
+    //     }
+
+    //     // 3. Uložení nebo aktualizace v databázi
+    //     $this->database->query('INSERT INTO fotoverse ? ON DUPLICATE KEY UPDATE ?', [
+    //         'display_date' => $dateString,
+    //         'image_path' => $imagePath,
+    //         'verse_text' => 'Tento den čeká na svůj verš...',
+    //     ], [
+    //         'image_path' => $imagePath, // Pokud už datum existuje, přepíšeme jen cestu k obrázku
+    //     ]);
+    // }
+    
+    // echo "Hotovo! Zkopírováno a přejmenováno $fileIndex fotek. Celý rok 2026 je v databázi.";
+    // die(); // Zastaví vykreslování, aby se nenačítala šablona
    
 }
 
@@ -106,6 +168,7 @@ final class HomePresenter extends BasePresenter
 //     {
 //         $this->redirect('Home:cookies'); 
 //     }
+
 
    
  

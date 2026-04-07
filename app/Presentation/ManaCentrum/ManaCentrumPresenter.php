@@ -3,7 +3,10 @@
 declare(strict_types=1);
 
 namespace App\Presentation\ManaCentrum;
+
+
 use App\Presenters\BasePresenter;
+use App\Model\FotoVerse;
 
 use Nette;
 
@@ -18,7 +21,8 @@ final class ManaCentrumPresenter extends BasePresenter
                                 private \Nette\Database\Explorer $database,
                                 private \App\Service\FusteroService $fusteroService,
                                 private \App\Service\FusteroTitle $fusteroTitle,
-                                private \App\Service\VideosYoutubeService $videosYoutubeService
+                                private \App\Service\VideosYoutubeService $videosYoutubeService,
+                                private FotoVerse $fotoverse
                                 )
     {
        
@@ -42,12 +46,13 @@ final class ManaCentrumPresenter extends BasePresenter
         }
 
          $this->template->posts= $this->database->table('manacentrum'); // získejte články podle volby menu
+        
          
     }
+
     /**
     * Hlavní metoda pro zobrazení stránky školy v skola.latte
     */
-
     public function renderSkola()
     {   
         $this->template->html = $this->fusteroService->fetchPage();
@@ -56,6 +61,7 @@ final class ManaCentrumPresenter extends BasePresenter
         
     /**
     * Funkce pro zobrazení příběhů pro děti v prodeti.latte
+    *@property int $page - aktuální číslo stránky pro paginaci
     */
     public function renderProdeti($page=1)
     {
@@ -84,7 +90,8 @@ final class ManaCentrumPresenter extends BasePresenter
     }
 
     /**
-     * Funkce pro zobrazení kázání v kazaní.latte 
+     * Funkce pro zobrazení kázání v kazaní.latte
+     * @property int $page - aktuální číslo stránky pro paginaci
      */
       public function renderVideos($page=1)
     {   
@@ -116,7 +123,8 @@ final class ManaCentrumPresenter extends BasePresenter
         $this->template->pageCount = $pageCount;
     }
     /**
-     * Funkce pro zobrazení kázání v kazaní.latte 
+     * Funkce pro zobrazení kázání v kazaní.latte
+     * @property int $page - aktuální číslo stránky pro paginaci 
      */
       public function renderPritomnaPravda($page=1)
     {   
@@ -148,13 +156,16 @@ final class ManaCentrumPresenter extends BasePresenter
         $this->template->pageCount = $pageCount;
     }
 
-      public function renderOldTestament($page=1)
+    /**
+     * Funkce pro zobrazení starého zákona v staryzakon.latte
+     * @property int $page - aktuální číslo stránky pro paginaci
+     */
+    public function renderOldTestament($page=1)
     {   
 
         $this->videosYoutubeService->bibleProjectOld();
         // die;
         
-
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 
          $bibleProject = $this->database->table('oldtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
@@ -185,14 +196,16 @@ final class ManaCentrumPresenter extends BasePresenter
         $this->template->pageCount = $pageCount;
     }
 
-
-      public function renderNewTestament($page=1)
+    /**
+     * Funkce pro zobrazení nového zákona v novyzakon.latte
+     * @property int $page - aktuální číslo stránky pro paginaci
+     */
+    public function renderNewTestament($page=1)
     {   
 
         $this->videosYoutubeService->bibleProjectNew();
         // die;
         
-
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 
          $bibleProject = $this->database->table('newtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
@@ -220,6 +233,9 @@ final class ManaCentrumPresenter extends BasePresenter
     }
 
 
+    /**
+     * Funkce pro zobrazení proxy obrázku v proxyimage.latte
+     */
     public function handleProxyImage(): void
     {
         $url = 'https://www.fustero.es/index_cz.php';
@@ -239,6 +255,14 @@ final class ManaCentrumPresenter extends BasePresenter
     {   
         $index = $this->fusteroTitle->getTitlesFromFustero();
         $this->template->lessons = $index;    
+    }
+
+    /**
+     * Funkce pro zobbrazení verše dne z FotoVerse modelu ve fotoverse.latte
+     */
+    public function renderFotoverse()
+    {
+         $this->template->fotovers = $this->fotoverse->getDailyVerse(); // získejte verš dne z FotoVerse modelu
     }
 
 }

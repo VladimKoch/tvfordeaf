@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Presentation\FitCentrum;
 use App\Presenters\BasePresenter;
+use Nette\DI\Attributes\Inject;
 
 use Nette;
 
@@ -14,12 +15,11 @@ final class FitCentrumPresenter extends BasePresenter
     /** @var int počet položek na stránku */
     private const ITEMS_PER_PAGE = 8;
 
-    public function __construct(
-                                
-                                private \Nette\Database\Explorer $database)
-    {
-       
-    }
+    // public function __construct(private \Nette\Database\Explorer $database)
+    // {}
+
+    #[Inject]
+    public Nette\Database\Explorer $database;
 
     public function renderDefault()
     {   
@@ -55,7 +55,7 @@ final class FitCentrumPresenter extends BasePresenter
 
     }
 
-    public function renderShow($postId): void
+    public function renderShow(int $postId): void
     {
         
         // $posts = $this->article->findAllArticles()->get($postId);

@@ -10,19 +10,24 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
     /** @var string[] */
     protected array $acceptedCookies = [];
-
+    
     public function startup(): void
     {
         parent::startup();
-
+        
         $this->getHttpResponse()->setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
         $this->getHttpResponse()->setHeader('Pragma', 'no-cache');
         $this->getHttpResponse()->setHeader('Expires', '0');
-
+        
         $cookie = $this->getHttpRequest()->getCookie('cookies_accepted');
         $this->acceptedCookies = $cookie ? json_decode($cookie, true) : [];
     }
-
+    
+    public function handleMoreInfo(): void
+    {
+        $this->redirect('Home:cookies'); 
+    }
+    
     protected function beforeRender(): void
     {
         parent::beforeRender();
@@ -61,10 +66,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         }
     }
 
-    public function handleMoreInfo(): void
-    {
-        $this->redirect('Home:cookies'); 
-    }
 
 
         // V presenteru, např. v BasePresenter.php, který dědí všechny ostatní presentery

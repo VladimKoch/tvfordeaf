@@ -75,10 +75,11 @@ class Container_4d01def601 extends Nette\DI\Container
 		],
 		'Nette\Application\Routers\RouteList' => [['01']],
 		'App\Model\ArticleManager' => [['02']],
-		'App\Model\PostManager' => [['03']],
-		'App\Service\YouTubeService' => [['04']],
-		'App\Service\FusteroService' => [['05']],
-		'App\Service\FusteroTitle' => [['06']],
+		'App\Model\FotoVerse' => [['03']],
+		'App\Model\PostManager' => [['04']],
+		'App\Service\YouTubeService' => [['05']],
+		'App\Service\FusteroService' => [['06']],
+		'App\Service\FusteroTitle' => [['07']],
 		'Nette\Application\UI\Presenter' => [
 			2 => [
 				'application.1',
@@ -228,7 +229,7 @@ class Container_4d01def601 extends Nette\DI\Container
 		'App\Presentation\Tip\TipPresenter' => [2 => ['application.9']],
 		'NetteModule\ErrorPresenter' => [2 => ['application.10']],
 		'NetteModule\MicroPresenter' => [2 => ['application.11']],
-		'App\Service\VideosYoutubeService' => [['07']],
+		'App\Service\VideosYoutubeService' => [['08']],
 	];
 
 
@@ -250,31 +251,37 @@ class Container_4d01def601 extends Nette\DI\Container
 	}
 
 
-	public function createService03(): App\Model\PostManager
+	public function createService03(): App\Model\FotoVerse
+	{
+		return new App\Model\FotoVerse($this->getService('database.default.explorer'), $this->getService('cache.storage'));
+	}
+
+
+	public function createService04(): App\Model\PostManager
 	{
 		return new App\Model\PostManager($this->getService('database.default.explorer'));
 	}
 
 
-	public function createService04(): App\Service\YouTubeService
+	public function createService05(): App\Service\YouTubeService
 	{
 		return new App\Service\YouTubeService;
 	}
 
 
-	public function createService05(): App\Service\FusteroService
+	public function createService06(): App\Service\FusteroService
 	{
 		return new App\Service\FusteroService;
 	}
 
 
-	public function createService06(): App\Service\FusteroTitle
+	public function createService07(): App\Service\FusteroTitle
 	{
 		return new App\Service\FusteroTitle;
 	}
 
 
-	public function createService07(): App\Service\VideosYoutubeService
+	public function createService08(): App\Service\VideosYoutubeService
 	{
 		return new App\Service\VideosYoutubeService($this->getService('database.default.explorer'));
 	}
@@ -334,7 +341,7 @@ class Container_4d01def601 extends Nette\DI\Container
 
 	public function createServiceApplication__4(): App\Presentation\FitCentrum\FitCentrumPresenter
 	{
-		$service = new App\Presentation\FitCentrum\FitCentrumPresenter($this->getService('database.default.explorer'));
+		$service = new App\Presentation\FitCentrum\FitCentrumPresenter;
 		$service->injectPrimary(
 			$this->getService('http.request'),
 			$this->getService('http.response'),
@@ -344,6 +351,7 @@ class Container_4d01def601 extends Nette\DI\Container
 			$this->getService('security.user'),
 			$this->getService('latte.templateFactory'),
 		);
+		$service->database = $this->getService('database.default.explorer');
 		$service->invalidLinkMode = 5;
 		return $service;
 	}
@@ -370,9 +378,10 @@ class Container_4d01def601 extends Nette\DI\Container
 	{
 		$service = new App\Presentation\ManaCentrum\ManaCentrumPresenter(
 			$this->getService('database.default.explorer'),
-			$this->getService('05'),
 			$this->getService('06'),
 			$this->getService('07'),
+			$this->getService('08'),
+			$this->getService('03'),
 		);
 		$service->injectPrimary(
 			$this->getService('http.request'),

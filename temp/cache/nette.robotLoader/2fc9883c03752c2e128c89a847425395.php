@@ -22,6 +22,11 @@ return array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\ArticleManager.php',
       1 => 1760901154,
     ),
+    'App\\Model\\FotoVerse' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\FotoVerse.php',
+      1 => 1775582338,
+    ),
     'App\\Model\\PostManager' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Model\\PostManager.php',
@@ -35,7 +40,7 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\BasePresenter.php',
-      1 => 1760901154,
+      1 => 1765798147,
     ),
     'App\\Presentation\\Cookie\\CookiePresenter' => 
     array (
@@ -55,17 +60,17 @@ return array (
     'App\\Presentation\\FitCentrum\\FitCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\FitCentrum\\FitCentrumPresenter.php',
-      1 => 1760901156,
+      1 => 1765460454,
     ),
     'App\\Presentation\\Home\\HomePresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Home\\HomePresenter.php',
-      1 => 1760901156,
+      1 => 1775582034,
     ),
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1760901158,
+      1 => 1775580706,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -105,10 +110,13 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 2,
-    'null' => 2,
+    'Nette\\Bridges\\Assets\\DIExtension' => 3,
+    'null' => 3,
     'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
     'App\\Presentation\\Home\\HomeTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 2,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumFotoverseTemplate' => 3,
   ),
   2 => 
   array (

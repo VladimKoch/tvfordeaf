@@ -1,6 +1,7 @@
 services:
 	- App\Core\RouterFactory::createRouter
 	- App\Model\ArticleManager
+	- App\Model\FotoVerse
 	
 	
 	- App\Model\PostManager
