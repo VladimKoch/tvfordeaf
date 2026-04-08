@@ -44,7 +44,9 @@ final class Template_ed4615b3a0 extends Latte\Runtime\Template
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:default')) /* line 18 */;
 		echo '"><i class="fa fa-home"></i> Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-bars"></i> Možnosti</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> O nás</a></li>
+                <li class="nav-item"><a class="nav-link" href="';
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Home:onas')) /* line 20 */;
+		echo '"><i class="fa-solid fa-circle-info"></i> O nás</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-newspaper"></i> Novinky</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-suitcase-medical"></i> Pomoc</a></li>
             </ul>

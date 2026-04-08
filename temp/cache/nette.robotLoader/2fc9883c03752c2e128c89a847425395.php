@@ -119,7 +119,9 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumFotoverseTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumProdetiTemplate' => 1,
+    'App\\Presentation\\Home\\HomeOnasTemplate' => 3,
   ),
   2 => 
   array (

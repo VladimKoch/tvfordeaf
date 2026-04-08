@@ -63,7 +63,7 @@ final class Template_e17e81a02b extends Latte\Runtime\Template
 		echo '"style="text-decoration:none; color:blue">Domů</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
 		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:default')) /* line 5 */;
 		echo '"style="text-decoration:none; color:blue">ManaCentrum</a> <i class="fa-solid fa-arrow-right"></i> <a href="';
-		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('Manacentrum:skola')) /* line 5 */;
+		echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('ManaCentrum:skola')) /* line 5 */;
 		echo '"style="text-decoration:none; color:blue">Sobotní škola</a>
        <div class="mb-3 border-2" style="height:70px;margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
             -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
