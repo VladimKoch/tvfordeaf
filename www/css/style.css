@@ -630,3 +630,29 @@ ul{
 }
 
 
+/* ========================================= */
+/* SPECIFICKÉ STYLY PRO STRÁNKU FITCENTRUM   */
+/* ========================================= */
+
+/* Zelená patička */
+.page-fitcentrum .footer {
+    background: rgb(26, 171, 0) !important;
+}
+
+/* Zelená hlavička (navbar) */
+.page-fitcentrum .navbar {
+    background: rgb(26, 171, 0) !important;
+}
+
+/* Bílý text a ikony v zelené hlavičce pro lepší čitelnost */
+.page-fitcentrum .navbar-nav .nav-link, 
+.page-fitcentrum .navbar-nav .nav-link i {
+    color: white !important;
+}
+
+/* Zelená cookie lišta (volitelné) */
+.page-fitcentrum .cookie-bar {
+    background-color: rgb(20, 130, 0) !important; /* Tmavší zelená */
+}
+
+

@@ -21,6 +21,10 @@ final class FitCentrumPresenter extends BasePresenter
     #[Inject]
     public Nette\Database\Explorer $database;
 
+
+    /**
+     * Renderuje výchozí stránku pro FitCentrum. Získává data z databáze a předává je do šablony.
+     */
     public function renderDefault()
     {   
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
@@ -28,6 +32,7 @@ final class FitCentrumPresenter extends BasePresenter
          
          $post = $this->database->table('fitcentrum'); // získejte články podle volby menu
          $this->template->topics = $post; 
+
          
         //  $totalItems = $post->related('videos')->count(); // celkový počet článků
 
@@ -53,6 +58,15 @@ final class FitCentrumPresenter extends BasePresenter
 
 
 
+    }
+
+    /**
+     * Renderuje stránku s bylinkami. Získává data z databáze a předává je do šablony.
+     */
+    public function renderBozilekarna()
+    {
+         $bylinky = $this->database->table('bylinky'); // získejte články podle volby menu
+         $this->template->bylinky = $bylinky;
     }
 
     public function renderShow(int $postId): void

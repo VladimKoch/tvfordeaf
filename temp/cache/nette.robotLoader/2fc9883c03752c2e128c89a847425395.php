@@ -55,12 +55,12 @@ return array (
     'App\\Presentation\\Error\\Error5xx\\Error5xxPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Error\\Error5xx\\Error5xxPresenter.php',
-      1 => 1775589581,
+      1 => 1775638955,
     ),
     'App\\Presentation\\FitCentrum\\FitCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\FitCentrum\\FitCentrumPresenter.php',
-      1 => 1765460454,
+      1 => 1776059119,
     ),
     'App\\Presentation\\Home\\HomePresenter' => 
     array (
@@ -110,18 +110,20 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 3,
-    'null' => 3,
+    'Nette\\Bridges\\Assets\\DIExtension' => 1,
+    'null' => 2,
+    'App\\Presentation\\FitCentrum\\FitCentrumBozilekarnaTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
     'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
     'App\\Presentation\\Home\\HomeTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumFotoverseTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumProdetiTemplate' => 1,
-    'App\\Presentation\\Home\\HomeOnasTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumVideosTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 2,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 1,
+    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 2,
   ),
   2 => 
   array (

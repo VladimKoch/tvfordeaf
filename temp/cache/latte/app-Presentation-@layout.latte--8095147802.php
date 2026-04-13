@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 use Latte\Runtime as LR;
 
-/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation/@layout.latte */
+/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation\@layout.latte */
 final class Template_8095147802 extends Latte\Runtime\Template
 {
-	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation/@layout.latte';
+	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\@layout.latte';
 
 
 	public function main(array $ʟ_args): void
@@ -85,7 +85,9 @@ final class Template_8095147802 extends Latte\Runtime\Template
 </head>
 
 
-<body>
+<body';
+		echo ($ʟ_tmp = array_filter([($this->global->fn->isLinkCurrent)($this, 'FitCentrum:*') ? 'page-fitcentrum' : null])) ? ' class="' . LR\Filters::escapeHtmlAttr(implode(" ", array_unique($ʟ_tmp))) . '"' : "" /* line 63 */;
+		echo '>
 	<div class="container" style="">
 ';
 		$this->createTemplate('header.latte', $this->params, 'include')->renderToContentType('html') /* line 66 */;
