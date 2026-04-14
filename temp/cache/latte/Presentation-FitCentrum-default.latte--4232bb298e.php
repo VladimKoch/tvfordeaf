@@ -69,19 +69,21 @@ final class Template_4232bb298e extends Latte\Runtime\Template
                           <a href="';
 			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$topic->presenter}:{$topic->action}")) /* line 19 */;
 			echo '" class="fit-href">
+                          
+
                               <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 20 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 22 */;
 			echo '/uploads/img/';
-			echo LR\Filters::escapeHtmlAttr($topic->photo_url) /* line 20 */;
+			echo LR\Filters::escapeHtmlAttr($topic->photo_url) /* line 22 */;
 			echo '" class="card-img-top rounded-3 scale-down" alt="..." style="height: 250px; width: 100%; object-fit: cover;">
                               <div class="card-body card__data" style="background: rgb(18, 134, 0);background:linear-gradient(0deg,rgba(18, 134, 0,1) 0%, rgb(62, 180, 12) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
                               <span class="card__description">';
-			echo LR\Filters::escapeHtmlText($topic->content) /* line 24 */;
+			echo LR\Filters::escapeHtmlText($topic->content) /* line 26 */;
 			echo '</span>
                                 <h5 class="card__title card-title text-center" style="color:white">';
-			echo LR\Filters::escapeHtmlText($topic->title) /* line 25 */;
+			echo LR\Filters::escapeHtmlText($topic->title) /* line 27 */;
 			echo '</h5>
                             
                               </div>

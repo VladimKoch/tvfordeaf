@@ -61,6 +61,56 @@ final class FitCentrumPresenter extends BasePresenter
     }
 
     /**
+     * Renderuje stránku pro sekci "Tepny". Získává data z databáze a předává je do šablony.
+     */
+    public function renderSekceTepny()
+    {
+            $posts = $this->template->posts = $this->database->table('bylinky')
+            ->where('sekce_id', 4);
+            $this->template->posts = $posts;
+    }
+
+    /**
+     * Renderuje stránku pro sekci "Infekce". Získává data z databáze a předává je do šablony.
+     */
+    public function renderSekceInfekce()
+    {
+            $posts = $this->template->posts = $this->database->table('bylinky')
+            ->where('sekce_id', 5);
+            $this->template->posts = $posts;
+    }
+
+    /**
+     * Renderuje stránku pro sekci "Nervy". Získává data z databáze a předává je do šablony.
+     */
+    public function renderSekceNerv()
+    {
+            $posts = $this->template->posts = $this->database->table('bylinky')
+            ->where('sekce_id', 2);
+            $this->template->posts = $posts;
+    }
+
+    /**
+     * Renderuje stránku pro sekci "Krk, nos, ústa". Získává data z databáze a předává je do šablony.
+     */
+    public function renderSekceKrk()
+    {$posts = $this->template->posts = $this->database->table('bylinky')
+            ->where('sekce_id', 3);
+            $this->template->posts = $posts;
+    }
+
+    /**
+     * Renderuje stránku pro sekci "Oči". Získává data z databáze a předává je do šablony.
+     */
+    public function renderSekceOko()
+    {
+            // Vyfiltruje pouze bylinky, které mají sekce_id = 4
+        $posts = $this->template->posts = $this->database->table('bylinky')
+            ->where('sekce_id', 1);
+            $this->template->posts = $posts;
+    }
+
+    /**
      * Renderuje stránku s bylinkami. Získává data z databáze a předává je do šablony.
      */
     public function renderBozilekarna()
@@ -69,6 +119,17 @@ final class FitCentrumPresenter extends BasePresenter
          $this->template->bylinky = $bylinky;
     }
 
+    /*
+     * Renderuje stránku s bylinkami. Získává data z databáze a předává je do šablony.
+     */
+    public function renderSekcerostlin()
+    {
+        $sekce = $this->database->table('sekcerostlin');
+        $this->template->sekce = $sekce;
+    }
+
+
+    
     public function renderShow(int $postId): void
     {
         

@@ -29,7 +29,7 @@ final class Template_ed4615b3a0 extends Latte\Runtime\Template
 		echo '" class="navbar-brand">
             <img src="';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 7 */;
-		echo '/uploads/img/ucho.jpg" alt="Symbol for Deaf" class="ucho" style="border-radius: 20%; height: 40px; width: 40px;">
+		echo '/uploads/img/znak.jpg" alt="Symbol for Deaf" class="ucho" height: 40px; width: 40px;>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
