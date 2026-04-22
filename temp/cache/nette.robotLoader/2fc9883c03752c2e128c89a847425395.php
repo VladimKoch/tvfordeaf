@@ -110,12 +110,10 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 2,
-    'null' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 1,
-    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
+    'Nette\\Bridges\\Assets\\DIExtension' => 1,
+    'null' => 2,
     'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceInfekceTemplate' => 1,
+    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
   ),
   2 => 
   array (

@@ -325,6 +325,9 @@ h6{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Jemný stín */
     /* Vnitřní odsazení */
 }
+.navbar-collapse.show .logo-tv{
+   display: none !important;
+}
 
 
 
@@ -700,3 +703,4 @@ ul{
 .navbar-collapse.show .nav-item {
     margin-bottom: 10px;
 }
+
