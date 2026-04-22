@@ -60,7 +60,7 @@ return array (
     'App\\Presentation\\FitCentrum\\FitCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\FitCentrum\\FitCentrumPresenter.php',
-      1 => 1776152609,
+      1 => 1776156702,
     ),
     'App\\Presentation\\Home\\HomePresenter' => 
     array (
@@ -110,30 +110,11 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 3,
-    'null' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumBozilekarnaTemplate' => 3,
+    'Nette\\Bridges\\Assets\\DIExtension' => 1,
+    'null' => 2,
+    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 1,
     'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
-    'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
-    'App\\Presentation\\Home\\HomeTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumProdetiTemplate' => 1,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumVideosTemplate' => 1,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 2,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 1,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 1,
-    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 3,
-    'App\\Presentation\\Tip\\TipDefaultTemplate' => 1,
-    'App\\Presentation\\Tip\\TipTemplate' => 1,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumOkoTemplate' => 2,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceOkoTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceNervTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceKrkTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceTepnyTemplate' => 3,
-    'App\\Presentation\\Uploads\\UploadsPresenter' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceInfekceTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 2,
   ),
   2 => 
   array (

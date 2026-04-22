@@ -106,23 +106,35 @@ final class Template_8095147802 extends Latte\Runtime\Template
 
 ';
 		$this->renderBlock('content', [], 'html') /* line 78 */;
-		echo '      
+		echo '  <div class="d-flex justify-content-end">
+  <model-viewer 
+        src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 84 */;
+		echo '/blender/deaf_3d.glb" 
+        ar 
+        camera-controls 
+        touch-action="pan-y" 
+        shadow-intensity="1" 
+        style="width: 10%; height: 100px;">
+  </model-viewer>
+</div>
+      
 ';
-		if (!$cookiesAccepted) /* line 83 */ {
+		if (!$cookiesAccepted) /* line 93 */ {
 			echo '      <div id="cookie-consent" class="cookie-bar">
     <div class="cookie-bar-content">
         <img src="';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 85 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 95 */;
 			echo '/uploads/img/cookies.png" alt="Cookie Icon" class="cookie-icon">
         <p>
             Používáme soubory cookie, abychom zajistili co nejlepší uživatelský zážitek. Pokračováním v používání našeho webu s tím souhlasíte.
         </p>
         <div class="cookie-bar-buttons">
             <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 90 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('acceptCookies!', ['all'])) /* line 100 */;
 			echo '" class="btn-accept" >Rozumím</a>
             <a href="';
-			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 92 */;
+			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link('moreInfo!')) /* line 102 */;
 			echo '" class="btn-info">Více informací</a>
         </div>
     </div>
@@ -132,15 +144,17 @@ final class Template_8095147802 extends Latte\Runtime\Template
 		echo '    
 
 ';
-		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 98 */;
+		$this->createTemplate('footer.latte', $this->params, 'include')->renderToContentType('html') /* line 108 */;
 		echo '
 
 
 	<script>window.scrollTo({ top: 0, behavior: \'smooth\' });</script>
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+
 	 <!-- MDB -->
     <script type="text/javascript" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 105 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 117 */;
 		echo '/js/mdb.umd.min.js"></script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -151,7 +165,7 @@ final class Template_8095147802 extends Latte\Runtime\Template
 	<script src="https://unpkg.com/nette.ajax.js"></script>
 	<script src="https://unpkg.com/htmx.org@2.0.4"></script>
 	<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 114 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 126 */;
 		echo '/js/script.js"></script>
 
 

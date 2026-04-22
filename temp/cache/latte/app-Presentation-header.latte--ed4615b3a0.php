@@ -51,9 +51,10 @@ final class Template_ed4615b3a0 extends Latte\Runtime\Template
                 <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-suitcase-medical"></i> Pomoc</a></li>
             </ul>
             <ul class="navbar-nav ms-auto d-flex align-items-center">
+                     
                 <li class="nav-item">
                     <img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 26 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 27 */;
 		echo '/uploads/img/Fulllogo-origin.png" class="me-5 pb-1" style="height:40px; width:40px; transform: scale(1.2);">
                 </li>
             </ul>

@@ -61,7 +61,7 @@ final class Template_0f574b72a7 extends Latte\Runtime\Template
 		echo '"style="text-decoration:none; color:green">FitCentrum</a>
      <div class="mb-3 border-2" style="height:70px;margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
         -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
-        -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:green; font-size:1.5rem" class="text-center">Sekce rostlin Boží lékárny</h1>
+        -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:green; font-size:1.5rem" class="text-center">Encyklopedie léčivých rostlin</h1>
         <p class="text-center" style="font-size:0.875rem">Zde najdete sekci bylinek pro různé potřeby</p></div>
             <!-- Post -->
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5"> 

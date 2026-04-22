@@ -69,7 +69,7 @@ final class Template_4232bb298e extends Latte\Runtime\Template
                           <a href="';
 			echo LR\Filters::escapeHtmlAttr($this->global->uiControl->link("{$topic->presenter}:{$topic->action}")) /* line 19 */;
 			echo '" class="fit-href">
-                          
+                           
 
                               <img src="';
 			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 22 */;
