@@ -656,3 +656,47 @@ ul{
 }
 
 
+/* Media Queries pro responzivitu */
+
+/* Pro tablety a menší (do 991px) */
+@media (max-width: 991px) {
+    .navbar {
+        width: 100% !important; /* Na tabletu už nebude navbar jen na 70 % šířky */
+    }
+    
+    /* Logo "TV FOR DEAF" vpravo schováme, když je menu sbalené, aby nepřekáželo hamburgeru */
+    .logo-tv {
+        display: none;
+    }
+}
+
+/* Pro mobilní telefony (do 578px) */
+@media (max-width: 578px) {
+    .card__container {
+        min-width: 60% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+    
+    .navbar-nav.ms-auto {
+        display: none !important; 
+    }
+}
+
+/* Stylování rozbaleného hamburger menu - přidáme bílé pozadí a odsazení */
+.navbar-collapse.show {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-radius: 0 0 10px 10px;
+}
+
+/* Položky v menu pod sebou */
+.navbar-collapse.show .nav-item {
+    margin-bottom: 10px;
+}

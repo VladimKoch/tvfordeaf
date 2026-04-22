@@ -63,6 +63,15 @@ final class FitCentrumPresenter extends BasePresenter
     /**
      * Renderuje stránku pro sekci "Tepny". Získává data z databáze a předává je do šablony.
      */
+    public function renderSekceUvod()
+    {
+            $posts = $this->template->posts = $this->database->table('bylinky')
+            ->where('sekce_id', 1);
+            $this->template->posts = $posts;
+    }
+    /**
+     * Renderuje stránku pro sekci "Tepny". Získává data z databáze a předává je do šablony.
+     */
     public function renderSekceTepny()
     {
             $posts = $this->template->posts = $this->database->table('bylinky')

@@ -60,7 +60,7 @@ return array (
     'App\\Presentation\\FitCentrum\\FitCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\FitCentrum\\FitCentrumPresenter.php',
-      1 => 1776156702,
+      1 => 1776851265,
     ),
     'App\\Presentation\\Home\\HomePresenter' => 
     array (
@@ -110,11 +110,12 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 1,
-    'null' => 2,
+    'Nette\\Bridges\\Assets\\DIExtension' => 2,
+    'null' => 3,
     'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 1,
     'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 2,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekceInfekceTemplate' => 1,
   ),
   2 => 
   array (
