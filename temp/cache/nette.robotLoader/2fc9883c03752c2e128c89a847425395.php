@@ -114,6 +114,9 @@ return array (
     'null' => 2,
     'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
     'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
+    'App\\Presentation\\Home\\HomeDefaultTemplate' => 1,
+    'App\\Presentation\\Home\\HomeTemplate' => 1,
+    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 1,
   ),
   2 => 
   array (

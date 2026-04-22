@@ -69,7 +69,7 @@ final class Template_0f574b72a7 extends Latte\Runtime\Template
                     <div class="card-group">
                         <div class="card card__container border-0">
                             <article class="card__article">
-                                    <a href="https://hladwork.papet.cz/public/zk/titulka/titulka_Page_1.html" class="fit-href">
+                                    <a href="https://hladwork.papet.cz/public/zk/titulka/titulka_Page_1.html" class="fit-href" target="_blank">
                                         <img src="';
 		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($basePath)) /* line 21 */;
 		echo '/uploads/img/znak-modry.png" 
