@@ -122,6 +122,7 @@ final class ManaCentrumPresenter extends BasePresenter
         $this->template->page = $page;
         $this->template->pageCount = $pageCount;
     }
+
     /**
      * Funkce pro zobrazení kázání v kazaní.latte
      * @property int $page - aktuální číslo stránky pro paginaci 
@@ -169,11 +170,7 @@ final class ManaCentrumPresenter extends BasePresenter
         $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
 
          $bibleProject = $this->database->table('oldtestament')->page($page,$itemsPerPage); // získejte články podle volby menu
-                // echo '<pre>';
-                // print_r($bibleProject);
-                // echo'</pre>';
-                // die;
-
+   
          $this->template->olds = $bibleProject; // získejte videa na stránku 
          
         $totalItems = $bibleProject->count('*'); // celkový počet článků
@@ -234,6 +231,41 @@ final class ManaCentrumPresenter extends BasePresenter
 
 
     /**
+     * Funkce pro zobrazení písní v kazaní.latte
+     * @property int $page - aktuální číslo stránky pro paginaci
+     */
+    public function renderPisne($page=1)
+    {   
+        $this->videosYoutubeService->videosPisne(); // Nahrátí videí z Youtube do DB
+        
+
+        $itemsPerPage = self::ITEMS_PER_PAGE; // počet článků na stránku
+
+         $pisne = $this->database->table('pisne')->page($page,$itemsPerPage); // získejte články podle volby menu
+         $this->template->pisne = $pisne; // získejte videa na stránku 
+         
+        $totalItems = $pisne->count('*'); // celkový počet článků
+        $pageCount = (int) ceil($totalItems / $itemsPerPage);
+
+        // Ošetření neplatné stránky
+        if ($page < 1) {
+            $this->redirect('this', ['page' => 1]);
+        } elseif ($page > $pageCount) {
+            $this->redirect('this', ['page' => $pageCount]);
+        }
+
+        $offset = ($page - 1) * $itemsPerPage;
+
+        // Simulovaná data (v reálu dotaz na DB s LIMIT a OFFSET)
+        $this->template->articles = range($offset + 1, min($offset + $itemsPerPage, $totalItems));
+
+        // Info pro šablonu
+        $this->template->page = $page;
+        $this->template->pageCount = $pageCount;
+    }
+
+
+    /**
      * Funkce pro zobrazení proxy obrázku v proxyimage.latte
      */
     public function handleProxyImage(): void
@@ -264,5 +296,7 @@ final class ManaCentrumPresenter extends BasePresenter
     {
          $this->template->fotovers = $this->fotoverse->getDailyVerse(); // získejte verš dne z FotoVerse modelu
     }
+
+
 
 }

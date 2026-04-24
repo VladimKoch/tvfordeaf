@@ -131,7 +131,67 @@ html, body {
     box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
     -webkit-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
     -moz-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
+
 }
+
+
+/*=============== MODERN VIDEO CARDS ===============*/
+.video-card {
+    background-color: #ffffff;
+    border-radius: 16px; /* Moderní výrazné zaoblení */
+    overflow: hidden; /* Zajistí, že i rohy videa se zaoblí podle karty */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); /* Velmi jemný stín */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-8px); 
+    /* Stín se mírně zvětší a dostane nádech tvé tmavě modré barvy (#002b7f) */
+    box-shadow: 0 15px 35px rgba(0, 43, 127, 0.15); 
+
+  /* transform: scale(0.95);
+    box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
+    -webkit-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
+    -moz-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1); */
+
+}
+
+/* Úprava iframu, aby neměl vlastní okraje */
+.video-card iframe {
+    border: none;
+    background-color: #000; /* Kdyby se video načítalo pomalu, bude tam elegantní černá */
+}
+
+/* Kontejner pro text */
+.video-info {
+    padding: 15px 20px;
+    background: #ffffff;
+    flex-grow: 1; /* Vyplní zbylé místo, aby všechny karty byly stejně vysoké */
+    display: flex;
+    align-items: center; /* Vycentruje text vertikálně */
+    justify-content: center;
+}
+
+/* Minimalistický textový popisek */
+.video-title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-color, #333);
+    text-align: center;
+    
+    /* Tyto 3 řádky zajistí, že pokud je text moc dlouhý, udělá na konci 3 tečky a nezalomí se */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+
+
 /*--------------- Karty fitcentr menu hover ----------------*/
 .card-fit:hover{
     transform: scale(0.95);
@@ -633,31 +693,6 @@ ul{
 }
 
 
-/* ========================================= */
-/* SPECIFICKÉ STYLY PRO STRÁNKU FITCENTRUM   */
-/* ========================================= */
-
-/* Zelená patička */
-.page-fitcentrum .footer {
-    background: rgb(26, 171, 0) !important;
-}
-
-/* Zelená hlavička (navbar) */
-.page-fitcentrum .navbar {
-    background: rgb(26, 171, 0) !important;
-}
-
-/* Bílý text a ikony v zelené hlavičce pro lepší čitelnost */
-.page-fitcentrum .navbar-nav .nav-link, 
-.page-fitcentrum .navbar-nav .nav-link i {
-    color: white !important;
-}
-
-/* Zelená cookie lišta (volitelné) */
-.page-fitcentrum .cookie-bar {
-    background-color: rgb(20, 130, 0) !important; /* Tmavší zelená */
-}
-
 
 /* Media Queries pro responzivitu */
 
@@ -703,4 +738,6 @@ ul{
 .navbar-collapse.show .nav-item {
     margin-bottom: 10px;
 }
+
+
 

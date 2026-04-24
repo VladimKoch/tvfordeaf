@@ -317,4 +317,78 @@ class VideosYoutubeService
 
                 } while ($nextPageToken);
     }
+
+
+    public function videosPisne()
+    {
+        //playlist id
+        $apiKey = "AIzaSyC1XfUNh-tAz3UZWAix43J_cr2v-XNU6H4";
+        $playlistId = "PLc4GGRuuVveH6UwqkNdbv3a8aVo3LKmJV";
+      
+        $nextPageToken = '';
+        do {
+            // Sestavení URL
+            $apiUrl = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=$playlistId&key=$apiKey";
+            if ($nextPageToken) {
+                $apiUrl .= "&pageToken=" . urlencode($nextPageToken);
+            }
+                //Response from Youtube API
+                $response = file_get_contents($apiUrl);
+
+                if (!$response) {
+                    throw new \RuntimeException('Nepodařilo se nahrát data z Youtube API');
+                    
+                }
+
+                // Dekoduje JSON výstup do PHP objektu
+                $data = json_decode($response);
+
+                // dump($data);
+                // die;
+
+    
+        // Získání vídeí pouze kázání
+        foreach($data->items as $item){
+            
+            if ($item->snippet->title && $item->snippet->resourceId->videoId)  {
+
+                if(str_contains($item->snippet->title,'Deleted video'))
+                    {
+                        continue;
+                    }
+                elseif(str_contains($item->snippet->title,'Private video'))
+                    {
+                        continue;
+                    }
+                elseif(str_contains($item->snippet->title,'SONG 029'))
+                    {
+                        continue;
+                    }
+                elseif(str_contains($item->snippet->title,'Nezapomeň'))
+                    {
+                        continue;
+                    }
+                // vložit do tabulky pribehy
+                $title = $item->snippet->title ?? null;
+                $videoId = $item->snippet->resourceId->videoId ?? null;
+                if ($title && $videoId) {
+      
+                        try {
+                            $this->database->table('pisne')->insert([
+                                    'title' => $title,
+                                    'video_url' => $videoId,
+                                    'created_at' => new \DateTime(),
+                                ]);
+                                } catch (\Nette\Database\UniqueConstraintViolationException $e) {
+                                        // Přeskoč duplicitní řádek
+                                        continue;
+                                    }
+                                }
+                            }
+                        }
+                       // Příprava na další stránku
+                        $nextPageToken = $data->nextPageToken ?? null;
+
+                } while ($nextPageToken);
+    }
 }

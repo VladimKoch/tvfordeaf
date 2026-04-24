@@ -70,7 +70,7 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1775580706,
+      1 => 1777019334,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -100,7 +100,7 @@ return array (
     'App\\Service\\VideosYoutubeService' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Service\\VideosYoutubeService.php',
-      1 => 1760901160,
+      1 => 1777020704,
     ),
     'App\\Service\\YouTubeService' => 
     array (
@@ -110,13 +110,18 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 1,
-    'null' => 2,
+    'Nette\\Bridges\\Assets\\DIExtension' => 3,
+    'null' => 3,
     'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
     'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
-    'App\\Presentation\\Home\\HomeDefaultTemplate' => 1,
-    'App\\Presentation\\Home\\HomeTemplate' => 1,
+    'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
+    'App\\Presentation\\Home\\HomeTemplate' => 3,
     'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 1,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumPisneTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumVideosTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumProdetiTemplate' => 3,
   ),
   2 => 
   array (

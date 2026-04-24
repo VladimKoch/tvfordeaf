@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 use Latte\Runtime as LR;
 
-/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation\@layout.latte */
+/** source: C:\xampp\htdocs\tvfordeaf\app\Presentation/@layout.latte */
 final class Template_8095147802 extends Latte\Runtime\Template
 {
-	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\@layout.latte';
+	public const Source = 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation/@layout.latte';
 
 
 	public function main(array $ʟ_args): void
