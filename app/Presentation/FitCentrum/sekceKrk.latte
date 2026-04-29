@@ -3,57 +3,64 @@
 {block title}Sekce krk,nos,ústa{/block}
 {block content}
 
-<div class="container py-5">
-    {* Kontejner pro omezení šířky na velkých obrazovkách, ale na mobilech bude 100% *}
-    <div class="col-xl-10 mx-auto">
-        
-        {* --- Drobečková navigace --- *}
-        <div class="">
-            <a n:href="Home:default" class="text-decoration-none fw-bold " style="color:green;">Domů</a> 
-            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
-            <a n:href="FitCentrum:default" class="text-decoration-none fw-bold "style="color:green;">FitCentrum</a> 
-            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i>
-              <a n:href="FitCentrum:sekcerostlin" class="text-decoration-none fw-bold "style="color:green;">Encyklopedie rostlin</a> 
-            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
-            <span class="text-muted fw-semibold">Krk, nos, ústa</span>
+    <div class="container py-5">
+        {* Kontejner pro omezení šířky na velkých obrazovkách, ale na mobilech bude 100% *}
+        <div class="col-xl-10 mx-auto">
+
+            {* --- Drobečková navigace --- *}
+            <div class="">
+                <a n:href="Home:default" class="text-decoration-none fw-bold " style="color:green;">Domů</a>
+                <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i>
+                <a n:href="FitCentrum:default" class="text-decoration-none fw-bold " style="color:green;">FitCentrum</a>
+                <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i>
+                <a n:href="FitCentrum:sekcerostlin" class="text-decoration-none fw-bold "
+                    style="color:green;">Encyklopedie rostlin</a>
+                <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i>
+                <span class="text-muted fw-semibold">Krk, nos, ústa</span>
+            </div>
+
+            {* --- Hlavní nadpisová karta --- *}
+            <div class="border border-black-900 rounded overflow-hidden shadow-sm"
+                style="height:70px;margin-bottom:20px; background: white;">
+                <h1 style="color:green;font-size:1.5rem" class="text-center">Krk, nos, ústa</h1>
+                <p class="text-center" style="font-size:0.875rem">jak léčit problémy s krkem, nosen a ústami</p>
+            </div>
+            <!-- Post -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+                <div n:foreach="$posts as $post">
+                    <div class="col-12">
+                        <div class="card-group">
+                            <div class="card card__container border-0">
+                                <article class="card__article">
+
+
+                                    <a href="{$post->web_url}" class="fit-href" target="_blank">
+                                        <img src="{$basePath}/uploads/img/znak-zeleny.png"
+                                            style="position: absolute; top: 10px; right: 10px; z-index: 10; width: 50px; height: 50px;"
+                                            alt="Zelený znak">
+
+                                        <img src="{$basePath}/uploads/img/{$post->photo_url}"
+                                            class="card-img-top rounded-3 scale-down" alt="..."
+                                            style="height: 250px; width: 100%; object-fit: cover;">
+
+                                        <div class="card-body card__data"
+                                            style="background: rgb(18, 134, 0); background: linear-gradient(0deg,rgba(18, 134, 0,1) 0%, rgb(62, 180, 12) 100%); box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset; -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset; -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
+                                            <span class="card__description">{$post->content}</span>
+                                            <h5 class="card__title card-title text-center" style="color:white">
+                                                {$post->title}</h5>
+                                        </div>
+
+                                    </a>
+
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        {* --- Hlavní nadpisová karta --- *}
-      <div class="border border-black-900 rounded overflow-hidden shadow-sm" style="height:70px;margin-bottom:20px; background: white;">
-        <h1 style="color:green;font-size:1.5rem" class="text-center">Krk, nos, ústa</h1>
-            <p class="text-center" style="font-size:0.875rem">jak léčit problémy s krkem, nosen a ústami</p></div>
-            <!-- Post -->
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5"> 
-		          <div n:foreach="$posts as $post">   
-                <div class="col-12">
-                    <div class="card-group">
-                        <div class="card card__container border-0">
-                           <article class="card__article">
-
-                                
-                                    <a href="{$post->web_url}" class="fit-href" target="_blank">
-                                        <img src="{$basePath}/uploads/img/znak-zeleny.png" 
-                                        style="position: absolute; top: 10px; right: 10px; z-index: 10; width: 50px; height: 50px;" 
-                                        alt="Zelený znak">
-                                        
-                                    <img src="{$basePath}/uploads/img/{$post->photo_url}" class="card-img-top rounded-3 scale-down" alt="..." style="height: 250px; width: 100%; object-fit: cover;">
-
-                                    <div class="card-body card__data" style="background: rgb(18, 134, 0); background: linear-gradient(0deg,rgba(18, 134, 0,1) 0%, rgb(62, 180, 12) 100%); box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset; -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset; -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
-                                        <span class="card__description">{$post->content}</span>
-                                        <h5 class="card__title card-title text-center" style="color:white">{$post->title}</h5>
-                                    </div>
-                                            
-                                    </a>
-                                
-                            </article>
-
-                    </div>
-                  </div>
-                </div>
-            </div>    
-		</div>
-
-</div>
-
-</div>
+    </div>
 {/block}

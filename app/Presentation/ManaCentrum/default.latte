@@ -1,46 +1,50 @@
 {* This is the welcome page, you can delete it *}
 {block title}ManaCentrum{/block}
 {block content}
- 
-      <div class="container py-5">
+
+  <div class="container py-5">
     {* Kontejner pro omezení šířky na velkých obrazovkách, ale na mobilech bude 100% *}
     <div class="col-xl-10 mx-auto">
-        
-        {* --- Drobečková navigace --- *}
-        <div class="">
-            <a n:href="Home:default" class="text-decoration-none fw-bold " style="color:blue;">Domů</a> 
-            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
-            
-            <span class="text-muted fw-semibold">ManaCentrum</span>
-        </div>
 
-        {* --- Hlavní nadpisová karta --- *}
-      <div class="border border-black-900 rounded overflow-hidden shadow-sm" style="height:70px;margin-bottom:20px; background: white;">
+      {* --- Drobečková navigace --- *}
+      <div class="">
+        <a n:href="Home:default" class="text-decoration-none fw-bold " style="color:blue;">Domů</a>
+        <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i>
+
+        <span class="text-muted fw-semibold">ManaCentrum</span>
+      </div>
+
+      {* --- Hlavní nadpisová karta --- *}
+      <div class="border border-black-900 rounded overflow-hidden shadow-sm"
+        style="height:70px;margin-bottom:20px; background: white;">
         <h1 style="color:blue;font-size:1.5rem" class="text-center">ManaCentrum</h1>
-            <p class="text-center" style="font-size:0.875rem">Tady najdete kázání, písně, fotoverše atd.</p></div>
-                <!-- Post -->
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5"> 
-                  <div n:foreach="$posts as $post">
-                    <div class="col-12">
-                          <div class="card-group">
-                              <div class="card card__container border-0">
-                                <article class="card__article">                  
-                                    <a n:href="{$post->presenter}:{$post->action}" class="href">
-                                        <img src="{$basePath}/uploads/img/{$post->photo_url}" class="shadow-sm card-img-top scale-down" alt="..." style="height: 250px; width: 100%; object-fit: cover;">
-                                          <div class="card-body card__data" style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
+        <p class="text-center" style="font-size:0.875rem">Tady najdete kázání, písně, fotoverše atd.</p>
+      </div>
+      <!-- Post -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+        <div n:foreach="$posts as $post">
+          <div class="col-12">
+            <div class="card-group">
+              <div class="card card__container border-0">
+                <article class="card__article">
+                  <a n:href="{$post->presenter}:{$post->action}" class="href">
+                    <img src="{$basePath}/uploads/img/{$post->photo_url}" class="shadow-sm card-img-top scale-down"
+                      alt="..." style="height: 250px; width: 100%; object-fit: cover;">
+                    <div class="card-body card__data"
+                      style="background: rgb(6,14,131);background:linear-gradient(0deg,rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -webkit-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;
                                                                   -moz-box-shadow: 1px 3px 18px 0px rgba(255,255,255,0.75) inset;">
-          
-                                            <h5 class="card-title card__title text-center" style="color:white">{$post->title}</h5>
-                                          
-                                          </div>
-                                    </a>
-                              </article>
-                            </div>
-                        </div>
+
+                      <h5 class="card-title card__title text-center" style="color:white">{$post->title}</h5>
+
                     </div>
-                </div>
+                  </a>
+                </article>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 {/block}

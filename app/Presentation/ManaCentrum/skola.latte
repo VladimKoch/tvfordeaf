@@ -1,51 +1,56 @@
 {block title}Sobotní škola{/block}
 {block content}
 
-<div class="container py-5">
+  <div class="container py-5">
     {* Kontejner pro omezení šířky na velkých obrazovkách, ale na mobilech bude 100% *}
     <div class="col-xl-10 mx-auto">
-        
-        {* --- Drobečková navigace --- *}
-        <div class="mb-4">
-            <a n:href="Home:default" class="text-decoration-none fw-bold" style="color: blue;">Domů</a> 
-            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
-            <a n:href="ManaCentrum:default" class="text-decoration-none fw-bold" style="color: blue;">ManaCentrum</a> 
-            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
-            <span class="text-muted fw-semibold">Sobotní škola</span>
-        </div>
 
-        {* --- Hlavní nadpisová karta --- *}
-        <div class="bg-white border-0 shadow-sm rounded-4 mb-5 py-3">
-            <h1 style="color: blue; font-size: 1.5rem;" class="text-center mt-2 mb-1 fw-bold">Sobotní škola</h1>
-            <p class="text-center text-muted mb-2" style="font-size: 0.875rem;">Archív a aktuální čtvrtletí</p>
-        </div>
+      {* --- Drobečková navigace --- *}
+      <div class="mb-4">
+        <a n:href="Home:default" class="text-decoration-none fw-bold" style="color: blue;">Domů</a>
+        <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i>
+        <a n:href="ManaCentrum:default" class="text-decoration-none fw-bold" style="color: blue;">ManaCentrum</a>
+        <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i>
+        <span class="text-muted fw-semibold">Sobotní škola</span>
+      </div>
 
-        {* --- Hlavní rozcestník (Dlaždice) --- *}
-        <div class="row row-cols-1 row-cols-sm-2 g-4 justify-content-center">
-            
-            {* --- Dlaždice 1: Archív --- *}
-            <div class="col">
-                <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBc1pKSDdpcGtrcVdwT05YU0lUVHMtRVVkZ0p5R2c%5FZT1WTlFVMUs&id=964A92A9B81F49C6%21602583&cid=964A92A9B81F49C6" target="_blank" class="text-decoration-none d-block h-100">
-                    <div class="bg-white border-0 shadow-sm rounded-4 p-4 p-lg-5 text-center h-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{$basePath}/uploads/img/archive.png" alt="Archív" class="img-fluid mb-4" style="height: 120px; object-fit: contain;">
-                        <h4 class="fw-bold mb-0 "style="color: blue;">Archív</h4>
-                    </div>
-                </a>
+      {* --- Hlavní nadpisová karta --- *}
+      <div class="bg-white border-0 shadow-sm rounded-4 mb-1 py-1">
+        <h1 style="color: blue; font-size: 1.5rem;" class="text-center mt-2 mb-1 fw-bold">Sobotní škola</h1>
+        <p class="text-center text-muted mb-2" style="font-size: 0.875rem;">Archív a aktuální čtvrtletí</p>
+      </div>
+
+      {* --- Hlavní rozcestník (Dlaždice) --- *}
+      <div class="row row-cols-1 row-cols-sm-2 g-4 justify-content-center">
+
+        {* --- Dlaždice 1: Archív --- *}
+        <div class="col">
+          <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvcyFBc1pKSDdpcGtrcVdwT05YU0lUVHMtRVVkZ0p5R2c%5FZT1WTlFVMUs&id=964A92A9B81F49C6%21602583&cid=964A92A9B81F49C6"
+            target="_blank" class="text-decoration-none d-block h-100">
+            <div
+              class="bg-white border-0 shadow-sm rounded-4 p-4 p-lg-5 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+              <img src="{$basePath}/uploads/img/archive.png" alt="Archív" class="img-fluid mb-4"
+                style="height: 120px; object-fit: contain;">
+              <h4 class="fw-bold mb-0 " style="color: blue;">Archív</h4>
             </div>
-
-            {* --- Dlaždice 2: Aktuální čtvrtletí --- *}
-            <div class="col">
-                <a n:href="ManaCentrum:aktual" class="text-decoration-none d-block h-100">
-                    <div class="bg-white border-0 shadow-sm rounded-4 p-4 p-lg-5 text-center h-100 d-flex flex-column align-items-center justify-content-center">
-                        <img src="{$basePath}/uploads/img/check.png" alt="Aktuální čtvrtletí" class="img-fluid mb-4" style="height: 120px; object-fit: contain;">
-                        <h4 class="fw-bold mb-0 "style="color: blue;">Aktuální čtvrtletí</h4>
-                    </div>
-                </a>
-            </div>
-
+          </a>
         </div>
+
+        {* --- Dlaždice 2: Aktuální čtvrtletí --- *}
+        <div class="col">
+          <a n:href="ManaCentrum:aktual" class="text-decoration-none d-block h-100">
+            <div
+              class="bg-white border-0 shadow-sm rounded-4 p-4 p-lg-5 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+              <img src="{$basePath}/uploads/img/check.png" alt="Aktuální čtvrtletí" class="img-fluid mb-4"
+                style="height: 120px; object-fit: contain;">
+              <h4 class="fw-bold mb-0 " style="color: blue;">Aktuální čtvrtletí</h4>
+            </div>
+          </a>
+        </div>
+
+      </div>
 
     </div>
-</div>
+  </div>
 
 {/block}

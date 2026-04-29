@@ -59,7 +59,7 @@ final class Template_a1329dd39a extends Latte\Runtime\Template
             <span class="text-muted fw-semibold">Sobotní škola</span>
         </div>
 
-        <div class="bg-white border-0 shadow-sm rounded-4 mb-5 py-3">
+        <div class="bg-white border-0 shadow-sm rounded-4 mb-1 py-1">
             <h1 style="color: blue; font-size: 1.5rem;" class="text-center mt-2 mb-1 fw-bold">Sobotní škola</h1>
             <p class="text-center text-muted mb-2" style="font-size: 0.875rem;">Archív a aktuální čtvrtletí</p>
         </div>
