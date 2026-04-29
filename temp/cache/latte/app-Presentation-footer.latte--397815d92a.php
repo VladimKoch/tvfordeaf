@@ -104,10 +104,10 @@ final class Template_397815d92a extends Latte\Runtime\Template
 
       <div class="col-12 col-md-6 text-center text-md-center">
         <ul class="ul list-inline m-0">
-          <li class="list-inline-item"><a href="https://facebook.com"target="_blank" class="fs-4"><i class="bi bi-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.facebook.com/TvforDeaf"target="_blank" class="fs-4"><i class="bi bi-facebook"></i></a></li>
           <li class="list-inline-item"><a href="https://youtube.com"target="_blank" class="fs-4"><i class="bi bi-youtube"></i></a></li>
           <li class="list-inline-item"><a href="https://linkedin.com"target="_blank" class="fs-4"><i class="bi bi-linkedin"></i></a></li>
-          <li class="list-inline-item"><a href="https://instagram.com"target="_blank" class="fs-4"><i class="bi bi-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.instagram.com/tv_for_deaf_/"target="_blank" class="fs-4"><i class="bi bi-instagram"></i></a></li>
           <li class="list-inline-item"><a href="https://twitter.com"target="_blank" class="fs-4"><i class="fa-brands fa-x-twitter"></i></a></li>
         </ul>
       </div>

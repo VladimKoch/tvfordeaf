@@ -70,7 +70,7 @@ return array (
     'App\\Presentation\\ManaCentrum\\ManaCentrumPresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\ManaCentrum\\ManaCentrumPresenter.php',
-      1 => 1777019334,
+      1 => 1777447507,
     ),
     'App\\Presentation\\Post\\PostPresenter' => 
     array (
@@ -81,11 +81,6 @@ return array (
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Start\\StartPresenter.php',
       1 => 1760901158,
-    ),
-    'App\\Presentation\\Tip\\TipPresenter' => 
-    array (
-      0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\Tip\\TipPresentation.php',
-      1 => 1760901160,
     ),
     'App\\Service\\FusteroService' => 
     array (
@@ -110,18 +105,31 @@ return array (
   ),
   1 => 
   array (
-    'Nette\\Bridges\\Assets\\DIExtension' => 3,
-    'null' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
-    'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
-    'App\\Presentation\\Home\\HomeTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 1,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
+    'Nette\\Bridges\\Assets\\DIExtension' => 1,
+    'null' => 2,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumPisneTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumFotoverseTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumPritomnapravdaTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumVideosTemplate' => 3,
     'App\\Presentation\\ManaCentrum\\ManaCentrumProdetiTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumNewtestamentTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumOldtestamentTemplate' => 3,
+    'App\\Presentation\\ManaCentrum\\ManaCentrumPisneTemplate' => 3,
+    'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
+    'App\\Presentation\\Home\\HomeTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekceInfekceTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekceTepnyTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumBozilekarnaTemplate' => 2,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekceKrkTemplate' => 3,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekceNervTemplate' => 1,
+    'App\\Presentation\\FitCentrum\\FitCentrumSekceOkoTemplate' => 2,
   ),
   2 => 
   array (

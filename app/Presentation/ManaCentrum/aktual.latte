@@ -1,99 +1,234 @@
 {block title}Aktuální čtvrtletí{/block}
 {block content}
 
-<div class="container " style="margin-top: 50px; margin-bottom: 100px;width:60%;">
-    <a n:href="Home:default"style="text-decoration:none; color:blue">Domů</a> <i class="fa-solid fa-arrow-right"></i> <a n:href="ManaCentrum:default"style="text-decoration:none; color:blue">ManaCentrum</a> <i class="fa-solid fa-arrow-right"></i> <a n:href="ManaCentrum:skola"style="text-decoration:none; color:blue">Sobotní škola</a>
-       <div class="mb-3 border-2" style="height:70px;margin-bottom:20px; border:1px solid grey; box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
-            -webkit-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);
-            -moz-box-shadow: 10px 10px 18px -10px rgba(27,27,27,0.75);"><h1 style="color:blue;font-size:1.5rem" class="text-center">Sobotní škola</h1>
-            <p class="text-center"style="font-size:0.875rem">Aktuání čtvrtletí</p>
+<div class="container py-5">
+    {* Kontejner pro omezení šířky na velkých obrazovkách, ale na mobilech bude 100% *}
+    <div class="col-xl-10 mx-auto">
+        
+        {* --- Drobečková navigace --- *}
+        <div class="">
+            <a n:href="Home:default" class="text-decoration-none fw-bold " style="color:blue;">Domů</a> 
+            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
+            <a n:href="ManaCentrum:default" class="text-decoration-none fw-bold "style="color:blue;">ManaCentrum</a> 
+            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
+            <a n:href="ManaCentrum:skola" class="text-decoration-none fw-bold "style="color:blue;">Sobotní škola</a> 
+            <i class="fa-solid fa-chevron-right text-muted mx-2" style="font-size: 0.8rem;"></i> 
+            <span class="text-muted fw-semibold">Aktuální čtvrtletí</span>
         </div>
 
+        {* --- Hlavní nadpisová karta --- *}
+      <div class="border border-black-900 rounded overflow-hidden shadow-sm" style="height:70px;margin-bottom:20px; background: white;">
+        <h1 style="color:blue;font-size:1.5rem" class="text-center">Aktuální čtvrtletí</h1>
+            <p class="text-center" style="font-size:0.875rem">Studijní materiály pro aktulní čtrtletí</p></div>
 
-    <div class="container py-5">
 
-    <!-- Responzivní tabulka -->
-    <div class="table-responsive">
-        <table class="table table-bordered cookies-table align-middle text-center">
-            <thead class="table-light cookies-table thead">
-                <tr>
-                    <th>Název lekce</th>
-                    <th>Datum</th>
-                    <th>Prezentace PDF</th>
-                    <th>Prezentace PowerPoint</th>
-                    <th>Souhrn Word</th>
-                    <th>Souhrn PDF</th>
-                </tr>
-            </thead>
-            <tbody>
-                {foreach $lessons as $lesson}
-                <tr>
-                    <td><strong>{$lesson['title']}</strong></td>
-                    <td><strong>{$lesson['date']}</strong></td>
-                    <td>
-                        {if !empty($lesson['documents'])}
-                            {foreach $lesson['documents'] as $docLink}
-                                {if str_contains($docLink,'Zalm')}
-                                    <a href="{$docLink}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
-                                        <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30" class="me-1">
-                                        <span class="text-danger">PDF</span>
-                                    </a>
+        
+
+        {* --- Sekce Aktuální lekce --- *}
+        <h2 class="text-center mb-4 mt-5" style="color:blue;font-size:1.5rem">Aktuální lekce</h2>
+        
+        {* Table *}
+        <div class="mb-5">
+            <div class="table-responsive">
+                <table class="table align-middle text-center mb-0">
+                    <thead style="background: linear-gradient(90deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);">
+                        <tr>
+                            {* ZMĚNA: Přidáno color: white !important pro agresivní přebití Bootstrap proměnných *}
+                            <th class="fw-semibold py-3 border-0" >Název Aktuální lekce</th>
+                            <th class="fw-semibold py-3 border-0" >Datum</th>
+                            <th class="fw-semibold py-3 border-0" >Prezentace PDF</th>
+                            <th class="fw-semibold py-3 border-0" >Prezentace PowerPoint</th>
+                            <th class="fw-semibold py-3 border-0" >Souhrn Word</th>
+                            <th class="fw-semibold py-3 border-0" >Souhrn PDF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {* KROK 1: Najdeme aktuální hlavní lekci a její číslo *}
+                        {var $activeLesson = null}
+                        {var $activeLessonNumber = null}
+
+                        {foreach $lessons as $lesson}
+                            {if !empty($lesson['date'])}
+                                {var $lessonDateYmd = ($lesson['date']|date:'Y-m-d')}
+                                {if $lessonDateYmd >= $lastSunday && $lessonDateYmd <= $nextSaturday}
+                                    {var $activeLesson = $lesson}
+                                    {var $activeLessonNumber = (int)$lesson['title']}
+                                {/if}
+                            {/if}
+                        {/foreach}
+
+                        {* KROK 2: Výpis nalezených lekcí *}
+                        {if $activeLesson}
+                            {* A. Pomocná lekce *}
+                            {foreach $lessons as $lesson}
+                                {var $title = $lesson['title'] ?? ''}
+                                {if str_contains($title, 'Pomocná prezentace k lekci ' . $activeLessonNumber) || str_contains($title, 'Pomocná prezentace k lekci ' . sprintf('%02d', $activeLessonNumber))}
+                                    <tr class="table-light text-muted">
+                                        <td class="fw-semibold">{$lesson['title']}</td>
+                                        <td>{$lesson['date'] ?? ''}</td>
+                                        
+                                        <td>
+                                            {if isset($lesson['documents']['pdf']) || (!empty($lesson['documents']) && str_contains(implode(' ', $lesson['documents']), 'Zalm'))}
+                                                <a href="{$lesson['documents']['pdf'] ?? '#'}" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill d-inline-flex align-items-center fw-semibold">
+                                                    <img src="{$basePath}/uploads/img/pdf.png" width="18" height="18" class="me-2"> PDF
+                                                </a>
+                                            {/if}
+                                        </td>
+                                        <td>
+                                            {if isset($lesson['documents']['pptx'])}
+                                                <a href="{$lesson['documents']['pptx']}" target="_blank" class="btn btn-sm btn-outline-warning rounded-pill d-inline-flex align-items-center fw-semibold text-dark">
+                                                    <img src="{$basePath}/uploads/img/pptx.png" width="18" height="18" class="me-2"> PPTX
+                                                </a>
+                                            {/if}
+                                        </td>
+                                        <td>
+                                            {if isset($lesson['documents']['docx'])}
+                                                <a href="{$lesson['documents']['docx']}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill d-inline-flex align-items-center fw-semibold">
+                                                    <img src="{$basePath}/uploads/img/docx.png" width="18" height="18" class="me-2"> DOCX
+                                                </a>
+                                            {/if}
+                                        </td>
+                                        <td>
+                                            {if isset($lesson['documents']['res_pdf'])}
+                                                <a href="{$lesson['documents']['res_pdf']}" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill d-inline-flex align-items-center fw-semibold">
+                                                    <img src="{$basePath}/uploads/img/pdf.png" width="18" height="18" class="me-2"> PDF
+                                                </a>
+                                            {/if}
+                                        </td>
+                                    </tr>
                                 {/if}
                             {/foreach}
-                        {/if}
 
-                        {if isset($lesson['documents']['pdf'])}
-                            <a href="{$lesson['documents']['pdf']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
-                                <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30" class="me-1">
-                                <span class="text-danger">PDF</span>
-                            </a>
+                            {* B. Hlavní aktuální lekce *}
+                            {var $lesson = $activeLesson}
+                            <tr>
+                                <td class="fw-bold text-dark" style="font-size: 1.05rem;">{$lesson['title']}</td>
+                                <td class="fw-bold">{$lesson['date']}</td>
+                                
+                                <td>
+                                    {if isset($lesson['documents']['pdf']) || (!empty($lesson['documents']) && str_contains(implode(' ', $lesson['documents']), 'Zalm'))}
+                                        <a href="{$lesson['documents']['pdf'] ?? '#'}" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill d-inline-flex align-items-center fw-semibold">
+                                            <img src="{$basePath}/uploads/img/pdf.png" width="18" height="18" class="me-2"> PDF
+                                        </a>
+                                    {/if}
+                                </td>
+                                <td>
+                                    {if isset($lesson['documents']['pptx'])}
+                                        <a href="{$lesson['documents']['pptx']}" target="_blank" class="btn btn-sm btn-outline-warning rounded-pill d-inline-flex align-items-center fw-semibold text-dark">
+                                            <img src="{$basePath}/uploads/img/pptx.png" width="18" height="18" class="me-2"> PPTX
+                                        </a>
+                                    {/if}
+                                </td>
+                                <td>
+                                    {if isset($lesson['documents']['docx'])}
+                                        <a href="{$lesson['documents']['docx']}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill d-inline-flex align-items-center fw-semibold">
+                                            <img src="{$basePath}/uploads/img/docx.png" width="18" height="18" class="me-2"> DOCX
+                                        </a>
+                                    {/if}
+                                </td>
+                                <td>
+                                    {if isset($lesson['documents']['res_pdf'])}
+                                        <a href="{$lesson['documents']['res_pdf']}" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill d-inline-flex align-items-center fw-semibold">
+                                            <img src="{$basePath}/uploads/img/pdf.png" width="18" height="18" class="me-2"> PDF
+                                        </a>
+                                    {/if}
+                                </td>
+                            </tr>
+                        {else}
+                            <tr>
+                                <td colspan="6" class="text-center text-muted py-4">Tento týden neprobíhá žádná lekce.</td>
+                            </tr>
                         {/if}
-                    </td>
-                    <td>
-                        {if isset($lesson['documents']['pptx'])}
-                            <a href="{$lesson['documents']['pptx']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
-                                <img src="{$basePath}/uploads/img/pptx.png" width="30" height="30" class="me-1">
-                                <span class="text-warning">PPTX</span>
-                            </a>
-                        {/if}
-                    </td>
-                    <td>
-                        {if isset($lesson['documents']['docx'])}
-                            <a href="{$lesson['documents']['docx']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
-                                <img src="{$basePath}/uploads/img/docx.png" width="30" height="30" class="me-1">
-                                <span class="text-primary">DOCX</span>
-                            </a>
-                        {/if}
-                    </td>
-                    <td>
-                        {if isset($lesson['documents']['res_pdf'])}
-                            <a href="{$lesson['documents']['res_pdf']}" target="_blank" download class="d-inline-flex align-items-center me-2 mb-1">
-                                <img src="{$basePath}/uploads/img/pdf.png" width="30" height="30" class="me-1">
-                                <span class="text-danger">PDF</span>
-                            </a>
-                        {/if}
-                    </td>
-                </tr>
-                {/foreach}
-            </tbody>
-        </table>
-    </div>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    <!-- Obrázky k lekcím -->
-    <h1 class="text-center mb-4" style="color:blue">Verše k lekcím</h1>
-    <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4">
-        {foreach $lessons as $lesson}
-            {foreach $lesson['documents'] as $jpgLink}
-                {if str_ends_with($jpgLink, '.jpg')}
-                    <div class="col">
-                        <a href="{$jpgLink}" target="_blank">
-                            <img src="{$jpgLink}" alt="Image" class="img-fluid rounded shadow-sm">
-                        </a>
-                    </div>
+        {* --- Rozdělovací prvek --- *}
+        <div class="d-flex justify-content-center mb-5">
+            <span style="width: 90%; height: 4px; background-color: blue; border-radius: 2px;"></span>
+        </div>
+
+        {* --- Sekce Celé čtvrtletí --- *}
+        <h2 class="text-center mb-4" style="color:blue;;font-size:1.5rem">Lekce na celé čtvrtletí</h2>
+        
+        {* ZMĚNA: Odtud také odebrána třída 'card' a stíny *}
+        <div class="mb-5">
+            <div class="table-responsive">
+                <table class="table align-middle text-center mb-0">
+                    <thead class="bg-light">
+                        <tr>
+                            <th class="py-3 border-0 text-secondary">Název lekce</th>
+                            <th class="py-3 border-0 text-secondary">Datum</th>
+                            <th class="py-3 border-0 text-secondary">Prezentace PDF</th>
+                            <th class="py-3 border-0 text-secondary">Prezentace PPTX</th>
+                            <th class="py-3 border-0 text-secondary">Souhrn Word</th>
+                            <th class="py-3 border-0 text-secondary">Souhrn PDF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach $lessons as $lesson}
+                        <tr {if str_contains($lesson['title'] ?? '', 'Pomocná')}class="table-light text-muted"{/if}>
+                            <td class="{if !str_contains($lesson['title'] ?? '', 'Pomocná')}fw-bold{/if}">{$lesson['title']}</td>
+                            <td class="fw-semibold">{$lesson['date'] ?? ''}</td>
+                            
+                            <td>
+                                {if isset($lesson['documents']['pdf']) || (!empty($lesson['documents']) && str_contains(implode(' ', $lesson['documents']), 'Zalm'))}
+                                    <a href="{$lesson['documents']['pdf'] ?? '#'}" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill d-inline-flex align-items-center fw-semibold">
+                                        <img src="{$basePath}/uploads/img/pdf.png" width="18" height="18" class="me-2"> PDF
+                                    </a>
+                                {/if}
+                            </td>
+                            <td>
+                                {if isset($lesson['documents']['pptx'])}
+                                    <a href="{$lesson['documents']['pptx']}" target="_blank" class="btn btn-sm btn-outline-warning rounded-pill d-inline-flex align-items-center fw-semibold text-dark">
+                                        <img src="{$basePath}/uploads/img/pptx.png" width="18" height="18" class="me-2"> PPTX
+                                    </a>
+                                {/if}
+                            </td>
+                            <td>
+                                {if isset($lesson['documents']['docx'])}
+                                    <a href="{$lesson['documents']['docx']}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill d-inline-flex align-items-center fw-semibold">
+                                        <img src="{$basePath}/uploads/img/docx.png" width="18" height="18" class="me-2"> DOCX
+                                    </a>
+                                {/if}
+                            </td>
+                            <td>
+                                {if isset($lesson['documents']['res_pdf'])}
+                                    <a href="{$lesson['documents']['res_pdf']}" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill d-inline-flex align-items-center fw-semibold">
+                                        <img src="{$basePath}/uploads/img/pdf.png" width="18" height="18" class="me-2"> PDF
+                                    </a>
+                                {/if}
+                            </td>
+                        </tr>
+                        {/foreach}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {* --- Obrázky k lekcím --- *}
+        <h2 class="text-center fw-bold mb-4 mt-5" style="color: blue;">Verše k lekcím</h2>
+        <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4 mb-5">
+            {foreach $lessons as $lesson}
+                {if !empty($lesson['documents'])}
+                    {foreach $lesson['documents'] as $jpgLink}
+                        {if str_ends_with($jpgLink, '.jpg')}
+                            <div class="col">
+                                {* ZMĚNA: Zde jsem .card ponechal, ale odebral hover-zoom. Pokud i obrázky nějak moc "vyskakují", napiš, upravíme to. *}
+                                <div class="card h-100 border-0 shadow-sm overflow-hidden text-center rounded-3">
+                                    <a href="{$jpgLink}" target="_blank" class="d-block">
+                                        <img src="{$jpgLink}" alt="Verš k lekci" class="img-fluid w-100" style="object-fit: cover;">
+                                    </a>
+                                </div>
+                            </div>
+                        {/if}
+                    {/foreach}
                 {/if}
             {/foreach}
-        {/foreach}
+        </div>
+        
     </div>
 </div>
-</div>
-        
+
+{/block}

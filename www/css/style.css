@@ -11,12 +11,18 @@
   --body-font: "Poppins", sans-serif;
   --h2-font-size: 1rem;
   --small-font-size: .775rem;
+  --background: #c1c1c1;
 }
 
 /*=============== CARD ===============*/
 
 html, body {
+
+  background-color: (var(--background)) !important;
+  background: (var(--background)) !important;
   margin: 0;
+  font-family: Arial, sans-serif;
+  
   padding: 0;
   overflow-x: hidden; /* zabrání horizontálnímu posunu */
 }
@@ -127,10 +133,8 @@ html, body {
     height: 50px;
 }
 .card:hover{
-    transform: scale(0.95);
-    box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
-    -webkit-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
-    -moz-box-shadow: 5px 6px 22px 5px rgba(31,43,134,1);
+    transform: scale(1.05);
+    
 
 }
 
@@ -201,11 +205,6 @@ html, body {
 }
 
 /*---------------- Body ------------------*/
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fbfbfb !important;
-}
 
 /*--------------- Header -------------------*/
 .header {

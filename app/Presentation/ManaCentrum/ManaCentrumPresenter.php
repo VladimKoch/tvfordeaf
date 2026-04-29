@@ -285,8 +285,28 @@ final class ManaCentrumPresenter extends BasePresenter
 
     public function renderAktual()
     {   
+        $now = new \DateTime();
+        $currentDate = $now->format('Y-m-d');
+
+        $targetSaturday = $now->setISODate(
+        (int)$now->format('o'), 
+        (int)$now->format('W'), 
+        6);
+
+        $nextSaturday = $targetSaturday->format('Y-m-d');
+        $lastSunday = $now->modify('last Sunday')->format('Y-m-d');
+
+        // dump($saturdayString);
+        // dump($currentDate);
+        // dump($lastSunday);
+        // die;
+
         $index = $this->fusteroTitle->getTitlesFromFustero();
         $this->template->lessons = $index;    
+        $this->template->currentDate = $currentDate; // Poslat aktuální datum do šablony
+        $this->template->nextSaturday = $nextSaturday; //
+        $this->template->lastSunday = $lastSunday; 
+
     }
 
     /**
