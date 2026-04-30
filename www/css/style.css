@@ -222,38 +222,7 @@ html, body {
     height: 50px;
 }
 
-/*------------------ H1 Tv for Deaf css ---------------*/
-/* .header .tv {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    background: linear-gradient(to right, #0c4394, #bcd3fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: auto 10px;
-    transition: background 0.5s ease;
-} */
 
-/*--------------- H1 Home css ---------------*/
-/* .header .home {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    background: linear-gradient(to right, #f2f3f4, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: auto 10px;
-    transition: background 0.5s ease;
-} */
-/* .home:hover {
-    background: linear-gradient(to right, #ffffff, #0158d9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: background 0.5s ease-in-out;
-} */
-/* .hand:hover{
-  box-shadow: #1c00bb ;
-  transform: scale(0.9);
-  transition: transform 0.5 ease-in-out;
-} */
 a {
   text-decoration:none;
 }
@@ -434,112 +403,7 @@ h6{
   
 }
 
-/* Cookie Banner */
 
-
-.cookie-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #0C2852; /* Tmavě modrá barva z patičky */
-    color: #fff;
-    padding: 15px 20px;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif; /* Použijte písmo odpovídající vašemu webu */
-    box-sizing: border-box;
-}
-
-.cookie-bar-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1100px; /* Nastavte na šířku vašeho obsahu */
-}
-
-.cookie-bar p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.4;
-    padding-right: 20px;
-}
-
-.cookie-bar-buttons {
-    display: flex;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.cookie-bar-buttons a {
-    text-decoration: none;
-    padding: 8px 18px;
-    border-radius: 5px; /* Zaoblené rohy */
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.cookie-bar-buttons .btn-accept {
-    background-color: #fff;
-    color: #0C2852;
-    border: 1px solid #fff;
-}
-
-.cookie-bar-buttons .btn-accept:hover {
-    background-color: transparent;
-    color: #fff;
-}
-
-.cookie-bar-buttons .btn-info {
-    background-color: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-}
-
-.cookie-bar-buttons .btn-info:hover {
-    background-color: #fff;
-    color: #0C2852;
-}
-
-@media (max-width: 768px) {
-    .cookie-bar-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .cookie-bar p {
-        padding-right: 0;
-        margin-bottom: 15px;
-    }
-    .cookie-bar-buttons {
-        justify-content: center;
-    }
-}
-
-/* Cookie Banner design */
-
-.cookies-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2rem 0;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.cookies-table th, .cookies-table td {
-    padding: 12px 16px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-.cookies-table thead {
-    background: #002b7f; /* tmavě modrá */
-    color: #fff;
-}
 
 /* .cookies-table tr:hover {
     background: #f8f9fa;
@@ -693,6 +557,8 @@ ul{
 
 
 
+
+
 /* Media Queries pro responzivitu */
 
 /* Pro tablety a menší (do 991px) */
@@ -718,25 +584,31 @@ ul{
     .navbar-nav.ms-auto {
         display: none !important; 
     }
+
+    @media (max-width: 992px) {
+    .custom-cookie-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    .custom-cookie-left {
+        max-width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .custom-cookie-right {
+        width: 100%;
+        justify-content: center;
+    }
+} 
+
+
 }
 
-/* Stylování rozbaleného hamburger menu - přidáme bílé pozadí a odsazení */
-.navbar-collapse.show {
-    background-color: white;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 100%;
-    z-index: 1000;
-    padding: 20px;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    border-radius: 0 0 10px 10px;
-}
 
-/* Položky v menu pod sebou */
-.navbar-collapse.show .nav-item {
-    margin-bottom: 10px;
-}
+
+
+
 
 
 

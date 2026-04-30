@@ -40,7 +40,7 @@ return array (
     'App\\Presenters\\BasePresenter' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tvfordeaf\\app\\Presentation\\BasePresenter.php',
-      1 => 1765798147,
+      1 => 1777542497,
     ),
     'App\\Presentation\\Cookie\\CookiePresenter' => 
     array (
@@ -107,29 +107,9 @@ return array (
   array (
     'Nette\\Bridges\\Assets\\DIExtension' => 1,
     'null' => 2,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumAktualTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumDefaultTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumFotoverseTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumPritomnapravdaTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumVideosTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumProdetiTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumSkolaTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumBiblestudiumTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumNewtestamentTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumOldtestamentTemplate' => 3,
-    'App\\Presentation\\ManaCentrum\\ManaCentrumPisneTemplate' => 3,
     'App\\Presentation\\Home\\HomeDefaultTemplate' => 3,
     'App\\Presentation\\Home\\HomeTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumDefaultTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekcerostlinTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceInfekceTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceTepnyTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumBozilekarnaTemplate' => 2,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceKrkTemplate' => 3,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceNervTemplate' => 1,
-    'App\\Presentation\\FitCentrum\\FitCentrumSekceOkoTemplate' => 2,
+    'App\\Presentation\\Home\\HomeCookiesTemplate' => 3,
   ),
   2 => 
   array (

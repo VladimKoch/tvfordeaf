@@ -36,15 +36,15 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         $this->template->cookiesAccepted = !empty($this->acceptedCookies);
         $this->template->hasAnalyticsConsent = in_array('analytics', $this->acceptedCookies, true);
         $this->template->hasMarketingConsent = in_array('marketing', $this->acceptedCookies, true);
-
     }
 
     public function handleAcceptCookies(string $category = 'all'): void
     {
+        // ZDE JE TA OPRAVA PRO MARKETING
         $this->acceptedCookies = match ($category) {
             'all' => ['essentials', 'analytics', 'marketing'],
             'analytics' => ['essentials', 'analytics'],
-            'marketing' => ['essentials', 'analytics', 'marketing'],
+            'marketing' => ['essentials', 'marketing'], 
             default => ['essentials'],
         };
 
@@ -66,9 +66,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         }
     }
 
-
-
-        // V presenteru, např. v BasePresenter.php, který dědí všechny ostatní presentery
+    // V presenteru, např. v BasePresenter.php, který dědí všechny ostatní presentery
     protected function createComponentContactForm(): Form
     {
         $form = new Form;
@@ -81,10 +79,8 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
             ->setHtmlAttribute('rows', 1);
 
         $form->addSubmit('submit', 'Odeslat zprávu')
-
-        ->setHtmlAttribute('class', 'form-button-container')
-        ->setHtmlAttribute('class', 'btn btn-primary');
-        // ->setHtmlAttribute('style', 'background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;');
+            ->setHtmlAttribute('class', 'form-button-container')
+            ->setHtmlAttribute('class', 'btn btn-primary');
 
         $form->onSuccess[] = [$this, 'contactFormSucceeded'];
 
@@ -104,10 +100,10 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         $mailer = new SmtpMailer(
                     host: 'wes1-smtp.wedos.net',
                     username: 'info@tvfordeaf.com',
-                    // password: 'sipc wgvh qaxn tsmx',
-                    password: 'F2XBCfrev*',
+                    password: 'F2XBCfrev*', // Doporučuji v budoucnu heslo přesunout do local.neon konfigurace!
                     port: 587,
-                    encryption: 'tls'); // Nebo SmtpMailer
+                    encryption: 'tls'
+        ); 
         $mailer->send($mail);
 
         $this->flashMessage('Vaše zpráva byla úspěšně odeslána. Děkujeme!', 'success');
